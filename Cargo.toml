@@ -1,6 +1,9 @@
 [package]
 name = "rustys-mini-golf"
 version = "0.1.0"
+authors = ["Sleeping Colossus"]
+description = "Mini golf puzzle game"
+repository = "https://github.com/SleepingColossus/rustys-mini-golf"
 edition = "2021"
 
 [lib]
