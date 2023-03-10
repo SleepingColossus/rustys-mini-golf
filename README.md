@@ -36,5 +36,5 @@
 
 1. ⌨️ Build the application using the `Build.ps1` PowerShell script from the command line
 2. ⌨️ From the root directory of the repository, run `http-server`
-3. ⌨️ Navigate to `http://localhost/web/index.html` in your web browser
+3. ⌨️ Navigate to `http://localhost:8080/web/index.html` in your web browser
 4. ⌨️ When testing new features, refresh the page using Ctrl + F5 to clear the cache.
