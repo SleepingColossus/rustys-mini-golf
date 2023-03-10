@@ -3,12 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Rusty's Mini-Golf</title>
+    <style type="text/css">
+        body { background-color: darkgray; }
+        canvas { background-color: white; }
+    </style>
 </head>
 <body>
+<canvas id="canvas" width="500" height="500"></canvas>
 <script type="module">
-    import init, { greet } from '/pkg/rustys_mini_golf.js';
+    import init, { start, greet } from '/pkg/rustys_mini_golf.js';
     init().then(() => {
-        greet("Rusty");
+        //greet("Rusty");
+        start();
     })
 </script>
 </body>
