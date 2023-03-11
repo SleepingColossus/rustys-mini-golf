@@ -1,66 +1,12 @@
+mod ball;
+mod game;
+
+use game::{Game};
+
 use std::cell::RefCell;
 use std::rc::Rc;
 use wasm_bindgen::prelude::*;
 use wasm_bindgen::JsCast;
-
-struct Ball {
-    pub x: f64,
-    pub y: f64,
-    pub w: f64,
-    pub h: f64,
-}
-
-impl Ball {
-    fn new() -> Self {
-        Self {
-            x: 0.0,
-            y: 0.0,
-            w: 16.0,
-            h: 16.0,
-        }
-    }
-
-    fn update(&mut self) {
-        self.x += 1.0;
-        self.y += 1.0;
-    }
-
-    fn draw(&self, ctx: &web_sys::CanvasRenderingContext2d) {
-        ctx.set_fill_style(&"red".into());
-        ctx.begin_path();
-
-        ctx.fill_rect(self.x, self.y, self.w, self.h);
-
-        ctx.close_path();
-    }
-}
-
-struct Game {
-    ball: Ball,
-    ellapsed_frames: i64,
-}
-
-impl Game {
-    fn new() -> Self {
-        Self {
-            ball: Ball::new(),
-            ellapsed_frames: 0,
-        }
-    }
-
-    fn update(&mut self) {
-        self.ellapsed_frames += 1;
-
-        self.ball.update();
-    }
-
-    fn draw(&self, canvas: &web_sys::HtmlCanvasElement, context: &web_sys::CanvasRenderingContext2d) {
-        // clear screen
-        context.clear_rect(0.0, 0.0, canvas.width() as f64, canvas.height() as f64);
-
-        self.ball.draw(context);
-    }
-}
 
 fn window() -> web_sys::Window {
     web_sys::window().expect("no global `window` exists")
