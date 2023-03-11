@@ -26,7 +26,7 @@ impl Ball {
     }
 
     fn draw(&self, ctx: &web_sys::CanvasRenderingContext2d) {
-        //ctx.fill_style("red");
+        ctx.set_fill_style(&"red".into());
         ctx.begin_path();
 
         ctx.fill_rect(self.x, self.y, self.w, self.h);
