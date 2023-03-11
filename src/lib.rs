@@ -1,46 +1,18 @@
 mod ball;
 mod game;
-
-use game::{Game};
+mod html;
 
 use std::cell::RefCell;
 use std::rc::Rc;
 use wasm_bindgen::prelude::*;
-use wasm_bindgen::JsCast;
 
-fn window() -> web_sys::Window {
-    web_sys::window().expect("no global `window` exists")
-}
-
+// TODO figure out how to use method in html.rs instead of this
 fn request_animation_frame(f: &Closure<dyn FnMut()>) {
-    window()
+    let html = html::Html::new();
+
+    html.window
         .request_animation_frame(f.as_ref().unchecked_ref())
         .expect("should register `requestAnimationFrame` OK");
-}
-
-fn document() -> web_sys::Document {
-    window()
-        .document()
-        .expect("should have a document on window")
-}
-
-fn canvas() -> web_sys::HtmlCanvasElement {
-    let document = document();
-    let canvas = document.get_element_by_id("canvas").unwrap();
-
-    canvas
-        .dyn_into::<web_sys::HtmlCanvasElement>()
-        .map_err(|_| ())
-        .unwrap()
-}
-
-fn context(canvas: &web_sys::HtmlCanvasElement) -> web_sys::CanvasRenderingContext2d {
-    canvas
-        .get_context("2d")
-        .unwrap()
-        .unwrap()
-        .dyn_into::<web_sys::CanvasRenderingContext2d>()
-        .unwrap()
 }
 
 #[wasm_bindgen(start)]
@@ -48,13 +20,12 @@ pub fn run() -> Result<(), JsValue> {
     let f = Rc::new(RefCell::new(None));
     let g = f.clone();
 
-    let mut game = Game::new();
-    let canvas = canvas();
-    let context = context(&canvas);
+    let html = html::Html::new();
+    let mut game = game::Game::new();
 
     *g.borrow_mut() = Some(Closure::wrap(Box::new(move || {
         game.update();
-        game.draw(&canvas, &context);
+        game.draw(&html.canvas, &html.context);
 
         request_animation_frame(f.borrow().as_ref().unwrap());
     }) as Box<dyn FnMut()>));
