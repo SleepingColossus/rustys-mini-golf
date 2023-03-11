@@ -2,19 +2,19 @@ use crate::ball::Ball;
 
 pub struct Game {
     ball: Ball,
-    ellapsed_frames: i64,
+    elapsed_frames: i64,
 }
 
 impl Game {
     pub fn new() -> Self {
         Self {
             ball: Ball::new(),
-            ellapsed_frames: 0,
+            elapsed_frames: 0,
         }
     }
 
     pub fn update(&mut self) {
-        self.ellapsed_frames += 1;
+        self.elapsed_frames += 1;
 
         self.ball.update();
     }
