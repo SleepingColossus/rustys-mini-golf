@@ -2,6 +2,7 @@ use wasm_bindgen::JsCast;
 
 pub struct Html {
     pub window: web_sys::Window,
+    pub document: web_sys::Document,
     pub canvas: web_sys::HtmlCanvasElement,
     pub context: web_sys::CanvasRenderingContext2d,
 }
@@ -29,6 +30,7 @@ impl Html {
 
         Self {
             window,
+            document,
             canvas,
             context
         }
@@ -40,4 +42,13 @@ impl Html {
     //         .request_animation_frame(f.as_ref().unchecked_ref())
     //         .expect("should register `requestAnimationFrame` OK");
     // }
+
+    pub fn get_image_by_id(&self, image_id: &str) -> web_sys::HtmlImageElement {
+        self.document
+            .get_element_by_id(image_id)
+            .unwrap()
+            .dyn_into::<web_sys::HtmlImageElement>()
+            .map_err(|_| ())
+            .unwrap()
+    }
 }

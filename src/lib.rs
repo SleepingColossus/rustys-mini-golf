@@ -1,6 +1,9 @@
 mod ball;
 mod game;
 mod html;
+mod sprite_sheet;
+mod constants;
+mod point;
 
 use std::cell::RefCell;
 use std::rc::Rc;
