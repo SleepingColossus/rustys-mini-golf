@@ -3,14 +3,14 @@ use std::rc::Rc;
 use wasm_bindgen::prelude::*;
 use wasm_bindgen::JsCast;
 
-struct Player {
+struct Ball {
     pub x: f64,
     pub y: f64,
     pub w: f64,
     pub h: f64,
 }
 
-impl Player {
+impl Ball {
     fn new() -> Self {
         Self {
             x: 0.0,
@@ -36,14 +36,14 @@ impl Player {
 }
 
 struct Game {
-    player: Player,
+    ball: Ball,
     ellapsed_frames: i64,
 }
 
 impl Game {
     fn new() -> Self {
         Self {
-            player: Player::new(),
+            ball: Ball::new(),
             ellapsed_frames: 0,
         }
     }
@@ -51,14 +51,14 @@ impl Game {
     fn update(&mut self) {
         self.ellapsed_frames += 1;
 
-        self.player.update();
+        self.ball.update();
     }
 
     fn draw(&self, canvas: &web_sys::HtmlCanvasElement, context: &web_sys::CanvasRenderingContext2d) {
         // clear screen
         context.clear_rect(0.0, 0.0, canvas.width() as f64, canvas.height() as f64);
 
-        self.player.draw(context);
+        self.ball.draw(context);
     }
 }
 
