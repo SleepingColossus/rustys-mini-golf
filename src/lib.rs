@@ -35,6 +35,30 @@ impl Player {
     }
 }
 
+struct Game {
+    player: Player,
+    ellapsed_frames: i64,
+}
+
+impl Game {
+    fn new() -> Self {
+        Self {
+            player: Player::new(),
+            ellapsed_frames: 0,
+        }
+    }
+
+    fn update(&mut self) {
+        self.ellapsed_frames += 1;
+
+        self.player.update();
+    }
+
+    fn draw(&self, context: &web_sys::CanvasRenderingContext2d) {
+        self.player.draw(context);
+    }
+}
+
 fn window() -> web_sys::Window {
     web_sys::window().expect("no global `window` exists")
 }
@@ -76,12 +100,12 @@ pub fn run() -> Result<(), JsValue> {
     let f = Rc::new(RefCell::new(None));
     let g = f.clone();
 
-    let mut player = Player::new();
-    let ctx : web_sys::CanvasRenderingContext2d = context();
+    let mut game = Game::new();
+    let context : web_sys::CanvasRenderingContext2d = context();
 
     *g.borrow_mut() = Some(Closure::wrap(Box::new(move || {
-        player.update();
-        player.draw(&ctx);
+        game.update();
+        game.draw(&context);
 
         request_animation_frame(f.borrow().as_ref().unwrap());
     }) as Box<dyn FnMut()>));
