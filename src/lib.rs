@@ -54,7 +54,10 @@ impl Game {
         self.player.update();
     }
 
-    fn draw(&self, context: &web_sys::CanvasRenderingContext2d) {
+    fn draw(&self, canvas: &web_sys::HtmlCanvasElement, context: &web_sys::CanvasRenderingContext2d) {
+        // clear screen
+        context.clear_rect(0.0, 0.0, canvas.width() as f64, canvas.height() as f64);
+
         self.player.draw(context);
     }
 }
@@ -75,7 +78,7 @@ fn document() -> web_sys::Document {
         .expect("should have a document on window")
 }
 
-fn context() -> web_sys::CanvasRenderingContext2d {
+fn canvas() -> web_sys::HtmlCanvasElement {
     let document = document();
     let canvas = document.get_element_by_id("canvas").unwrap();
     let canvas: web_sys::HtmlCanvasElement =
@@ -84,6 +87,10 @@ fn context() -> web_sys::CanvasRenderingContext2d {
             .map_err(|_| ())
             .unwrap();
 
+    canvas
+}
+
+fn context(canvas: &web_sys::HtmlCanvasElement) -> web_sys::CanvasRenderingContext2d {
     let context =
         canvas
             .get_context("2d")
@@ -101,11 +108,12 @@ pub fn run() -> Result<(), JsValue> {
     let g = f.clone();
 
     let mut game = Game::new();
-    let context : web_sys::CanvasRenderingContext2d = context();
+    let canvas = canvas();
+    let context = context(&canvas);
 
     *g.borrow_mut() = Some(Closure::wrap(Box::new(move || {
         game.update();
-        game.draw(&context);
+        game.draw(&canvas, &context);
 
         request_animation_frame(f.borrow().as_ref().unwrap());
     }) as Box<dyn FnMut()>));
