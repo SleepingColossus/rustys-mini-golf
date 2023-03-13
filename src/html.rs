@@ -10,29 +10,24 @@ pub struct Html {
 impl Html {
     pub fn new() -> Self {
         let window = web_sys::window().expect("no global `window` exists");
-        let document =
-            window
-                .document()
-                .expect("should have a document on window");
+        let document = window.document().expect("should have a document on window");
         let canvas = document.get_element_by_id("canvas").unwrap();
-        let canvas =
-            canvas
-                .dyn_into::<web_sys::HtmlCanvasElement>()
-                .map_err(|_| ())
-                .unwrap();
-        let context =
-            canvas
-                .get_context("2d")
-                .unwrap()
-                .unwrap()
-                .dyn_into::<web_sys::CanvasRenderingContext2d>()
-                .unwrap();
+        let canvas = canvas
+            .dyn_into::<web_sys::HtmlCanvasElement>()
+            .map_err(|_| ())
+            .unwrap();
+        let context = canvas
+            .get_context("2d")
+            .unwrap()
+            .unwrap()
+            .dyn_into::<web_sys::CanvasRenderingContext2d>()
+            .unwrap();
 
         Self {
             window,
             document,
             canvas,
-            context
+            context,
         }
     }
 

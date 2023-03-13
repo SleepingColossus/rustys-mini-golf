@@ -45,17 +45,18 @@ impl AnimatedSprite {
         let scale_x = constants::TILE_SIZE;
         let scale_y = constants::TILE_SIZE;
 
-        context.draw_image_with_html_image_element_and_sw_and_sh_and_dx_and_dy_and_dw_and_dh(
-            &self.source_image,
-            source_x,
-            source_y,
-            frame_width,
-            frame_height,
-            position_x,
-            position_y,
-            scale_x,
-            scale_y
-        )
+        context
+            .draw_image_with_html_image_element_and_sw_and_sh_and_dx_and_dy_and_dw_and_dh(
+                &self.source_image,
+                source_x,
+                source_y,
+                frame_width,
+                frame_height,
+                position_x,
+                position_y,
+                scale_x,
+                scale_y,
+            )
             .unwrap();
     }
 }
