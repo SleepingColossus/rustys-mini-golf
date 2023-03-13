@@ -19,7 +19,7 @@ impl Ball {
             h: 16.0,
             speed_x: 1.0,
             speed_y: 1.0,
-            last_position: Point::zero()
+            last_position: Point::zero(),
         }
     }
 

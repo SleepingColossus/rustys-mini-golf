@@ -49,7 +49,7 @@ impl SpriteSheet {
         &self,
         tile_index: i32, // tile's index in sprite sheet
         position: &Point,
-        context: &web_sys::CanvasRenderingContext2d
+        context: &web_sys::CanvasRenderingContext2d,
     ) {
         let tile_column = tile_index % self.number_of_columns;
         let tile_row = tile_index / self.number_of_columns;

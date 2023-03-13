@@ -13,7 +13,12 @@ pub struct Level {
 }
 
 impl Level {
-    pub fn new(level_id: i32, tiles: Vec<Vec<i32>>, starting_position: Point, tile_sheet: SpriteSheet) -> Self {
+    pub fn new(
+        level_id: i32,
+        tiles: Vec<Vec<i32>>,
+        starting_position: Point,
+        tile_sheet: SpriteSheet,
+    ) -> Self {
         Self {
             level_id,
             tiles,
@@ -36,11 +41,15 @@ impl Level {
 
                     if collision {
                         //self.handle_collision(&position);
-                        if self.ball.last_position.x > position.x && self.ball.last_position.x < position.x + constants::TILE_SIZE {
+                        if self.ball.last_position.x > position.x
+                            && self.ball.last_position.x < position.x + constants::TILE_SIZE
+                        {
                             self.ball.collide_horizontal();
                         }
 
-                        if self.ball.last_position.y > position.y && self.ball.last_position.y < position.y + constants::TILE_SIZE {
+                        if self.ball.last_position.y > position.y
+                            && self.ball.last_position.y < position.y + constants::TILE_SIZE
+                        {
                             self.ball.collide_vertical();
                         }
 
@@ -60,7 +69,7 @@ impl Level {
 
                 let position = Point::new(position_x, position_y);
 
-                self.tile_sheet.draw_tile(*tile-1, &position, context);
+                self.tile_sheet.draw_tile(*tile - 1, &position, context);
             }
         }
 
