@@ -4,6 +4,7 @@ mod html;
 mod sprite_sheet;
 mod constants;
 mod point;
+mod animated_sprite;
 
 use std::cell::RefCell;
 use std::rc::Rc;
