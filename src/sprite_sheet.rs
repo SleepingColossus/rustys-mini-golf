@@ -17,7 +17,7 @@ impl SpriteSheet {
         }
     }
 
-    pub fn draw_tile_at(
+    fn draw_tile_at(
         &self,
         source_position: &Point,
         position: &Point,
@@ -45,5 +45,21 @@ impl SpriteSheet {
                 scale_y,
             )
             .unwrap();
+    }
+
+    pub fn draw_tile(
+        &self,
+        tile_index: i32, // tile's index in sprite sheet
+        position: &Point,
+        context: &web_sys::CanvasRenderingContext2d
+    ) {
+        let tile_column = tile_index % self.number_of_columns;
+        let tile_row = tile_index / self.number_of_rows;
+        let tile_x = tile_column as f64 * constants::TILE_SIZE;
+        let tile_y = tile_row as f64 * constants::TILE_SIZE;
+
+        let source_position = Point::new(tile_x, tile_y);
+
+        self.draw_tile_at(&source_position, position, context);
     }
 }

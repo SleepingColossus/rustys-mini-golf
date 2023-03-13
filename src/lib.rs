@@ -1,10 +1,11 @@
+mod animated_sprite;
 mod ball;
+mod constants;
 mod game;
 mod html;
-mod sprite_sheet;
-mod constants;
+mod level;
 mod point;
-mod animated_sprite;
+mod sprite_sheet;
 
 use std::cell::RefCell;
 use std::rc::Rc;
