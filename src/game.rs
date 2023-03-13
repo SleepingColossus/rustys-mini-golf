@@ -1,9 +1,7 @@
-use crate::ball::Ball;
 use crate::level::Level;
 use crate::point::Point;
 
 pub struct Game {
-    ball: Ball,
     level: Level,
     last_epoch: f64,
 }
@@ -28,10 +26,9 @@ impl Game {
             vec![7,8,8,8,8,8,8,8,8,8,8,8,8,8,9],
             vec![13,14,14,14,14,14,14,14,14,14,14,14,14,14,15],
         ];
-        let level: Level = Level::new(0, tiles, Point::new(0.0, 0.0), tile_set);
+        let level: Level = Level::new(0, tiles, Point::new(50.0, 400.0), tile_set);
 
         Self {
-            ball: Ball::new(),
             level,
             last_epoch: 0.0,
         }
@@ -42,7 +39,6 @@ impl Game {
         let delta_time = epoch - self.last_epoch;
 
         self.level.update(delta_time);
-        self.ball.update();
 
         self.last_epoch = epoch;
     }
@@ -56,6 +52,5 @@ impl Game {
         context.clear_rect(0.0, 0.0, canvas.width() as f64, canvas.height() as f64);
 
         self.level.draw(context);
-        self.ball.draw(context);
     }
 }
