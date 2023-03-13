@@ -8,7 +8,7 @@ pub struct Game {
 
 impl Game {
     pub fn new() -> Self {
-        let tile_set = crate::sprite_sheet::SpriteSheet::new(&crate::html::Html::new(), "tileset", 6, 9);
+        let tile_set = crate::sprite_sheet::SpriteSheet::new(&crate::html::Html::new(), "tileset", 6);
         let tiles: Vec<Vec<i32>> = vec![
             vec![37,38,38,38,38,38,38,38,38,38,38,38,38,38,38,38,39],
             vec![43,1,2,2,2,2,28,2,2,2,2,2,2,2,2,3,45],

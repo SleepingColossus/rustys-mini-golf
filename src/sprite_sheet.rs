@@ -5,15 +5,13 @@ use crate::point::Point;
 pub struct SpriteSheet {
     source_image: web_sys::HtmlImageElement,
     number_of_columns: i32,
-    number_of_rows: i32,
 }
 
 impl SpriteSheet {
-    pub fn new(html: &Html, image_id: &str, number_of_columns: i32, number_of_rows: i32) -> Self {
+    pub fn new(html: &Html, image_id: &str, number_of_columns: i32) -> Self {
         Self {
             source_image: html.get_image_by_id(image_id),
             number_of_columns,
-            number_of_rows,
         }
     }
 
