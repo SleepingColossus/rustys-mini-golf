@@ -54,7 +54,7 @@ impl SpriteSheet {
         context: &web_sys::CanvasRenderingContext2d
     ) {
         let tile_column = tile_index % self.number_of_columns;
-        let tile_row = tile_index / self.number_of_rows;
+        let tile_row = tile_index / self.number_of_columns;
         let tile_x = tile_column as f64 * constants::TILE_SIZE;
         let tile_y = tile_row as f64 * constants::TILE_SIZE;
 
