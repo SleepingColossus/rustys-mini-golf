@@ -6,6 +6,7 @@ mod html;
 mod level;
 mod point;
 mod sprite_sheet;
+mod background;
 
 use std::cell::RefCell;
 use std::rc::Rc;
@@ -26,12 +27,21 @@ pub fn run() -> Result<(), JsValue> {
     let g = f.clone();
 
     let html = html::Html::new();
+    let mut background = background::Background::new(&html);
     let mut game = game::Game::new();
 
-    *g.borrow_mut() = Some(Closure::wrap(Box::new(move || {
-        game.update();
-        game.draw(&html.canvas, &html.context);
+    let mut last_epoch: f64 = js_sys::Date::now();
 
+    *g.borrow_mut() = Some(Closure::wrap(Box::new(move || {
+        let epoch = js_sys::Date::now();
+        let delta_time = epoch - last_epoch;
+
+        background.update(delta_time);
+        game.update(delta_time);
+        background.draw(&html.context_bg);
+        game.draw(&html.canvas_game, &html.context_game);
+
+        last_epoch = epoch;
         request_animation_frame(f.borrow().as_ref().unwrap());
     }) as Box<dyn FnMut()>));
 

@@ -3,7 +3,6 @@ use crate::point::Point;
 
 pub struct Game {
     level: Level,
-    last_epoch: f64,
 }
 
 impl Game {
@@ -43,17 +42,11 @@ impl Game {
 
         Self {
             level,
-            last_epoch: 0.0,
         }
     }
 
-    pub fn update(&mut self) {
-        let epoch = js_sys::Date::now();
-        let delta_time = epoch - self.last_epoch;
-
+    pub fn update(&mut self, delta_time: f64) {
         self.level.update(delta_time);
-
-        self.last_epoch = epoch;
     }
 
     pub fn draw(
