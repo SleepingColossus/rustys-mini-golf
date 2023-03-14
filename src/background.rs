@@ -1,11 +1,11 @@
-use wasm_bindgen::JsValue;
 use crate::animated_sprite::AnimatedSprite;
 use crate::constants;
 use crate::html::Html;
 use crate::point::Point;
+use wasm_bindgen::JsValue;
 
 pub struct Background {
-    tiles: Vec<Vec<AnimatedSprite>>
+    tiles: Vec<Vec<AnimatedSprite>>,
 }
 
 impl Background {
@@ -31,14 +31,20 @@ impl Background {
 
                 let random_starting_paint = true;
 
-                let animated_sprite = AnimatedSprite::new(html, "space", position, 1000.0, 2000.0,8, random_starting_paint);
+                let animated_sprite = AnimatedSprite::new(
+                    html,
+                    "space",
+                    position,
+                    1000.0,
+                    2000.0,
+                    8,
+                    random_starting_paint,
+                );
                 tiles[i as usize].push(animated_sprite);
             }
         }
 
-        Self {
-            tiles
-        }
+        Self { tiles }
     }
 
     pub fn update(&mut self, delta_time: f64) {

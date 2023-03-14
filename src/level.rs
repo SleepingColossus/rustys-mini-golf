@@ -77,9 +77,13 @@ impl Level {
 
     fn is_ball_colliding(&self, position: &Point) -> bool {
         // check for horizontal collision
-        if self.ball.position.x > position.x && self.ball.position.x < position.x + constants::TILE_SIZE {
+        if self.ball.position.x > position.x
+            && self.ball.position.x < position.x + constants::TILE_SIZE
+        {
             // check for vertical collision
-            if self.ball.position.y > position.y && self.ball.position.y < position.y + constants::TILE_SIZE {
+            if self.ball.position.y > position.y
+                && self.ball.position.y < position.y + constants::TILE_SIZE
+            {
                 return true;
             }
         }

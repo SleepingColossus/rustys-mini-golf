@@ -29,7 +29,14 @@ impl Ball {
         ctx.begin_path();
 
         ctx.move_to(self.position.x, self.position.y);
-        ctx.arc(self.position.x, self.position.y, self.radius, 0.0, std::f64::consts::PI * 2.0).unwrap();
+        ctx.arc(
+            self.position.x,
+            self.position.y,
+            self.radius,
+            0.0,
+            std::f64::consts::PI * 2.0,
+        )
+        .unwrap();
         ctx.fill();
 
         ctx.close_path();

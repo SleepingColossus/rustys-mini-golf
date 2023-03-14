@@ -40,9 +40,7 @@ impl Game {
         ];
         let level: Level = Level::new(0, tiles, Point::new(100.0, 400.0), tile_set);
 
-        Self {
-            level,
-        }
+        Self { level }
     }
 
     pub fn update(&mut self, delta_time: f64) {

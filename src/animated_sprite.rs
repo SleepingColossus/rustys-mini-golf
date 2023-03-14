@@ -1,7 +1,7 @@
-use rand::Rng;
 use crate::constants;
 use crate::html::Html;
 use crate::point::Point;
+use rand::Rng;
 
 pub struct AnimatedSprite {
     source_image: web_sys::HtmlImageElement,
@@ -19,14 +19,21 @@ fn next_frame_rate(min_rate: f64, max_rate: f64) -> f64 {
 }
 
 impl AnimatedSprite {
-    pub fn new(html: &Html, image_id: &str, position: Point, frame_rate_min: f64, frame_rate_max: f64, number_of_frames: i32, random_start_frame: bool) -> Self {
+    pub fn new(
+        html: &Html,
+        image_id: &str,
+        position: Point,
+        frame_rate_min: f64,
+        frame_rate_max: f64,
+        number_of_frames: i32,
+        random_start_frame: bool,
+    ) -> Self {
         let mut rng = rand::thread_rng();
-        let current_frame =
-            if random_start_frame {
-                rng.gen_range(0..number_of_frames)
-            } else {
-                0
-            };
+        let current_frame = if random_start_frame {
+            rng.gen_range(0..number_of_frames)
+        } else {
+            0
+        };
 
         Self {
             source_image: html.get_image_by_id(image_id),

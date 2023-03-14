@@ -17,7 +17,9 @@ fn get_canvas_by_id(document: &web_sys::Document, canvas_id: &str) -> web_sys::H
         .unwrap()
 }
 
-fn get_context_for_canvas(canvas: &web_sys::HtmlCanvasElement) -> web_sys::CanvasRenderingContext2d {
+fn get_context_for_canvas(
+    canvas: &web_sys::HtmlCanvasElement,
+) -> web_sys::CanvasRenderingContext2d {
     canvas
         .get_context("2d")
         .unwrap()
