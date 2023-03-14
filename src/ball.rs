@@ -42,4 +42,8 @@ impl Ball {
     pub fn collide_vertical(&mut self) {
         self.speed.x *= -1.0;
     }
+
+    pub fn revert_position(&mut self) {
+        self.position = self.last_position;
+    }
 }

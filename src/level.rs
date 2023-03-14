@@ -53,8 +53,7 @@ impl Level {
                             self.ball.collide_vertical();
                         }
 
-                        self.ball.position.x = self.ball.last_position.x;
-                        self.ball.position.y = self.ball.last_position.y;
+                        self.ball.revert_position();
                     }
                 }
             }
