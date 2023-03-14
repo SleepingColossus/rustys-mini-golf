@@ -53,8 +53,8 @@ impl Level {
                             self.ball.collide_vertical();
                         }
 
-                        self.ball.x = self.ball.last_position.x;
-                        self.ball.y = self.ball.last_position.y;
+                        self.ball.position.x = self.ball.last_position.x;
+                        self.ball.position.y = self.ball.last_position.y;
                     }
                 }
             }
@@ -78,9 +78,9 @@ impl Level {
 
     fn is_ball_colliding(&self, position: &Point) -> bool {
         // check for horizontal collision
-        if self.ball.x > position.x && self.ball.x < position.x + constants::TILE_SIZE {
+        if self.ball.position.x > position.x && self.ball.position.x < position.x + constants::TILE_SIZE {
             // check for vertical collision
-            if self.ball.y > position.y && self.ball.y < position.y + constants::TILE_SIZE {
+            if self.ball.position.y > position.y && self.ball.position.y < position.y + constants::TILE_SIZE {
                 return true;
             }
         }
