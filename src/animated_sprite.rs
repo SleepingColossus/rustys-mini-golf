@@ -1,5 +1,5 @@
 use crate::constants;
-use crate::html::Html;
+use crate::html::{Html, get_image_by_id};
 use crate::point::Point;
 use rand::Rng;
 
@@ -36,7 +36,7 @@ impl AnimatedSprite {
         };
 
         Self {
-            source_image: html.get_image_by_id(image_id),
+            source_image: get_image_by_id(&html.document, image_id),
             position,
             frame_rate_min,
             frame_rate_max,

@@ -1,5 +1,5 @@
 use crate::constants;
-use crate::html::Html;
+use crate::html::{Html, get_image_by_id};
 use crate::point::Point;
 
 pub struct SpriteSheet {
@@ -10,7 +10,7 @@ pub struct SpriteSheet {
 impl SpriteSheet {
     pub fn new(html: &Html, image_id: &str, number_of_columns: i32) -> Self {
         Self {
-            source_image: html.get_image_by_id(image_id),
+            source_image: get_image_by_id(&html.document, image_id),
             number_of_columns,
         }
     }

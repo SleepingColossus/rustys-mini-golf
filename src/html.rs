@@ -1,4 +1,5 @@
 use wasm_bindgen::JsCast;
+use wasm_bindgen::closure::Closure;
 
 pub struct Html {
     pub window: web_sys::Window,
@@ -7,6 +8,7 @@ pub struct Html {
     pub context_game: web_sys::CanvasRenderingContext2d,
     pub canvas_bg: web_sys::HtmlCanvasElement,
     pub context_bg: web_sys::CanvasRenderingContext2d,
+    pub cursor_img: web_sys::HtmlImageElement,
 }
 
 fn get_canvas_by_id(document: &web_sys::Document, canvas_id: &str) -> web_sys::HtmlCanvasElement {
@@ -28,6 +30,15 @@ fn get_context_for_canvas(
         .unwrap()
 }
 
+pub fn get_image_by_id(document: &web_sys::Document, image_id: &str) -> web_sys::HtmlImageElement {
+    document
+        .get_element_by_id(image_id)
+        .unwrap()
+        .dyn_into::<web_sys::HtmlImageElement>()
+        .map_err(|_| ())
+        .unwrap()
+}
+
 impl Html {
     pub fn new() -> Self {
         let window = web_sys::window().expect("no global `window` exists");
@@ -36,6 +47,7 @@ impl Html {
         let context_game = get_context_for_canvas(&canvas_game);
         let canvas_bg = get_canvas_by_id(&document, "canvas-background");
         let context_bg = get_context_for_canvas(&canvas_bg);
+        let cursor_img = get_image_by_id(&document, "cursor");
 
         Self {
             window,
@@ -44,6 +56,7 @@ impl Html {
             context_game,
             canvas_bg,
             context_bg,
+            cursor_img,
         }
     }
 
@@ -53,13 +66,4 @@ impl Html {
     //         .request_animation_frame(f.as_ref().unchecked_ref())
     //         .expect("should register `requestAnimationFrame` OK");
     // }
-
-    pub fn get_image_by_id(&self, image_id: &str) -> web_sys::HtmlImageElement {
-        self.document
-            .get_element_by_id(image_id)
-            .unwrap()
-            .dyn_into::<web_sys::HtmlImageElement>()
-            .map_err(|_| ())
-            .unwrap()
-    }
 }
