@@ -30,4 +30,23 @@ func _input(event):
 
 func _draw():
     if _mouse_position != null:
-        draw_line(_ball.position, _mouse_position, Color.YELLOW, 6)
+        var end_point = _mouse_position
+        var distance = _ball.position.distance_to(end_point)
+
+        if distance > 100:
+            var direction = (end_point - _ball.position).normalized()
+            end_point = _ball.position + direction * 100
+
+        var color : Color
+
+        if distance < 25:
+            color = Color.YELLOW
+        elif distance < 50:
+            color = Color.CORAL
+        elif distance < 75:
+            color = Color.ORANGE
+        else:
+            color = Color.RED
+
+        draw_line(_ball.position, end_point, color, 6)
+
