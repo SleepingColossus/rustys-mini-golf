@@ -19,6 +19,7 @@ func _input(event):
                 _is_mouse_down = true
             else:
                 _is_mouse_down = false
+                _mouse_released()
 
     if event is InputEventMouseMotion and _is_mouse_down:
         _mouse_position = get_local_mouse_position()
@@ -50,3 +51,17 @@ func _draw():
 
         draw_line(_ball.position, end_point, color, 6)
 
+func _mouse_released():
+    print_debug("Ball's linear velocity: %s" % _ball.get_linear_velocity().length())
+    if _mouse_position != null and !_ball.is_moving():
+        var end_point = _mouse_position
+        var distance = _ball.position.distance_to(end_point)
+
+        if distance > 100:
+            var direction = (end_point - _ball.position).normalized()
+            end_point = _ball.position + direction * 100
+
+        var forceX = (end_point.x - _ball.position.x) * 2
+        var forceY = (end_point.y - _ball.position.y) * 2
+
+        _ball.apply_impulse(Vector2(forceX, forceY))
