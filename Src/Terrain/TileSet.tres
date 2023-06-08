@@ -1,10 +1,35 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://bw6rlks3xkk14"]
+[gd_resource type="TileSet" load_steps=11 format=3 uid="uid://bw6rlks3xkk14"]
 
 [ext_resource type="Texture2D" uid="uid://b0qu16w863ewl" path="res://Terrain/Tileset.png" id="1_ppixx"]
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_yse7o"]
+tile_data = PackedInt32Array(0, 0, 6, 65536, 0, 7, 131072, 0, 7, 1, 65536, 6, 65537, 0, 0, 131073, 0, 1, 2, 65536, 6, 65538, 65536, 0, 131074, 65536, 1)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_kdunq"]
+tile_data = PackedInt32Array(0, 65536, 6, 65536, 65536, 0, 131072, 65536, 1, 1, 65536, 6, 65537, 131072, 0, 131073, 131072, 1, 2, 131072, 6, 65538, 131072, 7, 131074, 131072, 7)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_2q8nw"]
+tile_data = PackedInt32Array(0, 0, 7, 65536, 0, 7, 131072, 0, 8, 1, 0, 1, 65537, 0, 2, 131073, 65536, 8, 2, 65536, 1, 65538, 65536, 2, 131074, 65536, 8)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_gfew5"]
+tile_data = PackedInt32Array(0, 65536, 1, 65536, 65536, 2, 131072, 65536, 8, 1, 131072, 1, 65537, 131072, 2, 131073, 65536, 8, 2, 131072, 7, 65538, 131072, 7, 131074, 131072, 8)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_tk4s7"]
+tile_data = PackedInt32Array(0, 65536, 1, 65536, 65536, 2, 131072, 65536, 8)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_j04jm"]
+tile_data = PackedInt32Array(0, 0, 7, 1, 0, 1, 2, 65536, 1)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_rdpmj"]
+tile_data = PackedInt32Array(0, 65536, 6, 65536, 65536, 0, 131072, 65536, 1)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_bb1vh"]
+tile_data = PackedInt32Array(0, 65536, 1, 1, 131072, 1, 2, 131072, 7)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vrdaa"]
 texture = ExtResource("1_ppixx")
 texture_region_size = Vector2i(32, 32)
+use_texture_padding = false
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -198,8 +223,97 @@ texture_region_size = Vector2i(32, 32)
 5:8/0 = 0
 5:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 5:8/0/physics_layer_0/angular_velocity = 0.0
+0:9/0 = 0
+0:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:9/0/physics_layer_0/angular_velocity = 0.0
+1:9/0 = 0
+1:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:9/0/physics_layer_0/angular_velocity = 0.0
+2:9/0 = 0
+2:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:9/0/physics_layer_0/angular_velocity = 0.0
+3:9/0 = 0
+3:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:9/0/physics_layer_0/angular_velocity = 0.0
+4:9/0 = 0
+4:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:9/0/physics_layer_0/angular_velocity = 0.0
+5:9/0 = 0
+5:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:9/0/physics_layer_0/angular_velocity = 0.0
+0:10/0 = 0
+0:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:10/0/physics_layer_0/angular_velocity = 0.0
+1:10/0 = 0
+1:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:10/0/physics_layer_0/angular_velocity = 0.0
+2:10/0 = 0
+2:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:10/0/physics_layer_0/angular_velocity = 0.0
+3:10/0 = 0
+3:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:10/0/physics_layer_0/angular_velocity = 0.0
+4:10/0 = 0
+4:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:10/0/physics_layer_0/angular_velocity = 0.0
+5:10/0 = 0
+5:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:10/0/physics_layer_0/angular_velocity = 0.0
+0:11/0 = 0
+0:11/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:11/0/physics_layer_0/angular_velocity = 0.0
+1:11/0 = 0
+1:11/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:11/0/physics_layer_0/angular_velocity = 0.0
+2:11/0 = 0
+2:11/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:11/0/physics_layer_0/angular_velocity = 0.0
+3:11/0 = 0
+3:11/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:11/0/physics_layer_0/angular_velocity = 0.0
+4:11/0 = 0
+4:11/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:11/0/physics_layer_0/angular_velocity = 0.0
+5:11/0 = 0
+5:11/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:11/0/physics_layer_0/angular_velocity = 0.0
+0:12/0 = 0
+0:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:12/0/physics_layer_0/angular_velocity = 0.0
+1:12/0 = 0
+1:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:12/0/physics_layer_0/angular_velocity = 0.0
+2:12/0 = 0
+2:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:12/0/physics_layer_0/angular_velocity = 0.0
+3:12/0 = 0
+3:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:12/0/physics_layer_0/angular_velocity = 0.0
+4:12/0 = 0
+4:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:12/0/physics_layer_0/angular_velocity = 0.0
+5:12/0 = 0
+5:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:12/0/physics_layer_0/angular_velocity = 0.0
+0:13/0 = 0
+0:13/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:13/0/physics_layer_0/angular_velocity = 0.0
+0:14/0 = 0
+0:14/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:14/0/physics_layer_0/angular_velocity = 0.0
+0:15/0 = 0
+0:15/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:15/0/physics_layer_0/angular_velocity = 0.0
 
 [resource]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_vrdaa")
+pattern_0 = SubResource("TileMapPattern_yse7o")
+pattern_1 = SubResource("TileMapPattern_kdunq")
+pattern_2 = SubResource("TileMapPattern_2q8nw")
+pattern_3 = SubResource("TileMapPattern_gfew5")
+pattern_4 = SubResource("TileMapPattern_tk4s7")
+pattern_5 = SubResource("TileMapPattern_j04jm")
+pattern_6 = SubResource("TileMapPattern_rdpmj")
+pattern_7 = SubResource("TileMapPattern_bb1vh")
