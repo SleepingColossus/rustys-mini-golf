@@ -6,6 +6,7 @@
 size = Vector2(18, 32)
 
 [node name="WindmillBlade" type="StaticBody2D"]
+z_index = 3
 rotation = -3.14149
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
