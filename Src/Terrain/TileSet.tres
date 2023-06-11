@@ -323,6 +323,7 @@ use_texture_padding = false
 5:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 0:13/size_in_atlas = Vector2i(1, 3)
 0:13/0 = 0
+0:13/0/z_index = 2
 0:13/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:13/0/physics_layer_0/angular_velocity = 0.0
 0:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 43.5, -16, 40, -7, 40, -7, 48, -12, 48)
