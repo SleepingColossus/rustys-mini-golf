@@ -12,6 +12,8 @@ radius = 3.0
 [node name="Ball" type="RigidBody2D"]
 physics_material_override = SubResource("PhysicsMaterial_8efvg")
 gravity_scale = 2.66454e-15
+max_contacts_reported = 1
+contact_monitor = true
 linear_damp = 1.0
 script = ExtResource("1_d1na0")
 
@@ -21,3 +23,5 @@ texture = ExtResource("1_kqee2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_13qkb")
+
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
