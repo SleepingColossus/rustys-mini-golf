@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://k6783w4d6ov1"]
+
+[ext_resource type="Texture2D" uid="uid://bk8vknpdlm8e4" path="res://GameObjects/WindmillBlade/WindmillBlade.png" id="1_lpe7x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k736f"]
+size = Vector2(18, 32)
+
+[node name="WindmillBlade" type="StaticBody2D"]
+rotation = -3.14149
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_lpe7x")
+centered = false
+offset = Vector2(-13, -13)
+flip_v = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(9, 34)
+shape = SubResource("RectangleShape2D_k736f")

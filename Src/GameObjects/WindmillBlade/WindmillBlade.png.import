@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wsdxgf8sepg"
-path="res://.godot/imported/WindmillBladesFull.png-98ba6e736f3550f578567cdc1556dc03.ctex"
+uid="uid://bk8vknpdlm8e4"
+path="res://.godot/imported/WindmillBlade.png-085d001b735cc3810bdd924f439d8efd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GameObjects/Obstacles/WindmillBladesFull.png"
-dest_files=["res://.godot/imported/WindmillBladesFull.png-98ba6e736f3550f578567cdc1556dc03.ctex"]
+source_file="res://GameObjects/WindmillBlade/WindmillBlade.png"
+dest_files=["res://.godot/imported/WindmillBlade.png-085d001b735cc3810bdd924f439d8efd.ctex"]
 
 [params]
 
