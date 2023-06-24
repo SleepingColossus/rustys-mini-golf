@@ -1,13 +1,67 @@
-[gd_scene load_steps=5 format=3 uid="uid://1kasrsh4cgmt"]
+[gd_scene load_steps=8 format=3 uid="uid://1kasrsh4cgmt"]
 
 [ext_resource type="Script" path="res://GameObjects/Ball/Ball.gd" id="1_d1na0"]
 [ext_resource type="Texture2D" uid="uid://csbdvnjcx72wc" path="res://GameObjects/Ball/Ball.png" id="1_kqee2"]
+[ext_resource type="AudioStream" uid="uid://1kgm7w5g43x1" path="res://GameObjects/Ball/Splash.ogg" id="3_y47ud"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8efvg"]
 bounce = 1.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_13qkb"]
 radius = 3.0
+
+[sub_resource type="Animation" id="Animation_43axd"]
+resource_name = "die_and_reset"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer2D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_y47ud")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"stop"
+}, {
+"args": [],
+"method": &"reset_position"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ss27j"]
+_data = {
+"die_and_reset": SubResource("Animation_43axd")
+}
 
 [node name="Ball" type="RigidBody2D"]
 physics_material_override = SubResource("PhysicsMaterial_8efvg")
@@ -23,6 +77,14 @@ texture = ExtResource("1_kqee2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_13qkb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ss27j")
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_y47ud")
 
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
 [connection signal="body_shape_exited" from="." to="." method="_on_body_shape_exited"]
