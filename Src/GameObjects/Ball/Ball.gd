@@ -1,5 +1,6 @@
 extends RigidBody2D
 
+const LAYER_HOLE = 1
 const LAYER_WATER = 2
 const LAYER_SAND = 3
 
@@ -38,13 +39,17 @@ func reset_position():
     position = last_known_position
 
 
+func win():
+    queue_free()
+    print_debug("YOU WIN!!!")
+
 func _on_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
     if body is TileMap:
         var tile_coordinatess = body.get_coords_for_body_rid(body_rid)
 
         for layer_index in body.get_layers_count():
             # do not check for collisions on background layer
-            if layer_index != 2 and layer_index != 3:
+            if layer_index < LAYER_HOLE or layer_index > LAYER_SAND:
                 continue
 
             var tile_data = body.get_cell_tile_data(layer_index, tile_coordinatess)
@@ -52,6 +57,8 @@ func _on_body_shape_entered(body_rid, body, body_shape_index, local_shape_index)
             if not (tile_data is TileData):
                 continue
             else:
+                if layer_index == LAYER_HOLE:
+                    win()
                 if layer_index == LAYER_WATER:
                     $AnimationPlayer.play("die_and_reset")
                 if layer_index == LAYER_SAND:
