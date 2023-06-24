@@ -61,7 +61,7 @@ func _mouse_released():
             var direction = (end_point - _ball.position).normalized()
             end_point = _ball.position + direction * 100
 
-        var forceX = (end_point.x - _ball.position.x) * 2
-        var forceY = (end_point.y - _ball.position.y) * 2
+        var forceX = (end_point.x - _ball.position.x) * _ball.movement_factor
+        var forceY = (end_point.y - _ball.position.y) * _ball.movement_factor
 
         _ball.apply_impulse(Vector2(forceX, forceY))
