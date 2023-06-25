@@ -71,6 +71,9 @@ contact_monitor = true
 linear_damp = 1.0
 script = ExtResource("1_d1na0")
 
+[node name="BallCamera" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 texture = ExtResource("1_kqee2")

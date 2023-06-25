@@ -5,6 +5,10 @@ var _is_mouse_down := false
 @onready var _ball = $Ball
 
 
+func _process(_delta):
+    if Input.is_action_just_pressed("toggle_zoom"):
+        _toggle_zoom()
+
 func _input(event):
     if event is InputEventMouseButton:
         if event.button_index == MOUSE_BUTTON_LEFT:
@@ -58,3 +62,9 @@ func _mouse_released():
         var forceY = (end_point.y - _ball.position.y) * _ball.movement_factor
 
         _ball.move(forceX, forceY)
+
+
+func _toggle_zoom():
+    print_debug("Camera toggled")
+    $LevelCamera.enabled = not $LevelCamera.enabled
+    $Ball/BallCamera.enabled = not $Ball/BallCamera.enabled
