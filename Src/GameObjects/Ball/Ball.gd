@@ -11,15 +11,10 @@ const MOVEMENT_FACTOR_SAND = 1.0
 var movement_factor : float
 var last_known_position: Vector2
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
     movement_factor = MOVEMENT_FACTOR_GRASS
     last_known_position = position
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-    pass
 
 
 func is_moving():
@@ -43,7 +38,7 @@ func win():
     queue_free()
     print_debug("YOU WIN!!!")
 
-func _on_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+func _on_body_shape_entered(body_rid, body, _body_shape_index, _local_shape_index):
     if body is TileMap:
         var tile_coordinatess = body.get_coords_for_body_rid(body_rid)
 
@@ -66,7 +61,7 @@ func _on_body_shape_entered(body_rid, body, body_shape_index, local_shape_index)
                 print_debug("collided with tile in layer %d" % layer_index)
 
 
-func _on_body_shape_exited(body_rid, body, body_shape_index, local_shape_index):
+func _on_body_shape_exited(body_rid, body, _body_shape_index, _local_shape_index):
     if body is TileMap:
         var tile_coordinatess = body.get_coords_for_body_rid(body_rid)
 

@@ -4,13 +4,6 @@ var _mouse_position = null
 var _is_mouse_down := false
 @onready var _ball = $Ball
 
-func _ready():
-    pass
-
-
-func _process(delta):
-    pass
-
 
 func _input(event):
     if event is InputEventMouseButton:
