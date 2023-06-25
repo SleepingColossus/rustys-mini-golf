@@ -23,7 +23,7 @@ func _input(event):
 
 
 func _draw():
-    if _mouse_position != null:
+    if _mouse_position != null and _ball.can_move():
         var end_point = _mouse_position
         var distance = _ball.position.distance_to(end_point)
 
@@ -46,7 +46,7 @@ func _draw():
 
 func _mouse_released():
     print_debug("Ball's linear velocity: %s" % _ball.get_linear_velocity().length())
-    if _mouse_position != null and !_ball.is_moving():
+    if _mouse_position != null and _ball.can_move():
         var end_point = _mouse_position
         var distance = _ball.position.distance_to(end_point)
 

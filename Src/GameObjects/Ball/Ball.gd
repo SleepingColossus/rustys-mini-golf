@@ -9,7 +9,8 @@ const MOVEMENT_FACTOR_GRASS = 2.0
 const MOVEMENT_FACTOR_SAND = 1.0
 
 var movement_factor : float
-var _last_known_position: Vector2
+var _last_known_position : Vector2
+var _is_dead := false
 
 
 func _ready():
@@ -17,8 +18,9 @@ func _ready():
     _last_known_position = position
 
 
-func is_moving():
-    return get_linear_velocity().length() > MOVEMENT_THRESHOLD
+func can_move():
+    var is_stationary = get_linear_velocity().length() < MOVEMENT_THRESHOLD
+    return is_stationary and !_is_dead
 
 
 func move(forceX, forceY):
@@ -28,10 +30,12 @@ func move(forceX, forceY):
 
 func stop():
     linear_velocity = Vector2.ZERO
+    _is_dead = true
 
 
 func reset_position():
     position = _last_known_position
+    _is_dead = false
 
 
 func _win():
