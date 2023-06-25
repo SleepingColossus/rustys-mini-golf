@@ -9,12 +9,12 @@ const MOVEMENT_FACTOR_GRASS = 2.0
 const MOVEMENT_FACTOR_SAND = 1.0
 
 var movement_factor : float
-var last_known_position: Vector2
+var _last_known_position: Vector2
 
 
 func _ready():
     movement_factor = MOVEMENT_FACTOR_GRASS
-    last_known_position = position
+    _last_known_position = position
 
 
 func is_moving():
@@ -22,7 +22,7 @@ func is_moving():
 
 
 func move(forceX, forceY):
-    last_known_position = position
+    _last_known_position = position
     apply_impulse(Vector2(forceX, forceY))
 
 
@@ -31,10 +31,10 @@ func stop():
 
 
 func reset_position():
-    position = last_known_position
+    position = _last_known_position
 
 
-func win():
+func _win():
     queue_free()
     print_debug("YOU WIN!!!")
 
@@ -53,7 +53,7 @@ func _on_body_shape_entered(body_rid, body, _body_shape_index, _local_shape_inde
                 continue
             else:
                 if layer_index == LAYER_HOLE:
-                    win()
+                    _win()
                 if layer_index == LAYER_WATER:
                     $AnimationPlayer.play("die_and_reset")
                 if layer_index == LAYER_SAND:
