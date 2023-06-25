@@ -557,6 +557,7 @@ use_texture_padding = false
 5:8/0/physics_layer_3/linear_velocity = Vector2(0, 0)
 5:8/0/physics_layer_3/angular_velocity = 0.0
 0:9/animation_columns = 4
+0:9/animation_speed = 5.0
 0:9/animation_frame_0/duration = 1.0
 0:9/animation_frame_1/duration = 1.0
 0:9/animation_frame_2/duration = 1.0
