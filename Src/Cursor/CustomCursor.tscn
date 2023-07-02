@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://du633ihr8gykw"]
+
+[ext_resource type="Script" path="res://Cursor/CustomCursor.gd" id="1_rcnjc"]
+
+[node name="CustomCursor" type="Node2D"]
+script = ExtResource("1_rcnjc")
