@@ -1,0 +1,48 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://b27jjwqe2yuhy"]
+
+[ext_resource type="StyleBox" uid="uid://cd2myaplp6yj8" path="res://UI/MenuButtons/ButtonStyleHover.tres" id="1_75ywx"]
+[ext_resource type="FontFile" uid="uid://bhi0xtquxn3v" path="res://UI/Fonts/Cakecafe.ttf" id="1_xrbg5"]
+[ext_resource type="StyleBox" uid="uid://l14hy8v8xwv6" path="res://UI/MenuButtons/ButtonStyleNormal.tres" id="2_dy8oi"]
+[ext_resource type="StyleBox" uid="uid://dx8m5ag58os3u" path="res://UI/MenuButtons/ButtonStylePressed.tres" id="3_ucmie"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wxy81"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.3)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8t2vw"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[resource]
+Button/font_sizes/font_size = 24
+Button/fonts/font = ExtResource("1_xrbg5")
+Button/styles/disabled = SubResource("StyleBoxFlat_wxy81")
+Button/styles/focus = SubResource("StyleBoxFlat_8t2vw")
+Button/styles/hover = ExtResource("1_75ywx")
+Button/styles/normal = ExtResource("2_dy8oi")
+Button/styles/pressed = ExtResource("3_ucmie")
