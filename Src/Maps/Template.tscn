@@ -52,5 +52,6 @@ layer_0/tile_data = PackedInt32Array(0, 0, 5, 65536, 0, 1, 131072, 0, 1, 196608,
 [node name="Ball" parent="." instance=ExtResource("4_1xwo1")]
 visible = false
 position = Vector2(498, 338)
+mass = 0.4
 
 [node name="CustomCursor" parent="." instance=ExtResource("6_qiuio")]
