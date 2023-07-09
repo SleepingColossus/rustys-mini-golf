@@ -59,3 +59,4 @@ mass = 0.4
 
 [node name="MovingBlock" parent="." instance=ExtResource("6_e30vi")]
 position = Vector2(474, 274)
+disable_mode = 1
