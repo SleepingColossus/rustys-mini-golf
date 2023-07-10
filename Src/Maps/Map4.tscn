@@ -40,7 +40,7 @@ layer_3/modulate = Color(1, 1, 1, 1)
 layer_3/y_sort_enabled = false
 layer_3/y_sort_origin = 0
 layer_3/z_index = 0
-layer_3/tile_data = PackedInt32Array(524304, 196608, 11, 524303, 131072, 11, 524302, 131072, 11, 655374, 131072, 12, 655375, 131072, 12, 655376, 196608, 12, 589840, 196608, 11, 589839, 131072, 11, 589838, 131072, 11)
+layer_3/tile_data = PackedInt32Array(524303, 196608, 11, 524302, 131072, 11, 589839, 196608, 12, 589838, 131072, 12)
 
 [node name="Background" type="TileMap" parent="."]
 z_index = -1
