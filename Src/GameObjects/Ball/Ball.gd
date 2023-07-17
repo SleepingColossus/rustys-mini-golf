@@ -1,3 +1,5 @@
+class_name Ball
+
 extends RigidBody2D
 
 const LAYER_HOLE = 1
@@ -12,6 +14,7 @@ var movement_factor : float
 var _last_known_position : Vector2
 var _is_dead := false
 
+@onready var ball_camera : Camera2D = $BallCamera
 
 func _ready():
     movement_factor = MOVEMENT_FACTOR_GRASS
