@@ -1,7 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://bdnmctsjtjrgl"]
+[gd_scene load_steps=19 format=3 uid="uid://bdnmctsjtjrgl"]
 
 [ext_resource type="Script" path="res://UI/Overlay.gd" id="1_3x7xf"]
 [ext_resource type="Texture2D" uid="uid://irfoeqkh77x5" path="res://UI/ButtonZoom.png" id="1_g8ndk"]
+[ext_resource type="Texture2D" uid="uid://m6oguxmntem6" path="res://MainMenu/Rusty.png" id="3_ak2e5"]
+[ext_resource type="Texture2D" uid="uid://b277j2f4awigc" path="res://UI/SpeechBubbles/SpeechBubblesLong.png" id="4_hothf"]
+[ext_resource type="FontFile" uid="uid://bhi0xtquxn3v" path="res://UI/Fonts/Cakecafe.ttf" id="5_ii210"]
+[ext_resource type="Texture2D" uid="uid://b71i3lwayrl22" path="res://UI/SpeechBubbles/SpeechBubbleBtnEnabled.png" id="6_pvot0"]
+[ext_resource type="Texture2D" uid="uid://dnjll1rv7v3vc" path="res://UI/SpeechBubbles/SpeechBubbleBtnDisabled.png" id="7_i1kiw"]
 
 [sub_resource type="GDScript" id="GDScript_mjhbw"]
 script/source = "extends TextureButton
@@ -13,8 +18,121 @@ func _toggle_zoom():
     $Ball/BallCamera.enabled = not $Ball/BallCamera.enabled
 "
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b7ufs"]
+content_margin_left = 40.0
+content_margin_top = 40.0
+content_margin_right = 40.0
+content_margin_bottom = 40.0
+texture = ExtResource("4_hothf")
+texture_margin_left = 30.0
+texture_margin_top = 30.0
+texture_margin_right = 30.0
+texture_margin_bottom = 30.0
+
+[sub_resource type="Animation" id="Animation_c2l8u"]
+resource_name = "scroll_text"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Text:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NextButton:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nbisk"]
+_data = {
+"scroll_text": SubResource("Animation_c2l8u")
+}
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_34i1h"]
+texture = ExtResource("6_pvot0")
+texture_margin_left = 30.0
+texture_margin_top = 30.0
+texture_margin_right = 30.0
+texture_margin_bottom = 30.0
+modulate_color = Color(0.8, 0.8, 0.8, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_17thp"]
+texture = ExtResource("6_pvot0")
+texture_margin_left = 30.0
+texture_margin_top = 30.0
+texture_margin_right = 30.0
+texture_margin_bottom = 30.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6bff4"]
+texture = ExtResource("6_pvot0")
+texture_margin_left = 30.0
+texture_margin_top = 30.0
+texture_margin_right = 30.0
+texture_margin_bottom = 30.0
+modulate_color = Color(1, 0.905882, 0.431373, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v6tkt"]
+texture = ExtResource("7_i1kiw")
+texture_margin_left = 30.0
+texture_margin_top = 30.0
+texture_margin_right = 30.0
+texture_margin_bottom = 30.0
+modulate_color = Color(0.811765, 0.811765, 0.811765, 1)
+
+[sub_resource type="Animation" id="Animation_osjgb"]
+resource_name = "show"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_0owto"]
+resource_name = "hide"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_41vre"]
+_data = {
+"hide": SubResource("Animation_0owto"),
+"show": SubResource("Animation_osjgb")
+}
+
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource("1_3x7xf")
+text_lines = Array[String](["Hello, there!", "My name is Rusty!", "Welcome to my golf course!"])
 
 [node name="Overlay" type="Control" parent="."]
 layout_mode = 3
@@ -37,4 +155,68 @@ grow_horizontal = 0
 texture_normal = ExtResource("1_g8ndk")
 script = SubResource("GDScript_mjhbw")
 
+[node name="Tutorial" type="MarginContainer" parent="Overlay"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -236.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Rusty" type="TextureRect" parent="Overlay/Tutorial"]
+layout_mode = 2
+size_flags_horizontal = 8
+texture = ExtResource("3_ak2e5")
+expand_mode = 3
+flip_h = true
+
+[node name="TextBubble" type="PanelContainer" parent="Overlay/Tutorial"]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_b7ufs")
+
+[node name="Text" type="Label" parent="Overlay/Tutorial/TextBubble"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("5_ii210")
+theme_override_font_sizes/font_size = 32
+text = "Hello World"
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="ScrollingTextAnimator" type="AnimationPlayer" parent="Overlay/Tutorial/TextBubble"]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_nbisk")
+}
+
+[node name="NextButton" type="Button" parent="Overlay/Tutorial/TextBubble"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("5_ii210")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_34i1h")
+theme_override_styles/hover = SubResource("StyleBoxTexture_17thp")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6bff4")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_v6tkt")
+disabled = true
+text = "Next"
+
+[node name="TutorialAnimator" type="AnimationPlayer" parent="Overlay/Tutorial"]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_41vre")
+}
+
 [connection signal="pressed" from="Overlay/ZoomButton" to="." method="_on_zoom_button_pressed"]
+[connection signal="pressed" from="Overlay/Tutorial/TextBubble/NextButton" to="." method="_on_next_button_pressed"]

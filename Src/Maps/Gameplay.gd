@@ -13,6 +13,7 @@ var _is_mouse_down := false
 
 func _ready():
     _state = State.INTRO_STATE
+    $Overlay.tutorial_complete.connect(_on_tutorial_complete)
 
 func _process(_delta):
     if Input.is_action_just_pressed("toggle_zoom"):
@@ -79,3 +80,6 @@ func _toggle_zoom():
     print_debug("Camera toggled")
     $LevelCamera.enabled = not $LevelCamera.enabled
     $Ball/BallCamera.enabled = not $Ball/BallCamera.enabled
+
+func _on_tutorial_complete():
+    _state = State.GAMEPLAY_STATE
