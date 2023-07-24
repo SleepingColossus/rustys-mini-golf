@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dhslu4il7rcoi"]
+[gd_scene load_steps=8 format=3 uid="uid://dhslu4il7rcoi"]
 
 [ext_resource type="Script" path="res://Maps/Gameplay.gd" id="1_nt0ap"]
 [ext_resource type="TileSet" uid="uid://bw6rlks3xkk14" path="res://Terrain/TileSet.tres" id="2_bfjqh"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://1kasrsh4cgmt" path="res://GameObjects/Ball/Ball.tscn" id="4_c72qq"]
 [ext_resource type="PackedScene" uid="uid://du633ihr8gykw" path="res://Cursor/CustomCursor.tscn" id="5_hxh5n"]
 [ext_resource type="PackedScene" uid="uid://ydayvh8rhvlc" path="res://GameObjects/WindmillBlade/WindmillBlades.tscn" id="6_kim26"]
+[ext_resource type="PackedScene" uid="uid://bdnmctsjtjrgl" path="res://UI/Overlay.tscn" id="7_kuusi"]
 
 [node name="TestMap" type="Node2D"]
 script = ExtResource("1_nt0ap")
@@ -59,3 +60,5 @@ mass = 0.4
 
 [node name="WindmillBlades" parent="." instance=ExtResource("6_kim26")]
 position = Vector2(495, 248)
+
+[node name="Overlay" parent="." instance=ExtResource("7_kuusi")]

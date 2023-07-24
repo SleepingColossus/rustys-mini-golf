@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dc57fb66yc5p8"]
+[gd_scene load_steps=11 format=3 uid="uid://dc57fb66yc5p8"]
 
 [ext_resource type="Script" path="res://Maps/Gameplay.gd" id="1_5pvya"]
 [ext_resource type="TileSet" uid="uid://bw6rlks3xkk14" path="res://Terrain/TileSet.tres" id="2_0s2nr"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://1kasrsh4cgmt" path="res://GameObjects/Ball/Ball.tscn" id="4_ued2f"]
 [ext_resource type="PackedScene" uid="uid://du633ihr8gykw" path="res://Cursor/CustomCursor.tscn" id="5_1w5gb"]
 [ext_resource type="PackedScene" uid="uid://bv06devvj6xfc" path="res://GameObjects/Obstacles/MovingBlock.tscn" id="6_e30vi"]
+[ext_resource type="PackedScene" uid="uid://bdnmctsjtjrgl" path="res://UI/Overlay.tscn" id="7_kdh7w"]
 
 [sub_resource type="Animation" id="Animation_oc1iv"]
 resource_name = "MoveVertical"
@@ -21,7 +22,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 2, 4),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(474, 210), Vector2(474, 274), Vector2(474, 211)]
+"values": [Vector2(474, 272), Vector2(474, 336), Vector2(474, 272)]
 }
 
 [sub_resource type="Animation" id="Animation_0y5pt"]
@@ -104,3 +105,5 @@ autoplay = "MoveVertical"
 libraries = {
 "": SubResource("AnimationLibrary_ohkbj")
 }
+
+[node name="Overlay" parent="." instance=ExtResource("7_kdh7w")]

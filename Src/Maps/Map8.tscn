@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://356d2mj7keup"]
+[gd_scene load_steps=7 format=3 uid="uid://356d2mj7keup"]
 
 [ext_resource type="Script" path="res://Maps/Gameplay.gd" id="1_jvtp8"]
 [ext_resource type="TileSet" uid="uid://bw6rlks3xkk14" path="res://Terrain/TileSet.tres" id="2_l20rg"]
 [ext_resource type="TileSet" uid="uid://jxwklsycjhqh" path="res://Terrain/SpaceTileSet.tres" id="3_l8ydm"]
 [ext_resource type="PackedScene" uid="uid://1kasrsh4cgmt" path="res://GameObjects/Ball/Ball.tscn" id="4_5sjte"]
 [ext_resource type="PackedScene" uid="uid://du633ihr8gykw" path="res://Cursor/CustomCursor.tscn" id="5_265lw"]
+[ext_resource type="PackedScene" uid="uid://bdnmctsjtjrgl" path="res://UI/Overlay.tscn" id="6_8bp3e"]
 
 [node name="TestMap" type="Node2D"]
 script = ExtResource("1_jvtp8")
@@ -55,3 +56,5 @@ position = Vector2(385, 269)
 mass = 0.4
 
 [node name="CustomCursor" parent="." instance=ExtResource("5_265lw")]
+
+[node name="Overlay" parent="." instance=ExtResource("6_8bp3e")]
