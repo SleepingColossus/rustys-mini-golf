@@ -44,7 +44,14 @@ layer_3/modulate = Color(1, 1, 1, 1)
 layer_3/y_sort_enabled = false
 layer_3/y_sort_origin = 0
 layer_3/z_index = 0
-layer_3/tile_data = PackedInt32Array()
+layer_3/tile_data = PackedInt32Array(655375, 65536, 10, 720911, 65536, 11, 655376, 131072, 10, 720912, 131072, 11, 655377, 196608, 10, 720913, 196608, 11)
+layer_4/name = "Rocks"
+layer_4/enabled = true
+layer_4/modulate = Color(1, 1, 1, 1)
+layer_4/y_sort_enabled = false
+layer_4/y_sort_origin = 0
+layer_4/z_index = 0
+layer_4/tile_data = PackedInt32Array(524303, 131072, 15, 524305, 131072, 15)
 
 [node name="Background" type="TileMap" parent="."]
 z_index = -1
