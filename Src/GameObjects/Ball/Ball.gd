@@ -2,6 +2,10 @@ class_name Ball
 
 extends RigidBody2D
 
+
+signal hole_entered
+
+
 const LAYER_HOLE = 1
 const LAYER_WATER = 2
 const LAYER_SAND = 3
@@ -13,6 +17,7 @@ const MOVEMENT_FACTOR_SAND = 1.0
 var movement_factor : float
 var _last_known_position : Vector2
 var _is_dead := false
+var _has_won := false
 
 @onready var ball_camera : Camera2D = $BallCamera
 
@@ -23,7 +28,7 @@ func _ready():
 
 func can_move():
     var is_stationary = get_linear_velocity().length() < MOVEMENT_THRESHOLD
-    return is_stationary and !_is_dead
+    return is_stationary and !_is_dead and !_has_won
 
 
 func move(forceX, forceY):
@@ -42,8 +47,9 @@ func reset_position():
 
 
 func _win():
-    queue_free()
-    print_debug("YOU WIN!!!")
+    hole_entered.emit()
+    _has_won = true
+    visible = false
 
 func _on_body_shape_entered(body_rid, body, _body_shape_index, _local_shape_index):
     if body is TileMap:

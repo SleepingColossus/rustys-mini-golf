@@ -218,5 +218,19 @@ libraries = {
 "": SubResource("AnimationLibrary_41vre")
 }
 
+[node name="ShotTracker" type="Label" parent="Overlay"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -33.0
+offset_top = 16.0
+offset_right = 33.0
+offset_bottom = 42.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("5_ii210")
+theme_override_font_sizes/font_size = 36
+text = "Shots: -1"
+
 [connection signal="pressed" from="Overlay/ZoomButton" to="." method="_on_zoom_button_pressed"]
 [connection signal="pressed" from="Overlay/Tutorial/TextBubble/NextButton" to="." method="_on_next_button_pressed"]

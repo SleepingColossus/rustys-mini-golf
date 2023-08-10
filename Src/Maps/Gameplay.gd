@@ -5,15 +5,21 @@ enum State {
     GAMEPLAY_STATE
 }
 
+@export var gold_condition : int
+@export var silver_condition : int
+
 var _state : State
 var _mouse_position = null
 var _is_mouse_down := false
+var _shots_taken := 0
 @onready var _ball = $Ball
-
 
 func _ready():
     _state = State.INTRO_STATE
     $Overlay.tutorial_complete.connect(_on_tutorial_complete)
+    $Overlay.update_shot_tracker(_shots_taken)
+    _ball.hole_entered.connect(_on_hole_entered)
+
 
 func _process(_delta):
     if Input.is_action_just_pressed("toggle_zoom"):
@@ -73,6 +79,8 @@ func _mouse_released():
         var forceX = (end_point.x - _ball.position.x) * _ball.movement_factor
         var forceY = (end_point.y - _ball.position.y) * _ball.movement_factor
 
+        _shots_taken += 1
+        $Overlay.update_shot_tracker(_shots_taken)
         _ball.move(forceX, forceY)
 
 
@@ -81,5 +89,15 @@ func _toggle_zoom():
     $LevelCamera.enabled = not $LevelCamera.enabled
     $Ball/BallCamera.enabled = not $Ball/BallCamera.enabled
 
+
 func _on_tutorial_complete():
     _state = State.GAMEPLAY_STATE
+
+
+func _on_hole_entered():
+    if _shots_taken <= gold_condition:
+        print_debug("Gold earned")
+    elif _shots_taken <= silver_condition:
+        print_debug("Silver earned")
+    else:
+        print_debug("Bronze earned")

@@ -10,6 +10,8 @@
 
 [node name="TestMap" type="Node2D"]
 script = ExtResource("1_1wm66")
+gold_condition = 1
+silver_condition = 2
 
 [node name="LevelCamera" type="Camera2D" parent="."]
 position = Vector2(512, 288)
@@ -61,6 +63,7 @@ layer_0/tile_data = PackedInt32Array(0, 0, 5, 65536, 0, 1, 131072, 0, 1, 196608,
 
 [node name="Ball" parent="." instance=ExtResource("3_3pjj2")]
 position = Vector2(498, 338)
+mass = 0.8
 
 [node name="WindmillBlades" parent="." instance=ExtResource("5_e5pij")]
 position = Vector2(495, 272)

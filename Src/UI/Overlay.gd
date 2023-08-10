@@ -35,3 +35,7 @@ func _on_zoom_button_pressed() -> void:
 
 func _on_next_button_pressed() -> void:
     _next_message()
+
+
+func update_shot_tracker(shots_taken: int) -> void:
+    $Overlay/ShotTracker.text = "Shots: %d" % shots_taken
