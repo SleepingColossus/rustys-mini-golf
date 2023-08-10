@@ -39,3 +39,24 @@ func _on_next_button_pressed() -> void:
 
 func update_shot_tracker(shots_taken: int) -> void:
     $Overlay/ShotTracker.text = "Shots: %d" % shots_taken
+
+
+func show_scoreboard(shots_taken: int, gold_score: int, silver_score: int) -> void:
+    $Overlay/Scoreboard/ScoreboardAnimator.play("show")
+    $Overlay/Scoreboard/VBoxContainer/Moves.text = "Moves: %d" % shots_taken
+
+    if shots_taken <= gold_score:
+        $Overlay/Scoreboard/VBoxContainer/NextStar.visible = false
+        $Overlay/Scoreboard/VBoxContainer/Stars/Star1.visible = true
+        $Overlay/Scoreboard/VBoxContainer/Stars/Star2.visible = true
+        $Overlay/Scoreboard/VBoxContainer/Stars/Star3.visible = true
+    if shots_taken <= silver_score:
+        $Overlay/Scoreboard/VBoxContainer/NextStar.text = "Next Star: %d" % gold_score
+        $Overlay/Scoreboard/VBoxContainer/Stars/Star1.visible = true
+        $Overlay/Scoreboard/VBoxContainer/Stars/Star2.visible = true
+        $Overlay/Scoreboard/VBoxContainer/Stars/Star3.visible = false
+    else:
+        $Overlay/Scoreboard/VBoxContainer/NextStar.text = "Next Star: %d" % silver_score
+        $Overlay/Scoreboard/VBoxContainer/Stars/Star1.visible = true
+        $Overlay/Scoreboard/VBoxContainer/Stars/Star2.visible = false
+        $Overlay/Scoreboard/VBoxContainer/Stars/Star3.visible = false

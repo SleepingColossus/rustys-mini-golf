@@ -95,9 +95,4 @@ func _on_tutorial_complete():
 
 
 func _on_hole_entered():
-    if _shots_taken <= gold_condition:
-        print_debug("Gold earned")
-    elif _shots_taken <= silver_condition:
-        print_debug("Silver earned")
-    else:
-        print_debug("Bronze earned")
+    $Overlay.show_scoreboard(_shots_taken, gold_condition, silver_condition)
