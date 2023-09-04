@@ -5,17 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://b3awg7661o3k3" path="res://LevelSelect/LevelSelectIsland.tscn" id="3_0i0f6"]
 [ext_resource type="Texture2D" uid="uid://drae7wk3j0k3y" path="res://LevelSelect/LevelSelectLine.png" id="4_al6c4"]
 
-[node name="LevelSelect" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="LevelSelect" type="Node2D"]
 script = ExtResource("1_bodhp")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_ev08b")

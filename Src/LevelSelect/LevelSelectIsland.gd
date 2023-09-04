@@ -1,6 +1,4 @@
-extends AnimatedSprite2D
-
-var this : AnimatedSprite2D = self
+extends Node2D
 
 @export var score : int
 @export var unlocked : bool

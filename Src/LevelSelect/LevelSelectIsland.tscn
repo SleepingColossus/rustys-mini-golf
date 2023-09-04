@@ -160,7 +160,9 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5va7b"]
 size = Vector2(80, 65)
 
-[node name="LevelSelectIsland" type="AnimatedSprite2D"]
+[node name="Island" type="Node2D"]
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
 modulate = Color(0.235294, 0.235294, 0.235294, 1)
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_jkq3b")
@@ -168,7 +170,7 @@ animation = &"incomplete"
 frame_progress = 0.36042
 script = ExtResource("2_udmdw")
 
-[node name="Star1" type="Sprite2D" parent="."]
+[node name="Star1" type="Sprite2D" parent="AnimatedSprite"]
 visible = false
 modulate = Color(1, 1, 1, 0)
 texture_filter = 1
@@ -176,12 +178,12 @@ position = Vector2(-12, 11)
 texture = ExtResource("2_pn8gf")
 offset = Vector2(0, -4.09038)
 
-[node name="StarAnimation" type="AnimationPlayer" parent="Star1"]
+[node name="StarAnimation" type="AnimationPlayer" parent="AnimatedSprite/Star1"]
 libraries = {
 "": SubResource("AnimationLibrary_7bycb")
 }
 
-[node name="Star2" type="Sprite2D" parent="."]
+[node name="Star2" type="Sprite2D" parent="AnimatedSprite"]
 visible = false
 modulate = Color(1, 1, 1, 0)
 texture_filter = 1
@@ -189,12 +191,12 @@ position = Vector2(6, 16)
 texture = ExtResource("2_pn8gf")
 offset = Vector2(0, -4.09038)
 
-[node name="StarAnimation" type="AnimationPlayer" parent="Star2"]
+[node name="StarAnimation" type="AnimationPlayer" parent="AnimatedSprite/Star2"]
 libraries = {
 "": SubResource("AnimationLibrary_7bycb")
 }
 
-[node name="Star3" type="Sprite2D" parent="."]
+[node name="Star3" type="Sprite2D" parent="AnimatedSprite"]
 visible = false
 modulate = Color(1, 1, 1, 0)
 texture_filter = 1
@@ -202,26 +204,26 @@ position = Vector2(22, 11)
 texture = ExtResource("2_pn8gf")
 offset = Vector2(0, -4.09038)
 
-[node name="StarAnimation" type="AnimationPlayer" parent="Star3"]
+[node name="StarAnimation" type="AnimationPlayer" parent="AnimatedSprite/Star3"]
 libraries = {
 "": SubResource("AnimationLibrary_7bycb")
 }
 
-[node name="VictoryAnimation" type="AnimationPlayer" parent="."]
+[node name="VictoryAnimation" type="AnimationPlayer" parent="AnimatedSprite"]
 libraries = {
 "": SubResource("AnimationLibrary_f4tld")
 }
 
-[node name="FloatingAnimation" type="AnimationPlayer" parent="."]
+[node name="FloatingAnimation" type="AnimationPlayer" parent="AnimatedSprite"]
 autoplay = "float"
 libraries = {
 "": SubResource("AnimationLibrary_sopdt")
 }
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="AnimatedSprite"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite/Area2D"]
 position = Vector2(6, -4.5)
 shape = SubResource("RectangleShape2D_5va7b")
 
-[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="input_event" from="AnimatedSprite/Area2D" to="AnimatedSprite" method="_on_area_2d_input_event"]
