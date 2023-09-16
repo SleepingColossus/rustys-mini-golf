@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://64d8byno8hck"]
+[gd_scene load_steps=7 format=3 uid="uid://64d8byno8hck"]
 
 [ext_resource type="Texture2D" uid="uid://dt2rancvjeq3y" path="res://LevelSelect/Island1.png" id="1_uah6k"]
 [ext_resource type="Texture2D" uid="uid://dekjib5l3hkip" path="res://LevelSelect/LevelSelectStar.png" id="2_ncien"]
@@ -61,6 +61,26 @@ _data = {
 "float": SubResource("Animation_6wue8")
 }
 
+[sub_resource type="Animation" id="Animation_dmqyp"]
+resource_name = "reveal"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Color(0.109804, 0.109804, 0.109804, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7t0pk"]
+_data = {
+"reveal": SubResource("Animation_dmqyp")
+}
+
 [node name="Island" type="Sprite2D"]
 texture_filter = 1
 texture = ExtResource("1_uah6k")
@@ -88,4 +108,9 @@ offset = Vector2(0, 5)
 autoplay = "float"
 libraries = {
 "": SubResource("AnimationLibrary_bf4fg")
+}
+
+[node name="ModulateAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_7t0pk")
 }
