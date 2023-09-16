@@ -83,6 +83,7 @@ _data = {
 }
 
 [node name="Island" type="Sprite2D"]
+z_index = 2
 texture_filter = 1
 texture = ExtResource("1_uah6k")
 offset = Vector2(0, 5)

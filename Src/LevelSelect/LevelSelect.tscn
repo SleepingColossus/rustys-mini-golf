@@ -1,0 +1,185 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2w6dn7nk5cnc"]
+
+[ext_resource type="Texture2D" uid="uid://dt2qs854dfdvv" path="res://LevelSelect/LevelSelectBackground.png" id="1_ev08b"]
+[ext_resource type="PackedScene" uid="uid://64d8byno8hck" path="res://LevelSelect/LevelSelectIsland.tscn" id="3_0i0f6"]
+[ext_resource type="Texture2D" uid="uid://1r6fpprkg1mt" path="res://LevelSelect/LevelSelectLine.png" id="4_al6c4"]
+
+[node name="LevelSelect" type="Sprite2D"]
+texture_filter = 1
+texture = ExtResource("1_ev08b")
+centered = false
+
+[node name="Levels" type="Node2D" parent="."]
+
+[node name="Level1" parent="Levels" instance=ExtResource("3_0i0f6")]
+position = Vector2(106, 118)
+
+[node name="Level2" parent="Levels" instance=ExtResource("3_0i0f6")]
+position = Vector2(275, 77)
+
+[node name="Level3" parent="Levels" instance=ExtResource("3_0i0f6")]
+position = Vector2(426, 119)
+
+[node name="Level4" parent="Levels" instance=ExtResource("3_0i0f6")]
+position = Vector2(593, 85)
+
+[node name="Level5" parent="Levels" instance=ExtResource("3_0i0f6")]
+position = Vector2(737, 78)
+
+[node name="Level6" parent="Levels" instance=ExtResource("3_0i0f6")]
+position = Vector2(873, 150)
+
+[node name="Level7" parent="Levels" instance=ExtResource("3_0i0f6")]
+position = Vector2(923, 274)
+
+[node name="Level8" parent="Levels" instance=ExtResource("3_0i0f6")]
+position = Vector2(788, 302)
+
+[node name="Level9" parent="Levels" instance=ExtResource("3_0i0f6")]
+position = Vector2(645, 271)
+
+[node name="Level10" parent="Levels" instance=ExtResource("3_0i0f6")]
+position = Vector2(474, 312)
+
+[node name="Level11" parent="Levels" instance=ExtResource("3_0i0f6")]
+position = Vector2(327, 281)
+
+[node name="Level12" parent="Levels" instance=ExtResource("3_0i0f6")]
+position = Vector2(144, 313)
+
+[node name="Level13" parent="Levels" instance=ExtResource("3_0i0f6")]
+position = Vector2(161, 457)
+
+[node name="Level14" parent="Levels" instance=ExtResource("3_0i0f6")]
+position = Vector2(330, 484)
+
+[node name="Level15" parent="Levels" instance=ExtResource("3_0i0f6")]
+position = Vector2(511, 468)
+
+[node name="Level16" parent="Levels" instance=ExtResource("3_0i0f6")]
+position = Vector2(670, 451)
+
+[node name="Level17" parent="Levels" instance=ExtResource("3_0i0f6")]
+position = Vector2(809, 511)
+
+[node name="Level18" parent="Levels" instance=ExtResource("3_0i0f6")]
+position = Vector2(947, 427)
+
+[node name="Lines" type="Node2D" parent="."]
+
+[node name="Line1" type="Sprite2D" parent="Lines"]
+texture_filter = 1
+position = Vector2(189, 104)
+rotation = -1.09415
+scale = Vector2(0.837157, 0.837157)
+texture = ExtResource("4_al6c4")
+
+[node name="Line2" type="Sprite2D" parent="Lines"]
+texture_filter = 1
+position = Vector2(352, 111)
+rotation = -0.299782
+scale = Vector2(0.656055, 0.656055)
+texture = ExtResource("4_al6c4")
+
+[node name="Line3" type="Sprite2D" parent="Lines"]
+texture_filter = 1
+position = Vector2(510, 121)
+rotation = -1.35403
+scale = Vector2(0.710046, 0.710046)
+texture = ExtResource("4_al6c4")
+
+[node name="Line4" type="Sprite2D" parent="Lines"]
+texture_filter = 1
+position = Vector2(665, 92)
+rotation = -0.913392
+scale = Vector2(0.532271, 0.60282)
+texture = ExtResource("4_al6c4")
+
+[node name="Line5" type="Sprite2D" parent="Lines"]
+texture_filter = 1
+position = Vector2(805, 127)
+scale = Vector2(0.6, 0.64)
+texture = ExtResource("4_al6c4")
+
+[node name="Line6" type="Sprite2D" parent="Lines"]
+texture_filter = 1
+position = Vector2(903, 216)
+rotation = 0.419186
+scale = Vector2(0.472202, 0.472202)
+texture = ExtResource("4_al6c4")
+
+[node name="Line7" type="Sprite2D" parent="Lines"]
+texture_filter = 1
+position = Vector2(856, 290)
+rotation = -1.11566
+scale = Vector2(0.320415, 0.320415)
+texture = ExtResource("4_al6c4")
+
+[node name="Line8" type="Sprite2D" parent="Lines"]
+texture_filter = 1
+position = Vector2(716, 290)
+rotation = -0.395425
+scale = Vector2(0.581428, 0.581428)
+texture = ExtResource("4_al6c4")
+
+[node name="Line9" type="Sprite2D" parent="Lines"]
+texture_filter = 1
+position = Vector2(561, 299)
+rotation = -1.20821
+scale = Vector2(0.813003, 0.813003)
+texture = ExtResource("4_al6c4")
+
+[node name="Line10" type="Sprite2D" parent="Lines"]
+texture_filter = 1
+position = Vector2(401, 299)
+rotation = -0.367264
+scale = Vector2(0.549106, 0.549106)
+texture = ExtResource("4_al6c4")
+
+[node name="Line11" type="Sprite2D" parent="Lines"]
+texture_filter = 1
+position = Vector2(237, 302)
+rotation = -1.16385
+texture = ExtResource("4_al6c4")
+
+[node name="Line12" type="Sprite2D" parent="Lines"]
+texture_filter = 1
+position = Vector2(150, 394)
+rotation = 0.463406
+scale = Vector2(0.673264, 0.739898)
+texture = ExtResource("4_al6c4")
+
+[node name="Line13" type="Sprite2D" parent="Lines"]
+texture_filter = 1
+position = Vector2(248, 474)
+rotation = -0.580535
+scale = Vector2(0.710486, 0.710486)
+texture = ExtResource("4_al6c4")
+
+[node name="Line14" type="Sprite2D" parent="Lines"]
+texture_filter = 1
+position = Vector2(422, 483)
+rotation = -1.07434
+scale = Vector2(0.824146, 0.824146)
+texture = ExtResource("4_al6c4")
+
+[node name="Line15" type="Sprite2D" parent="Lines"]
+texture_filter = 1
+position = Vector2(590, 466)
+rotation = -0.92545
+scale = Vector2(0.543984, 0.543984)
+texture = ExtResource("4_al6c4")
+
+[node name="Line16" type="Sprite2D" parent="Lines"]
+texture_filter = 1
+position = Vector2(755, 462)
+rotation = -0.498091
+scale = Vector2(0.852942, 0.852942)
+texture = ExtResource("4_al6c4")
+
+[node name="Line17" type="Sprite2D" parent="Lines"]
+texture_filter = 1
+position = Vector2(868, 456)
+rotation = -1.3195
+scale = Vector2(0.757593, 0.757593)
+texture = ExtResource("4_al6c4")
