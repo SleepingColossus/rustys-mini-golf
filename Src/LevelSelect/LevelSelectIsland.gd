@@ -1,6 +1,8 @@
 extends Sprite2D
 
 @export var score : int
+@export var unlocked : bool
+@export var level_name : String
 
 
 # Called when the node enters the scene tree for the first time.
@@ -30,3 +32,10 @@ func reveal_start() -> void:
         $Star1.visible = true
         $Star2.visible = true
         $Star3.visible = true
+
+
+func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+    if event is InputEventMouseButton:
+        if unlocked:
+            get_tree().change_scene_to_file("res://Maps/%s.tscn" % level_name)
+
