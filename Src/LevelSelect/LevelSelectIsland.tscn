@@ -89,7 +89,6 @@ _data = {
 z_index = 2
 texture_filter = 1
 texture = ExtResource("1_uah6k")
-offset = Vector2(0, 5)
 script = ExtResource("2_udmdw")
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -102,25 +101,24 @@ shape = SubResource("RectangleShape2D_tjm0f")
 texture_filter = 1
 position = Vector2(-20, 22)
 texture = ExtResource("2_ncien")
-offset = Vector2(0, 5)
 
 [node name="Star2" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(0, 29)
 texture = ExtResource("2_ncien")
-offset = Vector2(0, 5)
 
 [node name="Star3" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(20, 22)
 texture = ExtResource("2_ncien")
-offset = Vector2(0, 5)
 
 [node name="FloatAnimation" type="AnimationPlayer" parent="."]
-autoplay = "float"
 libraries = {
 "": SubResource("AnimationLibrary_bf4fg")
 }
+
+[node name="StartAnimationTimer" type="Timer" parent="FloatAnimation"]
+one_shot = true
 
 [node name="ModulateAnimation" type="AnimationPlayer" parent="."]
 libraries = {
@@ -128,3 +126,4 @@ libraries = {
 }
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="timeout" from="FloatAnimation/StartAnimationTimer" to="." method="_on_start_animation_timer_timeout"]

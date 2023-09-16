@@ -9,6 +9,12 @@ extends Sprite2D
 func _ready() -> void:
     reveal_start()
 
+    var rand = RandomNumberGenerator.new()
+    var wait_time = rand.randf_range(0.100, 0.500)
+    var timer = $FloatAnimation/StartAnimationTimer
+    timer.wait_time = wait_time
+    timer.start()
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -39,3 +45,7 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
         if unlocked:
             get_tree().change_scene_to_file("res://Maps/%s.tscn" % level_name)
 
+
+
+func _on_start_animation_timer_timeout() -> void:
+    $FloatAnimation.play("float")
