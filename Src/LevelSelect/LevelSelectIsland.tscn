@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://64d8byno8hck"]
+[gd_scene load_steps=8 format=3 uid="uid://64d8byno8hck"]
 
 [ext_resource type="Texture2D" uid="uid://dt2rancvjeq3y" path="res://LevelSelect/Island1.png" id="1_uah6k"]
 [ext_resource type="Texture2D" uid="uid://dekjib5l3hkip" path="res://LevelSelect/LevelSelectStar.png" id="2_ncien"]
+[ext_resource type="Script" path="res://LevelSelect/LevelSelectIsland.gd" id="2_udmdw"]
 
 [sub_resource type="Animation" id="Animation_6wue8"]
 resource_name = "float"
@@ -85,6 +86,7 @@ _data = {
 texture_filter = 1
 texture = ExtResource("1_uah6k")
 offset = Vector2(0, 5)
+script = ExtResource("2_udmdw")
 
 [node name="Star1" type="Sprite2D" parent="."]
 texture_filter = 1
