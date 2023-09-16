@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wv27iywdgxr6"
-path="res://.godot/imported/LevelSelectIsland.png-a2a93b6802aa515268b26475f2b841a5.ctex"
+uid="uid://dekjib5l3hkip"
+path="res://.godot/imported/LevelSelectStar.png-aa1813ab4bdf392a1a700102da6e9310.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://LevelSelect/LevelSelectIsland.png"
-dest_files=["res://.godot/imported/LevelSelectIsland.png-a2a93b6802aa515268b26475f2b841a5.ctex"]
+source_file="res://LevelSelect/LevelSelectStar.png"
+dest_files=["res://.godot/imported/LevelSelectStar.png-aa1813ab4bdf392a1a700102da6e9310.ctex"]
 
 [params]
 
