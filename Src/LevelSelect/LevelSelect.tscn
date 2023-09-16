@@ -18,7 +18,6 @@ level_name = "Map1"
 
 [node name="Level2" parent="Levels" instance=ExtResource("3_0i0f6")]
 position = Vector2(275, 77)
-unlocked = true
 level_name = "Map2"
 
 [node name="Level3" parent="Levels" instance=ExtResource("3_0i0f6")]
