@@ -133,7 +133,7 @@ _data = {
 "show": SubResource("Animation_osjgb")
 }
 
-[sub_resource type="Animation" id="Animation_ojdi4"]
+[sub_resource type="Animation" id="Animation_jxx3c"]
 resource_name = "hide"
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -145,10 +145,10 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(212, 0), Vector2(212, -472)]
+"values": [Vector2(212, 0), Vector2(212, -550)]
 }
 
-[sub_resource type="Animation" id="Animation_brdn6"]
+[sub_resource type="Animation" id="Animation_7mdhv"]
 resource_name = "show"
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -160,13 +160,13 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(212, -472), Vector2(212, 0)]
+"values": [Vector2(212, -550), Vector2(212, 0)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_jnbtb"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t64vp"]
 _data = {
-"hide": SubResource("Animation_ojdi4"),
-"show": SubResource("Animation_brdn6")
+"hide": SubResource("Animation_jxx3c"),
+"show": SubResource("Animation_7mdhv")
 }
 
 [node name="CanvasLayer" type="CanvasLayer"]
@@ -277,12 +277,14 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -300.0
+offset_top = -550.0
 offset_right = 300.0
-offset_bottom = 535.0
+offset_bottom = -15.0
 grow_horizontal = 2
 
 [node name="Stats" type="AspectRatioContainer" parent="Overlay/Scoreboard"]
 layout_mode = 2
+size_flags_horizontal = 4
 
 [node name="Background" type="TextureRect" parent="Overlay/Scoreboard/Stats"]
 layout_mode = 2
@@ -331,11 +333,6 @@ theme_override_fonts/font = ExtResource("5_ii210")
 theme_override_font_sizes/font_size = 48
 text = "Next Star: -1"
 
-[node name="ScoreboardAnimator" type="AnimationPlayer" parent="Overlay/Scoreboard/Stats"]
-libraries = {
-"": SubResource("AnimationLibrary_jnbtb")
-}
-
 [node name="Navigation" type="HBoxContainer" parent="Overlay/Scoreboard"]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -354,6 +351,11 @@ text = "Replay Level"
 layout_mode = 2
 theme = ExtResource("10_aeofw")
 text = "Next Level"
+
+[node name="ScoreboardAnimator" type="AnimationPlayer" parent="Overlay/Scoreboard"]
+libraries = {
+"": SubResource("AnimationLibrary_t64vp")
+}
 
 [connection signal="pressed" from="Overlay/ZoomButton" to="." method="_on_zoom_button_pressed"]
 [connection signal="pressed" from="Overlay/Tutorial/TextBubble/NextButton" to="." method="_on_next_button_pressed"]
