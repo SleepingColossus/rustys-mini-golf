@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bdnmctsjtjrgl"]
+[gd_scene load_steps=25 format=3 uid="uid://bdnmctsjtjrgl"]
 
 [ext_resource type="Script" path="res://UI/Overlay.gd" id="1_3x7xf"]
 [ext_resource type="Texture2D" uid="uid://irfoeqkh77x5" path="res://UI/ButtonZoom.png" id="1_g8ndk"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dnjll1rv7v3vc" path="res://UI/SpeechBubbles/SpeechBubbleBtnDisabled.png" id="7_i1kiw"]
 [ext_resource type="Texture2D" uid="uid://duopy1iyrmwim" path="res://UI/Scoreboard.png" id="8_sygyr"]
 [ext_resource type="Texture2D" uid="uid://c1e8sdr7rxyun" path="res://UI/Star.png" id="9_iva0f"]
+[ext_resource type="Theme" uid="uid://b27jjwqe2yuhy" path="res://UI/MenuButtons/ButtonTheme.tres" id="10_aeofw"]
 
 [sub_resource type="GDScript" id="GDScript_mjhbw"]
 script/source = "extends TextureButton
@@ -132,21 +133,6 @@ _data = {
 "show": SubResource("Animation_osjgb")
 }
 
-[sub_resource type="Animation" id="Animation_brdn6"]
-resource_name = "show"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(212, -472), Vector2(212, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_ojdi4"]
 resource_name = "hide"
 tracks/0/type = "value"
@@ -160,6 +146,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(212, 0), Vector2(212, -472)]
+}
+
+[sub_resource type="Animation" id="Animation_brdn6"]
+resource_name = "show"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(212, -472), Vector2(212, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jnbtb"]
@@ -270,27 +271,29 @@ theme_override_fonts/font = ExtResource("5_ii210")
 theme_override_font_sizes/font_size = 36
 text = "Shots: -1"
 
-[node name="Scoreboard" type="AspectRatioContainer" parent="Overlay"]
+[node name="Scoreboard" type="VBoxContainer" parent="Overlay"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -300.0
-offset_top = -472.0
 offset_right = 300.0
-offset_bottom = -1.0
+offset_bottom = 535.0
 grow_horizontal = 2
 
-[node name="Background" type="TextureRect" parent="Overlay/Scoreboard"]
+[node name="Stats" type="AspectRatioContainer" parent="Overlay/Scoreboard"]
+layout_mode = 2
+
+[node name="Background" type="TextureRect" parent="Overlay/Scoreboard/Stats"]
 layout_mode = 2
 texture = ExtResource("8_sygyr")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Overlay/Scoreboard"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Overlay/Scoreboard/Stats"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="LevelComplete" type="Label" parent="Overlay/Scoreboard/VBoxContainer"]
+[node name="LevelComplete" type="Label" parent="Overlay/Scoreboard/Stats/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_fonts/font = ExtResource("5_ii210")
@@ -298,40 +301,59 @@ theme_override_font_sizes/font_size = 72
 text = "
 Level Complete"
 
-[node name="Stars" type="HBoxContainer" parent="Overlay/Scoreboard/VBoxContainer"]
+[node name="Stars" type="HBoxContainer" parent="Overlay/Scoreboard/Stats/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="Star1" type="TextureRect" parent="Overlay/Scoreboard/VBoxContainer/Stars"]
+[node name="Star1" type="TextureRect" parent="Overlay/Scoreboard/Stats/VBoxContainer/Stars"]
 layout_mode = 2
 texture = ExtResource("9_iva0f")
 
-[node name="Star2" type="TextureRect" parent="Overlay/Scoreboard/VBoxContainer/Stars"]
+[node name="Star2" type="TextureRect" parent="Overlay/Scoreboard/Stats/VBoxContainer/Stars"]
 layout_mode = 2
 texture = ExtResource("9_iva0f")
 
-[node name="Star3" type="TextureRect" parent="Overlay/Scoreboard/VBoxContainer/Stars"]
+[node name="Star3" type="TextureRect" parent="Overlay/Scoreboard/Stats/VBoxContainer/Stars"]
 layout_mode = 2
 texture = ExtResource("9_iva0f")
 
-[node name="Moves" type="Label" parent="Overlay/Scoreboard/VBoxContainer"]
+[node name="Moves" type="Label" parent="Overlay/Scoreboard/Stats/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("5_ii210")
 theme_override_font_sizes/font_size = 48
 text = "Moves: -1"
 
-[node name="NextStar" type="Label" parent="Overlay/Scoreboard/VBoxContainer"]
+[node name="NextStar" type="Label" parent="Overlay/Scoreboard/Stats/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("5_ii210")
 theme_override_font_sizes/font_size = 48
 text = "Next Star: -1"
 
-[node name="ScoreboardAnimator" type="AnimationPlayer" parent="Overlay/Scoreboard"]
+[node name="ScoreboardAnimator" type="AnimationPlayer" parent="Overlay/Scoreboard/Stats"]
 libraries = {
 "": SubResource("AnimationLibrary_jnbtb")
 }
+
+[node name="Navigation" type="HBoxContainer" parent="Overlay/Scoreboard"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="MenuButton" type="Button" parent="Overlay/Scoreboard/Navigation"]
+layout_mode = 2
+theme = ExtResource("10_aeofw")
+text = "Main Menu"
+
+[node name="ReplayButton" type="Button" parent="Overlay/Scoreboard/Navigation"]
+layout_mode = 2
+theme = ExtResource("10_aeofw")
+text = "Replay Level"
+
+[node name="NextButton" type="Button" parent="Overlay/Scoreboard/Navigation"]
+layout_mode = 2
+theme = ExtResource("10_aeofw")
+text = "Next Level"
 
 [connection signal="pressed" from="Overlay/ZoomButton" to="." method="_on_zoom_button_pressed"]
 [connection signal="pressed" from="Overlay/Tutorial/TextBubble/NextButton" to="." method="_on_next_button_pressed"]
