@@ -7,7 +7,7 @@ extends Sprite2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-    reveal_start()
+    reveal_stars()
 
     var rand = RandomNumberGenerator.new()
     var wait_time = rand.randf_range(0.100, 0.500)
@@ -24,7 +24,7 @@ func _process(delta: float) -> void:
         modulate = Color(1, 1, 1)
 
 
-func reveal_start() -> void:
+func reveal_stars() -> void:
     if score == 0:
         $Star1.visible = false
         $Star2.visible = false

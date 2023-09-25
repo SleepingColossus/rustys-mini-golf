@@ -7,6 +7,7 @@ func _ready() -> void:
         if Global.scores[i] > -1:
             var level = get_node("Levels/Level%d" % i)
             level.score = Global.scores[i]
+            level.reveal_stars()
 
             var next_level = get_node("Levels/Level%d" % (i + 1))
             next_level.unlocked = true
