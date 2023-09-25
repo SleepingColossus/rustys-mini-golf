@@ -347,7 +347,7 @@ layout_mode = 2
 theme = ExtResource("10_aeofw")
 text = "Replay Level"
 
-[node name="NextButton" type="Button" parent="Overlay/Scoreboard/Navigation"]
+[node name="NextLevelButton" type="Button" parent="Overlay/Scoreboard/Navigation"]
 layout_mode = 2
 theme = ExtResource("10_aeofw")
 text = "Next Level"
@@ -359,3 +359,6 @@ libraries = {
 
 [connection signal="pressed" from="Overlay/ZoomButton" to="." method="_on_zoom_button_pressed"]
 [connection signal="pressed" from="Overlay/Tutorial/TextBubble/NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="Overlay/Scoreboard/Navigation/MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="Overlay/Scoreboard/Navigation/ReplayButton" to="." method="_on_replay_button_pressed"]
+[connection signal="pressed" from="Overlay/Scoreboard/Navigation/NextLevelButton" to="." method="_on_next_level_button_pressed"]

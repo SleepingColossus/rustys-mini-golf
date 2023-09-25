@@ -60,3 +60,15 @@ func show_scoreboard(shots_taken: int, gold_score: int, silver_score: int) -> vo
         $Overlay/Scoreboard/Stats/VBoxContainer/Stars/Star1.visible = true
         $Overlay/Scoreboard/Stats/VBoxContainer/Stars/Star2.visible = false
         $Overlay/Scoreboard/Stats/VBoxContainer/Stars/Star3.visible = false
+
+
+func _on_menu_button_pressed() -> void:
+    get_tree().change_scene_to_file("res://MainMenu/MainMenu.tscn")
+
+
+func _on_replay_button_pressed() -> void:
+    get_tree().reload_current_scene()
+
+
+func _on_next_level_button_pressed() -> void:
+    get_tree().change_scene_to_file("res://LevelSelect/LevelSelect.tscn")
