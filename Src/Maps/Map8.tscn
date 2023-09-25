@@ -9,6 +9,7 @@
 
 [node name="TestMap" type="Node2D"]
 script = ExtResource("1_jvtp8")
+level_number = 8
 
 [node name="LevelCamera" type="Camera2D" parent="."]
 position = Vector2(512, 288)

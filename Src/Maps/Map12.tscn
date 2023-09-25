@@ -9,6 +9,7 @@
 
 [node name="TestMap" type="Node2D"]
 script = ExtResource("1_q78l8")
+level_number = 12
 
 [node name="Overlay" parent="." instance=ExtResource("2_3nq3f")]
 

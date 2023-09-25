@@ -7,6 +7,7 @@ enum State {
 
 @export var gold_condition : int
 @export var silver_condition : int
+@export var level_number : int
 
 var _state : State
 var _mouse_position = null
