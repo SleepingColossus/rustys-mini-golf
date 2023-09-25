@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://b2w6dn7nk5cnc"]
+[gd_scene load_steps=5 format=3 uid="uid://b2w6dn7nk5cnc"]
 
 [ext_resource type="Texture2D" uid="uid://dt2qs854dfdvv" path="res://LevelSelect/LevelSelectBackground.png" id="1_ev08b"]
+[ext_resource type="Script" path="res://LevelSelect/LevelSelect.gd" id="2_8bjj1"]
 [ext_resource type="PackedScene" uid="uid://64d8byno8hck" path="res://LevelSelect/LevelSelectIsland.tscn" id="3_0i0f6"]
 [ext_resource type="Texture2D" uid="uid://1r6fpprkg1mt" path="res://LevelSelect/LevelSelectLine.png" id="4_al6c4"]
 
@@ -8,6 +9,7 @@
 texture_filter = 1
 texture = ExtResource("1_ev08b")
 centered = false
+script = ExtResource("2_8bjj1")
 
 [node name="Levels" type="Node2D" parent="."]
 

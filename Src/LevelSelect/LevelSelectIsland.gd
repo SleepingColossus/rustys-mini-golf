@@ -7,10 +7,6 @@ extends Sprite2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-
-    if !unlocked:
-        modulate = Color(0.2, 0.2, 0.2)
-
     reveal_start()
 
     var rand = RandomNumberGenerator.new()
@@ -22,7 +18,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-    pass
+    if !unlocked:
+        modulate = Color(0.2, 0.2, 0.2)
+    else:
+        modulate = Color(1, 1, 1)
 
 
 func reveal_start() -> void:
