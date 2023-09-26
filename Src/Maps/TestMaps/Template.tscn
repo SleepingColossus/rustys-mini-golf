@@ -10,7 +10,9 @@
 [node name="TestMap" type="Node2D"]
 script = ExtResource("1_gbfc5")
 
-[node name="Overlay" parent="." instance=ExtResource("2_kp3be")]
+[node name="Overlay" parent="." node_paths=PackedStringArray("level_camera", "ball") instance=ExtResource("2_kp3be")]
+level_camera = NodePath("../LevelCamera")
+ball = NodePath("../Ball")
 
 [node name="LevelCamera" type="Camera2D" parent="."]
 position = Vector2(512, 288)
