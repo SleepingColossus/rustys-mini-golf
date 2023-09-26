@@ -50,6 +50,7 @@ func _win():
     hole_entered.emit()
     _has_won = true
     visible = false
+    linear_velocity = Vector2.ZERO
 
 func _on_body_shape_entered(body_rid, body, _body_shape_index, _local_shape_index):
     if body is TileMap:
