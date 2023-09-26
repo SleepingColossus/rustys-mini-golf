@@ -11,7 +11,9 @@
 script = ExtResource("1_q78l8")
 level_number = 12
 
-[node name="Overlay" parent="." instance=ExtResource("2_3nq3f")]
+[node name="Overlay" parent="." node_paths=PackedStringArray("level_camera", "ball") instance=ExtResource("2_3nq3f")]
+level_camera = NodePath("../LevelCamera")
+ball = NodePath("../Ball")
 
 [node name="LevelCamera" type="Camera2D" parent="."]
 position = Vector2(512, 288)

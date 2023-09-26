@@ -58,4 +58,6 @@ mass = 0.4
 
 [node name="CustomCursor" parent="." instance=ExtResource("5_cc0mt")]
 
-[node name="Overlay" parent="." instance=ExtResource("6_tckv0")]
+[node name="Overlay" parent="." node_paths=PackedStringArray("level_camera", "ball") instance=ExtResource("6_tckv0")]
+level_camera = NodePath("../LevelCamera")
+ball = NodePath("../Ball")

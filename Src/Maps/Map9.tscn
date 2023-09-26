@@ -135,7 +135,9 @@ mass = 0.4
 
 [node name="CustomCursor" parent="." instance=ExtResource("5_erpws")]
 
-[node name="Overlay" parent="." instance=ExtResource("6_1faqh")]
+[node name="Overlay" parent="." node_paths=PackedStringArray("level_camera", "ball") instance=ExtResource("6_1faqh")]
+level_camera = NodePath("../LevelCamera")
+ball = NodePath("../Ball")
 
 [node name="MovingBlock1" parent="." instance=ExtResource("7_7wsy8")]
 position = Vector2(496, 235)

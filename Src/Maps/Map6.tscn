@@ -62,4 +62,6 @@ mass = 0.4
 [node name="WindmillBlades" parent="." instance=ExtResource("6_kim26")]
 position = Vector2(495, 248)
 
-[node name="Overlay" parent="." instance=ExtResource("7_kuusi")]
+[node name="Overlay" parent="." node_paths=PackedStringArray("level_camera", "ball") instance=ExtResource("7_kuusi")]
+level_camera = NodePath("../LevelCamera")
+ball = NodePath("../Ball")
