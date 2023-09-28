@@ -1,4 +1,4 @@
-extends Sprite2D
+extends Control
 
 
 # Called when the node enters the scene tree for the first time.
@@ -24,4 +24,4 @@ func _set_total_score_label() -> void:
     var total_score = Global.aggregate_score()
     var max_stars = 3 * 18
 
-    $Control/TotalContainer/TotalScore.text = "%d/%d" % [total_score, max_stars]
+    $TotalContainer/TotalScore.text = "%d/%d" % [total_score, max_stars]

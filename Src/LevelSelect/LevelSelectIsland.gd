@@ -1,4 +1,4 @@
-extends Sprite2D
+extends MarginContainer
 
 @export var score : int
 @export var unlocked : bool
@@ -11,7 +11,7 @@ func _ready() -> void:
 
     var rand = RandomNumberGenerator.new()
     var wait_time = rand.randf_range(0.0, 1.0)
-    var timer = $FloatAnimation/StartAnimationTimer
+    var timer = $Island/FloatAnimation/StartAnimationTimer
     timer.wait_time = wait_time
     timer.start()
 
@@ -26,29 +26,27 @@ func _process(delta: float) -> void:
 
 func reveal_stars() -> void:
     if score == 0:
-        $Star1.visible = false
-        $Star2.visible = false
-        $Star3.visible = false
+        $Island/Star1.visible = false
+        $Island/Star2.visible = false
+        $Island/Star3.visible = false
     if score == 1:
-        $Star1.visible = true
-        $Star2.visible = false
-        $Star3.visible = false
+        $Island/Star1.visible = true
+        $Island/Star2.visible = false
+        $Island/Star3.visible = false
     if score == 2:
-        $Star1.visible = true
-        $Star2.visible = true
-        $Star3.visible = false
+        $Island/Star1.visible = true
+        $Island/Star2.visible = true
+        $Island/Star3.visible = false
     if score == 3:
-        $Star1.visible = true
-        $Star2.visible = true
-        $Star3.visible = true
+        $Island/Star1.visible = true
+        $Island/Star2.visible = true
+        $Island/Star3.visible = true
 
 
-func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-    if event is InputEventMouseButton:
-        if unlocked:
-            get_tree().change_scene_to_file("res://Maps/%s.tscn" % level_name)
-
+func _on_island_pressed() -> void:
+    if unlocked:
+        get_tree().change_scene_to_file("res://Maps/%s.tscn" % level_name)
 
 
 func _on_start_animation_timer_timeout() -> void:
-    $FloatAnimation.play("float")
+    $Island/FloatAnimation.play("float")

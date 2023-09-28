@@ -1,11 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://64d8byno8hck"]
+[gd_scene load_steps=8 format=3 uid="uid://64d8byno8hck"]
 
 [ext_resource type="Texture2D" uid="uid://dt2rancvjeq3y" path="res://LevelSelect/Island1.png" id="1_uah6k"]
 [ext_resource type="Texture2D" uid="uid://dekjib5l3hkip" path="res://LevelSelect/LevelSelectStar.png" id="2_ncien"]
 [ext_resource type="Script" path="res://LevelSelect/LevelSelectIsland.gd" id="2_udmdw"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tjm0f"]
-size = Vector2(96, 80)
 
 [sub_resource type="Animation" id="Animation_6wue8"]
 resource_name = "float"
@@ -14,50 +11,14 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:offset")
+tracks/0/path = NodePath("..:theme_override_constants/margin_top")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 2),
-"transitions": PackedFloat32Array(1, -2, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, 5), Vector2(0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Star1:offset")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1, 2),
-"transitions": PackedFloat32Array(1, -2, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, 5), Vector2(0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Star2:offset")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1, 2),
-"transitions": PackedFloat32Array(1, -2, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, 5), Vector2(0, 0)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Star3:offset")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 1, 2),
-"transitions": PackedFloat32Array(1, -2, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, 5), Vector2(0, 0)]
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, -2, 1),
+"update": 1,
+"values": [0, 2, 4, 2, 0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bf4fg"]
@@ -85,45 +46,57 @@ _data = {
 "reveal": SubResource("Animation_dmqyp")
 }
 
-[node name="Island" type="Sprite2D"]
-z_index = 2
-texture_filter = 1
-texture = ExtResource("1_uah6k")
+[node name="MarginContainer" type="MarginContainer"]
+offset_right = 96.0
+offset_bottom = 80.0
+theme_override_constants/margin_top = 0
 script = ExtResource("2_udmdw")
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 5)
-shape = SubResource("RectangleShape2D_tjm0f")
-
-[node name="Star1" type="Sprite2D" parent="."]
+[node name="Island" type="TextureButton" parent="."]
+z_index = 1
 texture_filter = 1
-position = Vector2(-20, 22)
+layout_mode = 2
+texture_normal = ExtResource("1_uah6k")
+
+[node name="Star1" type="TextureRect" parent="Island"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 18.0
+offset_top = 52.0
+offset_right = 38.0
+offset_bottom = 72.0
 texture = ExtResource("2_ncien")
 
-[node name="Star2" type="Sprite2D" parent="."]
+[node name="Star2" type="TextureRect" parent="Island"]
 texture_filter = 1
-position = Vector2(0, 29)
+layout_mode = 0
+offset_left = 38.0
+offset_top = 59.0
+offset_right = 58.0
+offset_bottom = 79.0
 texture = ExtResource("2_ncien")
 
-[node name="Star3" type="Sprite2D" parent="."]
+[node name="Star3" type="TextureRect" parent="Island"]
 texture_filter = 1
-position = Vector2(20, 22)
+layout_mode = 0
+offset_left = 58.0
+offset_top = 52.0
+offset_right = 78.0
+offset_bottom = 72.0
 texture = ExtResource("2_ncien")
 
-[node name="FloatAnimation" type="AnimationPlayer" parent="."]
+[node name="FloatAnimation" type="AnimationPlayer" parent="Island"]
 libraries = {
 "": SubResource("AnimationLibrary_bf4fg")
 }
 
-[node name="StartAnimationTimer" type="Timer" parent="FloatAnimation"]
+[node name="StartAnimationTimer" type="Timer" parent="Island/FloatAnimation"]
 one_shot = true
 
-[node name="ModulateAnimation" type="AnimationPlayer" parent="."]
+[node name="ModulateAnimation" type="AnimationPlayer" parent="Island"]
 libraries = {
 "": SubResource("AnimationLibrary_7t0pk")
 }
 
-[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
-[connection signal="timeout" from="FloatAnimation/StartAnimationTimer" to="." method="_on_start_animation_timer_timeout"]
+[connection signal="pressed" from="Island" to="." method="_on_island_pressed"]
+[connection signal="timeout" from="Island/FloatAnimation/StartAnimationTimer" to="." method="_on_start_animation_timer_timeout"]
