@@ -108,5 +108,6 @@ angle_max = 720.0
 scale_amount_min = 2.0
 scale_amount_max = 2.0
 
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
 [connection signal="body_shape_exited" from="." to="." method="_on_body_shape_exited"]
