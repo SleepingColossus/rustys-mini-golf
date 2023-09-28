@@ -96,8 +96,6 @@ func _on_tutorial_complete():
 
 
 func _on_hole_entered():
-    $Overlay.show_scoreboard(_shots_taken, gold_condition, silver_condition)
-
     var stars_earned : int
 
     if _shots_taken <= gold_condition:
@@ -108,3 +106,4 @@ func _on_hole_entered():
         stars_earned = 1
 
     Global.scores[level_number] = stars_earned
+    $Overlay.show_scoreboard(stars_earned, _shots_taken, gold_condition, silver_condition)
