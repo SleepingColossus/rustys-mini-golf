@@ -105,5 +105,5 @@ func _on_hole_entered():
     else:
         stars_earned = 1
 
-    Global.scores[level_number] = stars_earned
+    Global.set_score(level_number, stars_earned)
     $Overlay.show_scoreboard(stars_earned, _shots_taken, gold_condition, silver_condition)

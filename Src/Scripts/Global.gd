@@ -21,3 +21,17 @@ var scores := {
     17: -1,
     18: -1,
 }
+
+func get_score(level_number: int) -> int:
+    assert(level_number >= 1 and level_number <= 18, \
+           "ERROR: %d is an invalid level number! Must be between 1-18" % level_number)
+    return scores[level_number]
+
+func set_score(level_number: int, new_score: int) -> void:
+    assert(level_number >= 1 and level_number <= 18, \
+           "ERROR: %d is an invalid level number! Must be between 1-18" % level_number)
+
+    var previous_score: int = scores[level_number]
+
+    if new_score > previous_score:
+        scores[level_number] = new_score
