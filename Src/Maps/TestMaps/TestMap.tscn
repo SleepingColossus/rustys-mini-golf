@@ -10,6 +10,9 @@
 
 [node name="TestMap" type="Node2D"]
 script = ExtResource("1_1wm66")
+three_star_condition = 1
+two_star_condition = 2
+level_number = 1
 
 [node name="LevelCamera" type="Camera2D" parent="."]
 position = Vector2(512, 288)
