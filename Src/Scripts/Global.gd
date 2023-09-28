@@ -35,3 +35,14 @@ func set_score(level_number: int, new_score: int) -> void:
 
     if new_score > previous_score:
         scores[level_number] = new_score
+
+
+func aggregate_score() -> int:
+    var total_stars = 0
+
+    for level_number in scores:
+        var score = scores[level_number]
+        if score > -1:
+            total_stars += score
+
+    return total_stars

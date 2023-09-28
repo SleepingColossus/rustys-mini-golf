@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://b2w6dn7nk5cnc"]
+[gd_scene load_steps=8 format=3 uid="uid://b2w6dn7nk5cnc"]
 
 [ext_resource type="Texture2D" uid="uid://dt2qs854dfdvv" path="res://LevelSelect/LevelSelectBackground.png" id="1_ev08b"]
 [ext_resource type="Script" path="res://LevelSelect/LevelSelect.gd" id="2_8bjj1"]
 [ext_resource type="PackedScene" uid="uid://64d8byno8hck" path="res://LevelSelect/LevelSelectIsland.tscn" id="3_0i0f6"]
 [ext_resource type="Texture2D" uid="uid://1r6fpprkg1mt" path="res://LevelSelect/LevelSelectLine.png" id="4_al6c4"]
 [ext_resource type="Texture2D" uid="uid://0poldlbl8b85" path="res://UI/ButtonBack.png" id="5_1frbj"]
+[ext_resource type="FontFile" uid="uid://bhi0xtquxn3v" path="res://UI/Fonts/Cakecafe.ttf" id="6_gekvs"]
+[ext_resource type="Texture2D" uid="uid://c1e8sdr7rxyun" path="res://UI/Star.png" id="7_5cleq"]
 
 [node name="LevelSelect" type="Sprite2D"]
 texture_filter = 1
@@ -221,5 +223,29 @@ offset_top = 8.0
 offset_right = 72.0
 offset_bottom = 72.0
 texture_normal = ExtResource("5_1frbj")
+
+[node name="TotalContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -141.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = 71.0
+grow_horizontal = 0
+
+[node name="TotalScore" type="Label" parent="Control/TotalContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("6_gekvs")
+theme_override_font_sizes/font_size = 48
+text = "0/0"
+vertical_alignment = 2
+
+[node name="Star" type="TextureRect" parent="Control/TotalContainer"]
+layout_mode = 2
+texture = ExtResource("7_5cleq")
+expand_mode = 2
 
 [connection signal="pressed" from="Control/BackButton" to="." method="_on_back_button_pressed"]

@@ -13,11 +13,15 @@ func _ready() -> void:
             var next_level = get_node("Levels/Level%d" % (i + 1))
             next_level.unlocked = true
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-    pass
+    _set_total_score_label()
 
 
 func _on_back_button_pressed() -> void:
     get_tree().change_scene_to_file("res://MainMenu/MainMenu.tscn")
+
+
+func _set_total_score_label() -> void:
+    var total_score = Global.aggregate_score()
+    var max_stars = 3 * 18
+
+    $Control/TotalContainer/TotalScore.text = "%d/%d" % [total_score, max_stars]
