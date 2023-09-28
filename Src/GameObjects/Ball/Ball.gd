@@ -33,6 +33,7 @@ func can_move():
 
 func move(forceX, forceY):
     _last_known_position = position
+    $HitParticles.emitting = true
     apply_impulse(Vector2(forceX, forceY))
 
 
