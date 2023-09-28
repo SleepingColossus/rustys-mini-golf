@@ -10,7 +10,7 @@ func _ready() -> void:
     reveal_stars()
 
     var rand = RandomNumberGenerator.new()
-    var wait_time = rand.randf_range(0.100, 0.500)
+    var wait_time = rand.randf_range(0.0, 1.0)
     var timer = $FloatAnimation/StartAnimationTimer
     timer.wait_time = wait_time
     timer.start()
