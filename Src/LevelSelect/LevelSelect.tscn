@@ -42,6 +42,7 @@ offset_left = 231.0
 offset_top = 57.0
 offset_right = 327.0
 offset_bottom = 137.0
+level_name = "Map2"
 
 [node name="Level3" parent="Levels" instance=ExtResource("3_0i0f6")]
 layout_mode = 0
@@ -49,6 +50,7 @@ offset_left = 386.0
 offset_top = 90.0
 offset_right = 482.0
 offset_bottom = 170.0
+level_name = "Map3"
 
 [node name="Level4" parent="Levels" instance=ExtResource("3_0i0f6")]
 layout_mode = 0
@@ -56,6 +58,7 @@ offset_left = 543.0
 offset_top = 60.0
 offset_right = 639.0
 offset_bottom = 140.0
+level_name = "Map4"
 
 [node name="Level5" parent="Levels" instance=ExtResource("3_0i0f6")]
 layout_mode = 0
@@ -63,6 +66,7 @@ offset_left = 692.0
 offset_top = 47.0
 offset_right = 788.0
 offset_bottom = 127.0
+level_name = "Map5"
 
 [node name="Level6" parent="Levels" instance=ExtResource("3_0i0f6")]
 layout_mode = 0
@@ -70,6 +74,7 @@ offset_left = 815.0
 offset_top = 126.0
 offset_right = 911.0
 offset_bottom = 206.0
+level_name = "Map6"
 
 [node name="Level7" parent="Levels" instance=ExtResource("3_0i0f6")]
 layout_mode = 0
@@ -77,6 +82,7 @@ offset_left = 871.0
 offset_top = 243.0
 offset_right = 967.0
 offset_bottom = 323.0
+level_name = "Map7"
 
 [node name="Level8" parent="Levels" instance=ExtResource("3_0i0f6")]
 layout_mode = 0
@@ -84,6 +90,7 @@ offset_left = 744.0
 offset_top = 268.0
 offset_right = 840.0
 offset_bottom = 348.0
+level_name = "Map8"
 
 [node name="Level9" parent="Levels" instance=ExtResource("3_0i0f6")]
 layout_mode = 0
@@ -91,6 +98,7 @@ offset_left = 596.0
 offset_top = 248.0
 offset_right = 692.0
 offset_bottom = 328.0
+level_name = "Map9"
 
 [node name="Level10" parent="Levels" instance=ExtResource("3_0i0f6")]
 layout_mode = 0
@@ -98,6 +106,7 @@ offset_left = 430.0
 offset_top = 276.0
 offset_right = 526.0
 offset_bottom = 356.0
+level_name = "Map10"
 
 [node name="Level11" parent="Levels" instance=ExtResource("3_0i0f6")]
 layout_mode = 0
@@ -105,6 +114,7 @@ offset_left = 284.0
 offset_top = 248.0
 offset_right = 380.0
 offset_bottom = 328.0
+level_name = "Map11"
 
 [node name="Level12" parent="Levels" instance=ExtResource("3_0i0f6")]
 layout_mode = 0
@@ -112,6 +122,7 @@ offset_left = 99.0
 offset_top = 276.0
 offset_right = 195.0
 offset_bottom = 356.0
+level_name = "Map12"
 
 [node name="Level13" parent="Levels" instance=ExtResource("3_0i0f6")]
 layout_mode = 0
@@ -119,6 +130,7 @@ offset_left = 120.0
 offset_top = 422.0
 offset_right = 216.0
 offset_bottom = 502.0
+level_name = "Map13"
 
 [node name="Level14" parent="Levels" instance=ExtResource("3_0i0f6")]
 layout_mode = 0
@@ -126,6 +138,7 @@ offset_left = 283.0
 offset_top = 455.0
 offset_right = 379.0
 offset_bottom = 535.0
+level_name = "Map14"
 
 [node name="Level15" parent="Levels" instance=ExtResource("3_0i0f6")]
 layout_mode = 0
@@ -133,6 +146,7 @@ offset_left = 468.0
 offset_top = 432.0
 offset_right = 564.0
 offset_bottom = 512.0
+level_name = "Map15"
 
 [node name="Level16" parent="Levels" instance=ExtResource("3_0i0f6")]
 layout_mode = 0
@@ -140,6 +154,7 @@ offset_left = 625.0
 offset_top = 419.0
 offset_right = 721.0
 offset_bottom = 499.0
+level_name = "Map16"
 
 [node name="Level17" parent="Levels" instance=ExtResource("3_0i0f6")]
 layout_mode = 0
@@ -147,6 +162,7 @@ offset_left = 771.0
 offset_top = 469.0
 offset_right = 867.0
 offset_bottom = 549.0
+level_name = "Map17"
 
 [node name="Level18" parent="Levels" instance=ExtResource("3_0i0f6")]
 layout_mode = 0
@@ -154,6 +170,7 @@ offset_left = 892.0
 offset_top = 384.0
 offset_right = 988.0
 offset_bottom = 464.0
+level_name = "Map18"
 
 [node name="Lines" type="Control" parent="."]
 anchors_preset = 0
