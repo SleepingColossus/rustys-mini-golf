@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://b2w6dn7nk5cnc"]
+[gd_scene load_steps=6 format=3 uid="uid://b2w6dn7nk5cnc"]
 
 [ext_resource type="Texture2D" uid="uid://dt2qs854dfdvv" path="res://LevelSelect/LevelSelectBackground.png" id="1_ev08b"]
 [ext_resource type="Script" path="res://LevelSelect/LevelSelect.gd" id="2_8bjj1"]
 [ext_resource type="PackedScene" uid="uid://64d8byno8hck" path="res://LevelSelect/LevelSelectIsland.tscn" id="3_0i0f6"]
 [ext_resource type="Texture2D" uid="uid://1r6fpprkg1mt" path="res://LevelSelect/LevelSelectLine.png" id="4_al6c4"]
+[ext_resource type="Texture2D" uid="uid://0poldlbl8b85" path="res://UI/ButtonBack.png" id="5_1frbj"]
 
 [node name="LevelSelect" type="Sprite2D"]
 texture_filter = 1
@@ -204,3 +205,21 @@ position = Vector2(868, 456)
 rotation = -1.3195
 scale = Vector2(0.757593, 0.757593)
 texture = ExtResource("4_al6c4")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackButton" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 72.0
+offset_bottom = 72.0
+texture_normal = ExtResource("5_1frbj")
+
+[connection signal="pressed" from="Control/BackButton" to="." method="_on_back_button_pressed"]
