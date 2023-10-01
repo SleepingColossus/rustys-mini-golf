@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dt2qs854dfdvv" path="res://LevelSelect/LevelSelectBackground.png" id="1_ev08b"]
 [ext_resource type="Script" path="res://LevelSelect/LevelSelect.gd" id="2_8bjj1"]
-[ext_resource type="PackedScene" uid="uid://64d8byno8hck" path="res://LevelSelect/LevelSelectIsland.tscn" id="3_0i0f6"]
+[ext_resource type="PackedScene" uid="uid://64d8byno8hck" path="res://LevelSelect/Islands/Level1.tscn" id="3_0i0f6"]
 [ext_resource type="Texture2D" uid="uid://1r6fpprkg1mt" path="res://LevelSelect/LevelSelectLine.png" id="4_al6c4"]
 [ext_resource type="Texture2D" uid="uid://0poldlbl8b85" path="res://UI/ButtonBack.png" id="5_1frbj"]
 [ext_resource type="FontFile" uid="uid://bhi0xtquxn3v" path="res://UI/Fonts/Cakecafe.ttf" id="6_gekvs"]
