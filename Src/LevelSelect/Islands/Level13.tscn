@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfiu03jk7q5po"]
+
+[ext_resource type="PackedScene" uid="uid://64d8byno8hck" path="res://LevelSelect/Islands/Level1.tscn" id="1_ox6xu"]
+[ext_resource type="Texture2D" uid="uid://dceqtii4ev3ra" path="res://LevelSelect/Islands/Map13.png" id="2_wxh7n"]
+
+[node name="LevelIsland" instance=ExtResource("1_ox6xu")]
+level_name = "Map13"
+
+[node name="Island" parent="." index="0"]
+texture_normal = ExtResource("2_wxh7n")
+
+[node name="Star1" parent="Island" index="0"]
+offset_left = 34.0
+offset_top = 67.0
+offset_right = 54.0
+offset_bottom = 87.0
+
+[node name="Star2" parent="Island" index="1"]
+offset_left = 54.0
+offset_top = 74.0
+offset_right = 74.0
+offset_bottom = 94.0
+
+[node name="Star3" parent="Island" index="2"]
+offset_left = 74.0
+offset_top = 67.0
+offset_right = 94.0
+offset_bottom = 87.0
