@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://64d8byno8hck" path="res://LevelSelect/Islands/Level1.tscn" id="1_7esyf"]
 [ext_resource type="Texture2D" uid="uid://cdnilffesc1lr" path="res://LevelSelect/Islands/Map5.png" id="2_cex84"]
 
-[node name="LevelIsland" instance=ExtResource("1_7esyf")]
+[node name="Level" instance=ExtResource("1_7esyf")]
 level_name = "Map5"
 
 [node name="Island" parent="." index="0"]

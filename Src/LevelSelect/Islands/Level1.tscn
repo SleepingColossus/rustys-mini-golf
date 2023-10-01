@@ -46,7 +46,7 @@ _data = {
 "reveal": SubResource("Animation_dmqyp")
 }
 
-[node name="LevelIsland" type="MarginContainer"]
+[node name="Level" type="MarginContainer"]
 offset_right = 96.0
 offset_bottom = 80.0
 theme_override_constants/margin_top = 0
