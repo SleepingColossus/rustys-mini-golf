@@ -10,19 +10,19 @@ level_name = "Map15"
 texture_normal = ExtResource("2_ecw8k")
 
 [node name="Star1" parent="Island" index="0"]
-offset_left = 34.0
-offset_top = 163.0
-offset_right = 54.0
-offset_bottom = 183.0
+offset_left = 25.0
+offset_top = 149.0
+offset_right = 45.0
+offset_bottom = 169.0
 
 [node name="Star2" parent="Island" index="1"]
-offset_left = 54.0
-offset_top = 170.0
-offset_right = 74.0
-offset_bottom = 190.0
+offset_left = 45.0
+offset_top = 156.0
+offset_right = 65.0
+offset_bottom = 176.0
 
 [node name="Star3" parent="Island" index="2"]
-offset_left = 74.0
-offset_top = 163.0
-offset_right = 94.0
-offset_bottom = 183.0
+offset_left = 65.0
+offset_top = 149.0
+offset_right = 85.0
+offset_bottom = 169.0
