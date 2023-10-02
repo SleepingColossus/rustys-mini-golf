@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bdnmctsjtjrgl"]
+[gd_scene load_steps=29 format=3 uid="uid://bdnmctsjtjrgl"]
 
 [ext_resource type="Script" path="res://UI/Overlay.gd" id="1_3x7xf"]
 [ext_resource type="Texture2D" uid="uid://irfoeqkh77x5" path="res://UI/ButtonZoom.png" id="1_g8ndk"]
@@ -10,6 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://duopy1iyrmwim" path="res://UI/Scoreboard.png" id="8_sygyr"]
 [ext_resource type="Texture2D" uid="uid://c1e8sdr7rxyun" path="res://UI/Star.png" id="9_iva0f"]
 [ext_resource type="Theme" uid="uid://b27jjwqe2yuhy" path="res://UI/MenuButtons/ButtonTheme.tres" id="10_aeofw"]
+[ext_resource type="AudioStream" uid="uid://bn8tdme6p84bf" path="res://UI/Sounds/Win1Star.ogg" id="11_5mjvd"]
+[ext_resource type="AudioStream" uid="uid://cyofqj5gtyrc5" path="res://UI/Sounds/Win2Stars.ogg" id="12_n61r1"]
+[ext_resource type="AudioStream" uid="uid://dj32qrmt150bg" path="res://UI/Sounds/Win3Stars.ogg" id="13_wrk4s"]
+[ext_resource type="AudioStream" uid="uid://cmchagh1bxan5" path="res://UI/Sounds/StarPop.ogg" id="14_m7cfg"]
 
 [sub_resource type="GDScript" id="GDScript_mjhbw"]
 script/source = "extends TextureButton
@@ -356,6 +360,20 @@ text = "Next Level"
 libraries = {
 "": SubResource("AnimationLibrary_t64vp")
 }
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="Win1StarSound" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("11_5mjvd")
+
+[node name="Win2StarSound" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("12_n61r1")
+
+[node name="Win3StarSound" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("13_wrk4s")
+
+[node name="StarPopSound" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("14_m7cfg")
 
 [connection signal="pressed" from="Overlay/ZoomButton" to="." method="_on_zoom_button_pressed"]
 [connection signal="pressed" from="Overlay/Tutorial/TextBubble/NextButton" to="." method="_on_next_button_pressed"]

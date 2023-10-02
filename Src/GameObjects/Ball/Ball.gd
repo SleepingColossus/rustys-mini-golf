@@ -6,6 +6,7 @@ extends RigidBody2D
 signal hole_entered
 
 
+const LAYER_TERRAIN = 0
 const LAYER_HOLE = 1
 const LAYER_WATER = 2
 const LAYER_SAND = 3
@@ -21,6 +22,9 @@ var _has_won := false
 
 @onready var ball_camera : Camera2D = $BallCamera
 
+@onready var hit_sound : AudioStreamPlayer2D = $Sounds/HitSound
+@onready var bounce_sound : AudioStreamPlayer2D = $Sounds/BounceSound
+
 func _ready():
     movement_factor = MOVEMENT_FACTOR_GRASS
     _last_known_position = position
@@ -34,6 +38,7 @@ func can_move():
 func move(forceX, forceY):
     _last_known_position = position
     $HitParticles.emitting = true
+    hit_sound.play()
     apply_impulse(Vector2(forceX, forceY))
 
 
@@ -67,11 +72,13 @@ func _on_body_shape_entered(body_rid, body, _body_shape_index, _local_shape_inde
             if not (tile_data is TileData):
                 continue
             else:
-                if layer_index == LAYER_HOLE:
+                if layer_index == LAYER_TERRAIN:
+                    bounce_sound.play()
+                elif layer_index == LAYER_HOLE:
                     _win()
-                if layer_index == LAYER_WATER:
+                elif layer_index == LAYER_WATER:
                     $AnimationPlayer.play("die_and_reset")
-                if layer_index == LAYER_SAND:
+                elif layer_index == LAYER_SAND:
                     movement_factor = MOVEMENT_FACTOR_SAND
                 print_debug("collided with tile in layer %d" % layer_index)
 

@@ -26,6 +26,7 @@ func _process(_delta):
     if Input.is_action_just_pressed("toggle_zoom"):
         _toggle_zoom()
 
+
 func _input(event):
     if _state == State.GAMEPLAY_STATE:
         if event is InputEventMouseButton:

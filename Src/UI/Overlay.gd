@@ -50,16 +50,19 @@ func show_scoreboard(stars_earned: int, shots_taken: int, three_star_score: int,
         $Overlay/Scoreboard/Stats/VBoxContainer/Stars/Star1.visible = true
         $Overlay/Scoreboard/Stats/VBoxContainer/Stars/Star2.visible = true
         $Overlay/Scoreboard/Stats/VBoxContainer/Stars/Star3.visible = true
+        $Sounds/Win3StarSound.play()
     elif stars_earned == 2:
         $Overlay/Scoreboard/Stats/VBoxContainer/NextStar.text = "Next Star: %d" % three_star_score
         $Overlay/Scoreboard/Stats/VBoxContainer/Stars/Star1.visible = true
         $Overlay/Scoreboard/Stats/VBoxContainer/Stars/Star2.visible = true
         $Overlay/Scoreboard/Stats/VBoxContainer/Stars/Star3.visible = false
+        $Sounds/Win2StarSound.play()
     else:
         $Overlay/Scoreboard/Stats/VBoxContainer/NextStar.text = "Next Star: %d" % two_star_condition
         $Overlay/Scoreboard/Stats/VBoxContainer/Stars/Star1.visible = true
         $Overlay/Scoreboard/Stats/VBoxContainer/Stars/Star2.visible = false
         $Overlay/Scoreboard/Stats/VBoxContainer/Stars/Star3.visible = false
+        $Sounds/Win1StarSound.play()
 
 
 func _on_menu_button_pressed() -> void:
