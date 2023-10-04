@@ -63,3 +63,4 @@ mass = 0.4
 [node name="Overlay" parent="." node_paths=PackedStringArray("level_camera", "ball") instance=ExtResource("6_kscn5")]
 level_camera = NodePath("../LevelCamera")
 ball = NodePath("../Ball")
+text_lines = Array[String](["I hate this map! D:<"])
