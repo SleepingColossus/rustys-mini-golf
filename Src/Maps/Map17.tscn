@@ -163,6 +163,8 @@ _data = {
 
 [node name="TestMap" type="Node2D"]
 script = ExtResource("1_g4dan")
+three_star_condition = 6
+two_star_condition = 8
 level_number = 17
 
 [node name="Overlay" parent="." node_paths=PackedStringArray("level_camera", "ball") instance=ExtResource("2_4x2a5")]
