@@ -112,3 +112,4 @@ libraries = {
 [node name="Overlay" parent="." node_paths=PackedStringArray("level_camera", "ball") instance=ExtResource("7_kdh7w")]
 level_camera = NodePath("../LevelCamera")
 ball = NodePath("../Ball")
+text_lines = Array[String](["Your outstanding!", "Now try dodging this moving block.", "He's mean and doesn't want you to pass.", "And also a dummy.", "It has a simple pattern.", "Prepare your movement and wait patiently.", "When you think you won't get hit...", "STIKE! >:D"])
