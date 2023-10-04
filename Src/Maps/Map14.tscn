@@ -17,6 +17,7 @@ level_number = 14
 [node name="Overlay" parent="." node_paths=PackedStringArray("level_camera", "ball") instance=ExtResource("2_epd6p")]
 level_camera = NodePath("../LevelCamera")
 ball = NodePath("../Ball")
+text_lines = Array[String](["I can't whistle with chicken nuggets in my mouth. :)"])
 
 [node name="LevelCamera" type="Camera2D" parent="."]
 position = Vector2(512, 288)
