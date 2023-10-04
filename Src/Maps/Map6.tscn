@@ -67,3 +67,4 @@ position = Vector2(495, 248)
 [node name="Overlay" parent="." node_paths=PackedStringArray("level_camera", "ball") instance=ExtResource("7_kuusi")]
 level_camera = NodePath("../LevelCamera")
 ball = NodePath("../Ball")
+text_lines = Array[String](["Hey look! A windmill!", "Every good golf couse has one!", "Try going through the tiny door...", "When the blades are not blocking it!", "...", "Is there wind in space? :o"])
