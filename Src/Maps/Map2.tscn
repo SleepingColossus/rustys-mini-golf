@@ -9,8 +9,7 @@
 
 [node name="TestMap" type="Node2D"]
 script = ExtResource("1_2jmvj")
-gold_condition = 1
-silver_condition = 2
+three_star_condition = 1
 level_number = 2
 
 [node name="LevelCamera" type="Camera2D" parent="."]
