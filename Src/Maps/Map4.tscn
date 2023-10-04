@@ -63,3 +63,4 @@ mass = 0.4
 [node name="Overlay" parent="." node_paths=PackedStringArray("level_camera", "ball") instance=ExtResource("6_tckv0")]
 level_camera = NodePath("../LevelCamera")
 ball = NodePath("../Ball")
+text_lines = Array[String](["Ooooooooh want to do something fun?!", "Try wall bouncing!", "I used to do that in my last job...", "But I used to be a miner...", "Bouncing off of rocks is not fun! :c", "But doin' it with a ball is!!", "Aim for that wall under the sandpit.", "If my space physics works...", "It should bounce towards the hole!"])
