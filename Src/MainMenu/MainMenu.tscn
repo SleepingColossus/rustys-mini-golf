@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://2dmbavggp8m6"]
+[gd_scene load_steps=16 format=3 uid="uid://2dmbavggp8m6"]
 
 [ext_resource type="Theme" uid="uid://b27jjwqe2yuhy" path="res://UI/MenuButtons/ButtonTheme.tres" id="1_gwc1j"]
 [ext_resource type="Script" path="res://MainMenu/MainMenu.gd" id="1_ixlbc"]
@@ -8,6 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://du633ihr8gykw" path="res://Cursor/CustomCursor.tscn" id="5_u3a4g"]
 [ext_resource type="Texture2D" uid="uid://d20tiu0dm4qxf" path="res://MainMenu/Godoey.png" id="5_uclqq"]
 [ext_resource type="AudioStream" uid="uid://b17iyvlway0dg" path="res://UI/ClickSound.ogg" id="7_fc57y"]
+[ext_resource type="Texture2D" uid="uid://c4ty71ohtejpa" path="res://MainMenu/SocialMediaButtons/ItchIo.png" id="9_ci5km"]
+[ext_resource type="Texture2D" uid="uid://dxj7mo5is4w8m" path="res://MainMenu/SocialMediaButtons/Youtube.png" id="10_akxka"]
+[ext_resource type="Texture2D" uid="uid://dqbgj1fldu38h" path="res://MainMenu/SocialMediaButtons/Instagram.png" id="11_feiix"]
+[ext_resource type="Texture2D" uid="uid://v6a85w8n20al" path="res://MainMenu/SocialMediaButtons/Facebook.png" id="12_jotln"]
+[ext_resource type="Texture2D" uid="uid://c3dhqq7wtd116" path="res://MainMenu/SocialMediaButtons/X.png" id="13_7y52s"]
+[ext_resource type="Texture2D" uid="uid://p4f2vp6emt18" path="res://MainMenu/SocialMediaButtons/TikTok.png" id="14_wf3ey"]
+[ext_resource type="Texture2D" uid="uid://1g30vnw4ybeb" path="res://MainMenu/SocialMediaButtons/GitHub.png" id="15_dllwy"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -78,17 +85,15 @@ grow_vertical = 0
 texture = ExtResource("3_13ib5")
 
 [node name="Mascot2" type="TextureRect" parent="."]
-texture_filter = 1
-texture_repeat = 1
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -284.0
+offset_left = -326.0
 offset_top = -271.0
-offset_right = 496.0
+offset_right = 454.0
 offset_bottom = 809.0
 grow_horizontal = 0
 grow_vertical = 0
@@ -107,5 +112,44 @@ layer_0/tile_data = PackedInt32Array(0, 0, 5, 65536, 0, 1, 131072, 0, 1, 196608,
 
 [node name="ClickSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_fc57y")
+
+[node name="SocialMeadia" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -79.475
+offset_right = -15.475
+offset_bottom = 472.0
+grow_horizontal = 0
+scale = Vector2(1.225, 1.225)
+
+[node name="ItchIo" type="TextureRect" parent="SocialMeadia"]
+layout_mode = 2
+texture = ExtResource("9_ci5km")
+
+[node name="Youtube" type="TextureRect" parent="SocialMeadia"]
+layout_mode = 2
+texture = ExtResource("10_akxka")
+
+[node name="Instagram" type="TextureRect" parent="SocialMeadia"]
+layout_mode = 2
+texture = ExtResource("11_feiix")
+
+[node name="Facebook" type="TextureRect" parent="SocialMeadia"]
+layout_mode = 2
+texture = ExtResource("12_jotln")
+
+[node name="X" type="TextureRect" parent="SocialMeadia"]
+layout_mode = 2
+texture = ExtResource("13_7y52s")
+
+[node name="TikTok" type="TextureRect" parent="SocialMeadia"]
+layout_mode = 2
+texture = ExtResource("14_wf3ey")
+
+[node name="GitHub" type="TextureRect" parent="SocialMeadia"]
+layout_mode = 2
+texture = ExtResource("15_dllwy")
 
 [connection signal="pressed" from="Navigation/Play" to="." method="_on_play_pressed"]
