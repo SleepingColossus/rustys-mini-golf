@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://2dmbavggp8m6"]
+[gd_scene load_steps=9 format=3 uid="uid://2dmbavggp8m6"]
 
 [ext_resource type="Theme" uid="uid://b27jjwqe2yuhy" path="res://UI/MenuButtons/ButtonTheme.tres" id="1_gwc1j"]
 [ext_resource type="Script" path="res://MainMenu/MainMenu.gd" id="1_ixlbc"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://m6oguxmntem6" path="res://MainMenu/Rusty.png" id="3_13ib5"]
 [ext_resource type="TileSet" uid="uid://jxwklsycjhqh" path="res://Terrain/SpaceTileSet.tres" id="4_v7y8r"]
 [ext_resource type="PackedScene" uid="uid://du633ihr8gykw" path="res://Cursor/CustomCursor.tscn" id="5_u3a4g"]
+[ext_resource type="Texture2D" uid="uid://d20tiu0dm4qxf" path="res://MainMenu/Godoey.png" id="5_uclqq"]
 [ext_resource type="AudioStream" uid="uid://b17iyvlway0dg" path="res://UI/ClickSound.ogg" id="7_fc57y"]
 
 [node name="MainMenu" type="Control"]
@@ -22,15 +23,18 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 64.0
-offset_top = -65.0
-offset_right = 183.0
-offset_bottom = 65.0
+offset_left = 422.0
+offset_top = -37.43
+offset_right = 615.0
+offset_bottom = 262.57
 grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
 theme_override_constants/separation = 20
 
 [node name="Play" type="Button" parent="Navigation"]
 layout_mode = 2
+size_flags_vertical = 4
 theme = ExtResource("1_gwc1j")
 text = "PLAY"
 
@@ -39,38 +43,57 @@ layout_mode = 2
 theme = ExtResource("1_gwc1j")
 text = "TUTORIAL"
 
-[node name="Options" type="Button" parent="Navigation"]
+[node name="SoundOn" type="Button" parent="Navigation"]
 layout_mode = 2
 theme = ExtResource("1_gwc1j")
-text = "OPTIONS"
+text = "SOUND: ON"
+
+[node name="MusicOn" type="Button" parent="Navigation"]
+layout_mode = 2
+theme = ExtResource("1_gwc1j")
+text = "MUSIC: ON"
 
 [node name="Logo" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -584.0
-offset_right = 107.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -240.815
+offset_right = 450.185
 offset_bottom = 344.0
-grow_horizontal = 0
-scale = Vector2(0.75, 0.75)
+grow_horizontal = 2
+scale = Vector2(0.7, 0.7)
 texture = ExtResource("2_6iylc")
 
 [node name="Mascot" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 11.0
+offset_top = -380.0
+offset_right = 319.0
+offset_bottom = 26.0
+grow_vertical = 0
+texture = ExtResource("3_13ib5")
+
+[node name="Mascot2" type="TextureRect" parent="."]
+texture_filter = 1
+texture_repeat = 1
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -512.0
-offset_top = -338.0
-offset_right = -204.0
-offset_bottom = 68.0
+offset_left = -284.0
+offset_top = -271.0
+offset_right = 496.0
+offset_bottom = 809.0
 grow_horizontal = 0
 grow_vertical = 0
-texture = ExtResource("3_13ib5")
-flip_h = true
+scale = Vector2(0.275, 0.275)
+texture = ExtResource("5_uclqq")
 
 [node name="Background" type="TileMap" parent="."]
 z_index = -1
