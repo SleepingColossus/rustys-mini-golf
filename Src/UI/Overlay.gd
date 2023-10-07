@@ -13,9 +13,10 @@ var _message_index := 0
 
 
 func _ready() -> void:
-    %TutorialAnimator.play("show")
-    %Text.text = text_lines[_message_index]
-    %ScrollingTextAnimator.play("scroll_text")
+    if Options.play_tutorials:
+        %TutorialAnimator.play("show")
+        %Text.text = text_lines[_message_index]
+        %ScrollingTextAnimator.play("scroll_text")
 
 
 func _toggle_zoom():

@@ -17,8 +17,12 @@ var _shots_taken := 0
 @onready var _ball = $Ball
 
 func _ready():
-    _state = State.INTRO_STATE
-    $Overlay.tutorial_complete.connect(_on_tutorial_complete)
+    if Options.play_tutorials:
+        _state = State.INTRO_STATE
+        $Overlay.tutorial_complete.connect(_on_tutorial_complete)
+    else:
+        _state = State.GAMEPLAY_STATE
+
     $Overlay.update_shot_tracker(_shots_taken)
     _ball.hole_entered.connect(_on_hole_entered)
 
