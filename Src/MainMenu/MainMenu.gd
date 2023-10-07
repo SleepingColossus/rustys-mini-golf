@@ -7,6 +7,8 @@ extends Control
 @onready var toggle_sound_button := $Navigation/ToggleSound
 @onready var toggle_music_button := $Navigation/ToggleMusic
 
+var _playback_position : float
+
 func _ready() -> void:
     _set_label(toggle_tutorial_button, "TUTORIAL", Options.play_tutorials)
     _set_label(toggle_sound_button, "SOUND", Options.play_sounds)
@@ -47,3 +49,11 @@ func _on_music_on_pressed() -> void:
     Options.play_music = !Options.play_music
     var label = "MUSIC: %s" % (_bool_to_string(Options.play_music))
     toggle_music_button.text = label
+
+    var music := $MenuMusicPlayer/Music
+
+    if !Options.play_music:
+        _playback_position = music.get_playback_position()
+        music.stop()
+    else:
+        music.play(_playback_position)
