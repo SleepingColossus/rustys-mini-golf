@@ -27,14 +27,17 @@ script = ExtResource("1_ixlbc")
 
 [node name="Navigation" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 422.0
-offset_top = -37.43
-offset_right = 615.0
-offset_bottom = 262.57
-grow_vertical = 2
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -126.5
+offset_top = -324.0
+offset_right = 126.5
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_constants/separation = 20
@@ -45,17 +48,17 @@ size_flags_vertical = 4
 theme = ExtResource("1_gwc1j")
 text = "PLAY"
 
-[node name="Tutorial" type="Button" parent="Navigation"]
+[node name="ToggleTutorial" type="Button" parent="Navigation"]
 layout_mode = 2
 theme = ExtResource("1_gwc1j")
-text = "TUTORIAL"
+text = "TUTORIAL: ON"
 
-[node name="SoundOn" type="Button" parent="Navigation"]
+[node name="ToggleSound" type="Button" parent="Navigation"]
 layout_mode = 2
 theme = ExtResource("1_gwc1j")
 text = "SOUND: ON"
 
-[node name="MusicOn" type="Button" parent="Navigation"]
+[node name="ToggleMusic" type="Button" parent="Navigation"]
 layout_mode = 2
 theme = ExtResource("1_gwc1j")
 text = "MUSIC: ON"
@@ -153,3 +156,6 @@ layout_mode = 2
 texture = ExtResource("15_dllwy")
 
 [connection signal="pressed" from="Navigation/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Navigation/ToggleTutorial" to="." method="_on_tutorial_pressed"]
+[connection signal="pressed" from="Navigation/ToggleSound" to="." method="_on_sound_on_pressed"]
+[connection signal="pressed" from="Navigation/ToggleMusic" to="." method="_on_music_on_pressed"]
