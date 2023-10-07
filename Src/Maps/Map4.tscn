@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dxi3uigqvoxtg"]
+[gd_scene load_steps=8 format=3 uid="uid://dxi3uigqvoxtg"]
 
 [ext_resource type="Script" path="res://Maps/Gameplay.gd" id="1_2ilxm"]
 [ext_resource type="TileSet" uid="uid://bw6rlks3xkk14" path="res://Terrain/TileSet.tres" id="2_bb8cp"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://1kasrsh4cgmt" path="res://GameObjects/Ball/Ball.tscn" id="4_h3ma4"]
 [ext_resource type="PackedScene" uid="uid://du633ihr8gykw" path="res://Cursor/CustomCursor.tscn" id="5_cc0mt"]
 [ext_resource type="PackedScene" uid="uid://bdnmctsjtjrgl" path="res://UI/Overlay.tscn" id="6_tckv0"]
+[ext_resource type="PackedScene" uid="uid://dlo4vj7gdqhv6" path="res://Music/GameplayMusicPlayer.tscn" id="7_mspfk"]
 
 [node name="TestMap" type="Node2D"]
 script = ExtResource("1_2ilxm")
@@ -64,3 +65,5 @@ mass = 0.4
 level_camera = NodePath("../LevelCamera")
 ball = NodePath("../Ball")
 text_lines = Array[String](["Ooooooooh want to do something fun?!", "Try wall bouncing!", "I used to do that in my last job...", "But I used to be a miner...", "Bouncing off of rocks is not fun! :c", "But doin' it with a ball is!!", "Aim for that wall under the sandpit.", "If my space physics works...", "It should bounce towards the hole!"])
+
+[node name="GameplayMusicPlayer" parent="." instance=ExtResource("7_mspfk")]

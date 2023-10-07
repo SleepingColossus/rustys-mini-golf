@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bab76561kfmbg"]
+[gd_scene load_steps=9 format=3 uid="uid://bab76561kfmbg"]
 
 [ext_resource type="Script" path="res://Maps/Gameplay.gd" id="1_6f0t6"]
 [ext_resource type="PackedScene" uid="uid://bdnmctsjtjrgl" path="res://UI/Overlay.tscn" id="2_epd6p"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://1kasrsh4cgmt" path="res://GameObjects/Ball/Ball.tscn" id="5_arnnl"]
 [ext_resource type="PackedScene" uid="uid://du633ihr8gykw" path="res://Cursor/CustomCursor.tscn" id="6_cy00m"]
 [ext_resource type="PackedScene" uid="uid://ydayvh8rhvlc" path="res://GameObjects/WindmillBlade/WindmillBlades.tscn" id="7_mmwqy"]
+[ext_resource type="PackedScene" uid="uid://dlo4vj7gdqhv6" path="res://Music/GameplayMusicPlayer.tscn" id="8_sv2wi"]
 
 [node name="TestMap2" type="Node2D"]
 script = ExtResource("1_6f0t6")
@@ -75,3 +76,5 @@ mass = 0.4
 
 [node name="WindmillBlades" parent="." instance=ExtResource("7_mmwqy")]
 position = Vector2(336, 368)
+
+[node name="GameplayMusicPlayer" parent="." instance=ExtResource("8_sv2wi")]

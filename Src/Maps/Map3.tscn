@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dc57fb66yc5p8"]
+[gd_scene load_steps=12 format=3 uid="uid://dc57fb66yc5p8"]
 
 [ext_resource type="Script" path="res://Maps/Gameplay.gd" id="1_5pvya"]
 [ext_resource type="TileSet" uid="uid://bw6rlks3xkk14" path="res://Terrain/TileSet.tres" id="2_0s2nr"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://du633ihr8gykw" path="res://Cursor/CustomCursor.tscn" id="5_1w5gb"]
 [ext_resource type="PackedScene" uid="uid://bv06devvj6xfc" path="res://GameObjects/Obstacles/MovingBlock.tscn" id="6_e30vi"]
 [ext_resource type="PackedScene" uid="uid://bdnmctsjtjrgl" path="res://UI/Overlay.tscn" id="7_kdh7w"]
+[ext_resource type="PackedScene" uid="uid://dlo4vj7gdqhv6" path="res://Music/GameplayMusicPlayer.tscn" id="8_105jb"]
 
 [sub_resource type="Animation" id="Animation_oc1iv"]
 resource_name = "MoveVertical"
@@ -113,3 +114,5 @@ libraries = {
 level_camera = NodePath("../LevelCamera")
 ball = NodePath("../Ball")
 text_lines = Array[String](["Your outstanding!", "Now try dodging this moving block.", "He's mean and doesn't want you to pass.", "And also a dummy.", "It has a simple pattern.", "Prepare your movement and wait patiently.", "When you think you won't get hit...", "STIKE! >:D"])
+
+[node name="GameplayMusicPlayer" parent="." instance=ExtResource("8_105jb")]

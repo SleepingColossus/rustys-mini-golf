@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dhslu4il7rcoi"]
+[gd_scene load_steps=9 format=3 uid="uid://dhslu4il7rcoi"]
 
 [ext_resource type="Script" path="res://Maps/Gameplay.gd" id="1_nt0ap"]
 [ext_resource type="TileSet" uid="uid://bw6rlks3xkk14" path="res://Terrain/TileSet.tres" id="2_bfjqh"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://du633ihr8gykw" path="res://Cursor/CustomCursor.tscn" id="5_hxh5n"]
 [ext_resource type="PackedScene" uid="uid://ydayvh8rhvlc" path="res://GameObjects/WindmillBlade/WindmillBlades.tscn" id="6_kim26"]
 [ext_resource type="PackedScene" uid="uid://bdnmctsjtjrgl" path="res://UI/Overlay.tscn" id="7_kuusi"]
+[ext_resource type="PackedScene" uid="uid://dlo4vj7gdqhv6" path="res://Music/GameplayMusicPlayer.tscn" id="8_hj1v4"]
 
 [node name="TestMap" type="Node2D"]
 script = ExtResource("1_nt0ap")
@@ -68,3 +69,5 @@ position = Vector2(495, 248)
 level_camera = NodePath("../LevelCamera")
 ball = NodePath("../Ball")
 text_lines = Array[String](["Hey look! A windmill!", "Every good golf couse has one!", "Try going through the tiny door...", "When the blades are not blocking it!", "...", "Is there wind in space? :o"])
+
+[node name="GameplayMusicPlayer" parent="." instance=ExtResource("8_hj1v4")]

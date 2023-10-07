@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://b2w6dn7nk5cnc"]
+[gd_scene load_steps=27 format=3 uid="uid://b2w6dn7nk5cnc"]
 
 [ext_resource type="Texture2D" uid="uid://dt2qs854dfdvv" path="res://LevelSelect/LevelSelectBackground.png" id="1_ev08b"]
 [ext_resource type="Script" path="res://LevelSelect/LevelSelect.gd" id="2_8bjj1"]
@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://2hahi8oj1xek" path="res://LevelSelect/Islands/Level17.tscn" id="19_2uiei"]
 [ext_resource type="PackedScene" uid="uid://mnln682hc7tn" path="res://LevelSelect/Islands/Level18.tscn" id="20_64l3n"]
 [ext_resource type="AudioStream" uid="uid://b17iyvlway0dg" path="res://UI/Sounds/ClickSound.ogg" id="25_lyq0i"]
+[ext_resource type="PackedScene" uid="uid://djh6kfxgv0l14" path="res://Music/MenuMusicPlayer.tscn" id="26_8b81o"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -396,5 +397,7 @@ expand_mode = 2
 
 [node name="ClickSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("25_lyq0i")
+
+[node name="MenuMusicPlayer" parent="." instance=ExtResource("26_8b81o")]
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://356d2mj7keup"]
+[gd_scene load_steps=8 format=3 uid="uid://356d2mj7keup"]
 
 [ext_resource type="Script" path="res://Maps/Gameplay.gd" id="1_re1m3"]
 [ext_resource type="TileSet" uid="uid://bw6rlks3xkk14" path="res://Terrain/TileSet.tres" id="2_qdr4i"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://1kasrsh4cgmt" path="res://GameObjects/Ball/Ball.tscn" id="4_f22fq"]
 [ext_resource type="PackedScene" uid="uid://du633ihr8gykw" path="res://Cursor/CustomCursor.tscn" id="5_38561"]
 [ext_resource type="PackedScene" uid="uid://bdnmctsjtjrgl" path="res://UI/Overlay.tscn" id="6_ffdf8"]
+[ext_resource type="PackedScene" uid="uid://dlo4vj7gdqhv6" path="res://Music/GameplayMusicPlayer.tscn" id="7_fu6cd"]
 
 [node name="TestMap" type="Node2D"]
 script = ExtResource("1_re1m3")
@@ -71,3 +72,5 @@ mass = 0.4
 level_camera = NodePath("../LevelCamera")
 ball = NodePath("../Ball")
 text_lines = Array[String](["Ok this was all fun and games...", "But I have to bore you with some theory...", "*Yawn*", "To be the best golfer...", "You need to sink the ball in the least amount of moves", "Use all the skills you've learned and have fun!"])
+
+[node name="GameplayMusicPlayer" parent="." instance=ExtResource("7_fu6cd")]

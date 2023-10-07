@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://c6oi2jh21arjc"]
+[gd_scene load_steps=22 format=3 uid="uid://c6oi2jh21arjc"]
 
 [ext_resource type="Script" path="res://Maps/Gameplay.gd" id="1_g4dan"]
 [ext_resource type="PackedScene" uid="uid://bdnmctsjtjrgl" path="res://UI/Overlay.tscn" id="2_4x2a5"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://du633ihr8gykw" path="res://Cursor/CustomCursor.tscn" id="6_xuogc"]
 [ext_resource type="PackedScene" uid="uid://ydayvh8rhvlc" path="res://GameObjects/WindmillBlade/WindmillBlades.tscn" id="7_q0xxk"]
 [ext_resource type="PackedScene" uid="uid://bv06devvj6xfc" path="res://GameObjects/Obstacles/MovingBlock.tscn" id="8_lu0qq"]
+[ext_resource type="PackedScene" uid="uid://dlo4vj7gdqhv6" path="res://Music/GameplayMusicPlayer.tscn" id="9_56bkt"]
 
 [sub_resource type="Animation" id="Animation_uhm3i"]
 resource_name = "Move"
@@ -267,3 +268,5 @@ autoplay = "Move"
 libraries = {
 "": SubResource("AnimationLibrary_st4ha")
 }
+
+[node name="GameplayMusicPlayer" parent="." instance=ExtResource("9_56bkt")]

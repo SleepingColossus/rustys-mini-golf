@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b4bc5wtohrx04"]
+[gd_scene load_steps=8 format=3 uid="uid://b4bc5wtohrx04"]
 
 [ext_resource type="Script" path="res://Maps/Gameplay.gd" id="1_jjx2g"]
 [ext_resource type="TileSet" uid="uid://bw6rlks3xkk14" path="res://Terrain/TileSet.tres" id="2_nxf7o"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://1kasrsh4cgmt" path="res://GameObjects/Ball/Ball.tscn" id="4_oc3h3"]
 [ext_resource type="PackedScene" uid="uid://du633ihr8gykw" path="res://Cursor/CustomCursor.tscn" id="5_kv6of"]
 [ext_resource type="PackedScene" uid="uid://bdnmctsjtjrgl" path="res://UI/Overlay.tscn" id="6_kscn5"]
+[ext_resource type="PackedScene" uid="uid://dlo4vj7gdqhv6" path="res://Music/GameplayMusicPlayer.tscn" id="7_jop3q"]
 
 [node name="TestMap" type="Node2D"]
 script = ExtResource("1_jjx2g")
@@ -64,3 +65,5 @@ mass = 0.4
 level_camera = NodePath("../LevelCamera")
 ball = NodePath("../Ball")
 text_lines = Array[String](["I hate this map! D:<"])
+
+[node name="GameplayMusicPlayer" parent="." instance=ExtResource("7_jop3q")]

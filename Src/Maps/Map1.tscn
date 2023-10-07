@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cdfw7ofyk1chk"]
+[gd_scene load_steps=8 format=3 uid="uid://cdfw7ofyk1chk"]
 
 [ext_resource type="Script" path="res://Maps/Gameplay.gd" id="1_2aqg7"]
 [ext_resource type="TileSet" uid="uid://bw6rlks3xkk14" path="res://Terrain/TileSet.tres" id="2_mnx4b"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://1kasrsh4cgmt" path="res://GameObjects/Ball/Ball.tscn" id="4_7ltb6"]
 [ext_resource type="PackedScene" uid="uid://du633ihr8gykw" path="res://Cursor/CustomCursor.tscn" id="5_eojjh"]
 [ext_resource type="PackedScene" uid="uid://bdnmctsjtjrgl" path="res://UI/Overlay.tscn" id="6_tfv1y"]
+[ext_resource type="PackedScene" uid="uid://dlo4vj7gdqhv6" path="res://Music/GameplayMusicPlayer.tscn" id="7_cgk2i"]
 
 [node name="TestMap" type="Node2D"]
 script = ExtResource("1_2aqg7")
@@ -64,3 +65,5 @@ mass = 0.4
 level_camera = NodePath("../LevelCamera")
 ball = NodePath("../Ball")
 text_lines = Array[String](["Howdy partner!", "I'm Rusty and this is my golf corse!", "Let me show you how to play!", "Drag across the screen and let go to move your ball.", "Try dragging towards the hole to win."])
+
+[node name="GameplayMusicPlayer" parent="." instance=ExtResource("7_cgk2i")]

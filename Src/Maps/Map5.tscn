@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ct1ho4dmrg1qb"]
+[gd_scene load_steps=8 format=3 uid="uid://ct1ho4dmrg1qb"]
 
 [ext_resource type="Script" path="res://Maps/Gameplay.gd" id="1_ej4vl"]
 [ext_resource type="TileSet" uid="uid://bw6rlks3xkk14" path="res://Terrain/TileSet.tres" id="2_kni3f"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://1kasrsh4cgmt" path="res://GameObjects/Ball/Ball.tscn" id="4_h2njv"]
 [ext_resource type="PackedScene" uid="uid://du633ihr8gykw" path="res://Cursor/CustomCursor.tscn" id="5_wytyg"]
 [ext_resource type="PackedScene" uid="uid://bdnmctsjtjrgl" path="res://UI/Overlay.tscn" id="6_2exmm"]
+[ext_resource type="PackedScene" uid="uid://dlo4vj7gdqhv6" path="res://Music/GameplayMusicPlayer.tscn" id="7_yr8ax"]
 
 [node name="TestMap" type="Node2D"]
 script = ExtResource("1_ej4vl")
@@ -64,3 +65,5 @@ mass = 0.4
 level_camera = NodePath("../LevelCamera")
 ball = NodePath("../Ball")
 text_lines = Array[String](["Oh wow! Water!", "I have 2 tips regarding water tiles!", "1. AVOIND AT ALL COSTS!", "If you sink your ball your score will be worse!", "2. I woudln't touch the ball if it sinks.", "Has it ever occurred to you where the water came from?", "Nature called! ;D"])
+
+[node name="GameplayMusicPlayer" parent="." instance=ExtResource("7_yr8ax")]

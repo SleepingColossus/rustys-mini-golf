@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://djirtcnh1dyqh"]
+[gd_scene load_steps=8 format=3 uid="uid://djirtcnh1dyqh"]
 
 [ext_resource type="Script" path="res://Maps/Gameplay.gd" id="1_jvtp8"]
 [ext_resource type="TileSet" uid="uid://bw6rlks3xkk14" path="res://Terrain/TileSet.tres" id="2_l20rg"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://1kasrsh4cgmt" path="res://GameObjects/Ball/Ball.tscn" id="4_5sjte"]
 [ext_resource type="PackedScene" uid="uid://du633ihr8gykw" path="res://Cursor/CustomCursor.tscn" id="5_265lw"]
 [ext_resource type="PackedScene" uid="uid://bdnmctsjtjrgl" path="res://UI/Overlay.tscn" id="6_8bp3e"]
+[ext_resource type="PackedScene" uid="uid://dlo4vj7gdqhv6" path="res://Music/GameplayMusicPlayer.tscn" id="7_x5hov"]
 
 [node name="TestMap2" type="Node2D"]
 script = ExtResource("1_jvtp8")
@@ -71,3 +72,5 @@ mass = 0.4
 level_camera = NodePath("../LevelCamera")
 ball = NodePath("../Ball")
 text_lines = Array[String](["Oh! By the way!", "Not all maps need to be won with a hole in one", "For a perfect 3 star score!"])
+
+[node name="GameplayMusicPlayer" parent="." instance=ExtResource("7_x5hov")]

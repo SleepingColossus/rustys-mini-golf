@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bvhur5j4mnecf"]
+[gd_scene load_steps=15 format=3 uid="uid://bvhur5j4mnecf"]
 
 [ext_resource type="Script" path="res://Maps/Gameplay.gd" id="1_u31ly"]
 [ext_resource type="TileSet" uid="uid://bw6rlks3xkk14" path="res://Terrain/TileSet.tres" id="2_ykv7i"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://du633ihr8gykw" path="res://Cursor/CustomCursor.tscn" id="5_erpws"]
 [ext_resource type="PackedScene" uid="uid://bdnmctsjtjrgl" path="res://UI/Overlay.tscn" id="6_1faqh"]
 [ext_resource type="PackedScene" uid="uid://bv06devvj6xfc" path="res://GameObjects/Obstacles/MovingBlock.tscn" id="7_7wsy8"]
+[ext_resource type="PackedScene" uid="uid://dlo4vj7gdqhv6" path="res://Music/GameplayMusicPlayer.tscn" id="8_kslrq"]
 
 [sub_resource type="Animation" id="Animation_iun0c"]
 resource_name = "MoveLeft"
@@ -159,3 +160,5 @@ autoplay = "MoveRight"
 libraries = {
 "": SubResource("AnimationLibrary_x7p1t")
 }
+
+[node name="GameplayMusicPlayer" parent="." instance=ExtResource("8_kslrq")]
