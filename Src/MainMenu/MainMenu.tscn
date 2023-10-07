@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://2dmbavggp8m6"]
+[gd_scene load_steps=18 format=3 uid="uid://2dmbavggp8m6"]
 
 [ext_resource type="Theme" uid="uid://b27jjwqe2yuhy" path="res://UI/MenuButtons/ButtonTheme.tres" id="1_gwc1j"]
 [ext_resource type="Script" path="res://MainMenu/MainMenu.gd" id="1_ixlbc"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://d20tiu0dm4qxf" path="res://MainMenu/Godoey.png" id="5_uclqq"]
 [ext_resource type="AudioStream" uid="uid://b17iyvlway0dg" path="res://UI/Sounds/ClickSound.ogg" id="7_fc57y"]
 [ext_resource type="Texture2D" uid="uid://c4ty71ohtejpa" path="res://MainMenu/SocialMediaButtons/ItchIo.png" id="9_ci5km"]
+[ext_resource type="Script" path="res://MainMenu/SocialMediaButtons/OpenURL.gd" id="9_mvhlp"]
 [ext_resource type="Texture2D" uid="uid://dxj7mo5is4w8m" path="res://MainMenu/SocialMediaButtons/Youtube.png" id="10_akxka"]
 [ext_resource type="Texture2D" uid="uid://dqbgj1fldu38h" path="res://MainMenu/SocialMediaButtons/Instagram.png" id="11_feiix"]
 [ext_resource type="Texture2D" uid="uid://v6a85w8n20al" path="res://MainMenu/SocialMediaButtons/Facebook.png" id="12_jotln"]
@@ -116,42 +117,59 @@ layer_0/tile_data = PackedInt32Array(0, 0, 5, 65536, 0, 1, 131072, 0, 1, 196608,
 
 [node name="SocialMeadia" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 1
+anchors_preset = 6
 anchor_left = 1.0
+anchor_top = 0.5
 anchor_right = 1.0
-offset_left = -79.475
-offset_right = -15.475
-offset_bottom = 472.0
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -236.0
+offset_right = -16.0
+offset_bottom = 236.0
 grow_horizontal = 0
-scale = Vector2(1.225, 1.225)
+grow_vertical = 2
 
-[node name="ItchIo" type="TextureRect" parent="SocialMeadia"]
+[node name="ItchIo" type="TextureButton" parent="SocialMeadia"]
 layout_mode = 2
-texture = ExtResource("9_ci5km")
+texture_normal = ExtResource("9_ci5km")
+script = ExtResource("9_mvhlp")
+url = "https://sleepingcolossus.itch.io/"
 
-[node name="Youtube" type="TextureRect" parent="SocialMeadia"]
+[node name="Youtube" type="TextureButton" parent="SocialMeadia"]
 layout_mode = 2
-texture = ExtResource("10_akxka")
+texture_normal = ExtResource("10_akxka")
+script = ExtResource("9_mvhlp")
+url = "https://www.youtube.com/@sleepingcolossus"
 
-[node name="Instagram" type="TextureRect" parent="SocialMeadia"]
+[node name="Instagram" type="TextureButton" parent="SocialMeadia"]
 layout_mode = 2
-texture = ExtResource("11_feiix")
+texture_normal = ExtResource("11_feiix")
+script = ExtResource("9_mvhlp")
+url = "https://www.instagram.com/sleepingcolossus/"
 
-[node name="Facebook" type="TextureRect" parent="SocialMeadia"]
+[node name="Facebook" type="TextureButton" parent="SocialMeadia"]
 layout_mode = 2
-texture = ExtResource("12_jotln")
+texture_normal = ExtResource("12_jotln")
+script = ExtResource("9_mvhlp")
+url = "https://www.facebook.com/sleepingcolossus"
 
-[node name="X" type="TextureRect" parent="SocialMeadia"]
+[node name="X" type="TextureButton" parent="SocialMeadia"]
 layout_mode = 2
-texture = ExtResource("13_7y52s")
+texture_normal = ExtResource("13_7y52s")
+script = ExtResource("9_mvhlp")
+url = "https://twitter.com/SleepColossus"
 
-[node name="TikTok" type="TextureRect" parent="SocialMeadia"]
+[node name="TikTok" type="TextureButton" parent="SocialMeadia"]
 layout_mode = 2
-texture = ExtResource("14_wf3ey")
+texture_normal = ExtResource("14_wf3ey")
+script = ExtResource("9_mvhlp")
+url = "https://www.tiktok.com/@sleepingcolossus"
 
-[node name="GitHub" type="TextureRect" parent="SocialMeadia"]
+[node name="GitHub" type="TextureButton" parent="SocialMeadia"]
 layout_mode = 2
-texture = ExtResource("15_dllwy")
+texture_normal = ExtResource("15_dllwy")
+script = ExtResource("9_mvhlp")
+url = "https://github.com/SleepingColossus"
 
 [node name="ClickSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_fc57y")
@@ -162,3 +180,10 @@ stream = ExtResource("7_fc57y")
 [connection signal="pressed" from="Navigation/ToggleTutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="pressed" from="Navigation/ToggleSound" to="." method="_on_sound_on_pressed"]
 [connection signal="pressed" from="Navigation/ToggleMusic" to="." method="_on_music_on_pressed"]
+[connection signal="pressed" from="SocialMeadia/ItchIo" to="SocialMeadia/ItchIo" method="_on_pressed"]
+[connection signal="pressed" from="SocialMeadia/Youtube" to="SocialMeadia/Youtube" method="_on_pressed"]
+[connection signal="pressed" from="SocialMeadia/Instagram" to="SocialMeadia/Instagram" method="_on_pressed"]
+[connection signal="pressed" from="SocialMeadia/Facebook" to="SocialMeadia/Facebook" method="_on_pressed"]
+[connection signal="pressed" from="SocialMeadia/X" to="SocialMeadia/X" method="_on_pressed"]
+[connection signal="pressed" from="SocialMeadia/TikTok" to="SocialMeadia/TikTok" method="_on_pressed"]
+[connection signal="pressed" from="SocialMeadia/GitHub" to="SocialMeadia/GitHub" method="_on_pressed"]
