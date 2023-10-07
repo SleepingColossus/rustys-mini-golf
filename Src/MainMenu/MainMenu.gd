@@ -3,6 +3,15 @@ extends Control
 
 @onready var click_sound := $ClickSound
 
+@onready var toggle_tutorial_button := $Navigation/ToggleTutorial
+@onready var toggle_sound_button := $Navigation/ToggleSound
+@onready var toggle_music_button := $Navigation/ToggleMusic
+
+func _ready() -> void:
+    _set_label(toggle_tutorial_button, "TUTORIAL", Options.play_tutorials)
+    _set_label(toggle_sound_button, "SOUND", Options.play_sounds)
+    _set_label(toggle_music_button, "MUSIC", Options.play_music)
+
 
 func _on_play_pressed() -> void:
     SoundPlayer.play_sound($ClickSound)
@@ -14,25 +23,27 @@ func _bool_to_string(option_state: bool) -> String:
     return str
 
 
+func _set_label(button: Button, base_text: String, toggle: bool) -> void:
+    var label = "%s: %s" % [base_text, (_bool_to_string(toggle))]
+    button.text = label
+
+
 func _on_tutorial_pressed() -> void:
     SoundPlayer.play_sound($ClickSound)
     Options.play_tutorials = !Options.play_tutorials
-
     var label = "TUTORIAL: %s" % (_bool_to_string(Options.play_tutorials))
-    $Navigation/ToggleTutorial.text = label
+    toggle_tutorial_button.text = label
 
 
 func _on_sound_on_pressed() -> void:
     SoundPlayer.play_sound($ClickSound)
     Options.play_sounds = !Options.play_sounds
-
     var label = "SOUND: %s" % (_bool_to_string(Options.play_sounds))
-    $Navigation/ToggleSound.text = label
+    toggle_sound_button.text = label
 
 
 func _on_music_on_pressed() -> void:
     SoundPlayer.play_sound($ClickSound)
     Options.play_music = !Options.play_music
-
     var label = "MUSIC: %s" % (_bool_to_string(Options.play_music))
-    $Navigation/ToggleMusic.text = label
+    toggle_music_button.text = label
