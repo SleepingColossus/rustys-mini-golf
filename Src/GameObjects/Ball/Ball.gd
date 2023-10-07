@@ -61,7 +61,7 @@ func reset_position():
 
 func _win():
     SoundPlayer.play_sound(enter_hole_sound)
-    hole_entered.emit()
+    $DelayVictoryTimer.start()
     _has_won = true
     visible = false
     linear_velocity = Vector2.ZERO
@@ -117,3 +117,7 @@ func _on_body_entered(body: Node) -> void:
 
 func _play_splash_sound() -> void:
     SoundPlayer.play_sound(splash_sound)
+
+
+func _on_delay_victory_timer_timeout() -> void:
+    hole_entered.emit()

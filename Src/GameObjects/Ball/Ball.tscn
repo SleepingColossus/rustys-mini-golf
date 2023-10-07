@@ -155,6 +155,10 @@ angle_max = 720.0
 scale_amount_min = 2.0
 scale_amount_max = 2.0
 
+[node name="DelayVictoryTimer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
 [connection signal="body_shape_exited" from="." to="." method="_on_body_shape_exited"]
+[connection signal="timeout" from="DelayVictoryTimer" to="." method="_on_delay_victory_timer_timeout"]
