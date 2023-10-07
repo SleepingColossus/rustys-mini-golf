@@ -26,6 +26,7 @@ var _has_won := false
 @onready var hit_sound := $Sounds/HitSound
 @onready var bounce_sound := $Sounds/BounceSound
 @onready var splash_sound := $Sounds/SplashSound
+@onready var enter_hole_sound := $Sounds/EnterHoleSound
 
 # particles
 @onready var hit_particles := $Particles/HitParticles
@@ -59,6 +60,7 @@ func reset_position():
 
 
 func _win():
+    SoundPlayer.play_sound(enter_hole_sound)
     hole_entered.emit()
     _has_won = true
     visible = false

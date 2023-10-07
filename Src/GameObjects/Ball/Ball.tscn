@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://1kasrsh4cgmt"]
+[gd_scene load_steps=11 format=3 uid="uid://1kasrsh4cgmt"]
 
 [ext_resource type="Script" path="res://GameObjects/Ball/Ball.gd" id="1_d1na0"]
 [ext_resource type="Texture2D" uid="uid://csbdvnjcx72wc" path="res://GameObjects/Ball/Ball.png" id="1_kqee2"]
 [ext_resource type="AudioStream" uid="uid://jo0mn4f4uemr" path="res://GameObjects/Ball/Splash.ogg" id="3_y47ud"]
 [ext_resource type="AudioStream" uid="uid://px0hlfj07x04" path="res://GameObjects/Ball/BallHit.ogg" id="4_rbee4"]
 [ext_resource type="AudioStream" uid="uid://ckco7yymmxkia" path="res://GameObjects/Ball/BallBounce.ogg" id="5_545ny"]
+[ext_resource type="AudioStream" uid="uid://bfbfpib2g1smh" path="res://GameObjects/Ball/BallEnterHole.ogg" id="6_ns8js"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8efvg"]
 bounce = 1.0
@@ -109,6 +110,9 @@ stream = ExtResource("4_rbee4")
 
 [node name="BounceSound" type="AudioStreamPlayer2D" parent="Sounds"]
 stream = ExtResource("5_545ny")
+
+[node name="EnterHoleSound" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("6_ns8js")
 
 [node name="Particles" type="Node2D" parent="."]
 
