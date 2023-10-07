@@ -22,8 +22,10 @@ var _has_won := false
 
 @onready var ball_camera : Camera2D = $BallCamera
 
-@onready var hit_sound : AudioStreamPlayer2D = $Sounds/HitSound
-@onready var bounce_sound : AudioStreamPlayer2D = $Sounds/BounceSound
+@onready var hit_sound := $Sounds/HitSound
+@onready var bounce_sound := $Sounds/BounceSound
+@onready var splash_sound := $Sounds/SplashSound
+
 
 func _ready():
     movement_factor = MOVEMENT_FACTOR_GRASS
@@ -38,7 +40,7 @@ func can_move():
 func move(forceX, forceY):
     _last_known_position = position
     $HitParticles.emitting = true
-    hit_sound.play()
+    _play_sound(hit_sound)
     apply_impulse(Vector2(forceX, forceY))
 
 
@@ -74,11 +76,11 @@ func _on_body_shape_entered(body_rid, body, _body_shape_index, _local_shape_inde
                 continue
             else:
                 if layer_index == LAYER_TERRAIN:
-                    bounce_sound.play()
+                    _play_sound(bounce_sound)
                 elif layer_index == LAYER_HOLE:
                     _win()
                 elif layer_index == LAYER_WATER:
-                    $AnimationPlayer.play("die_and_reset")
+                    $DrownAnimation.play("die_and_reset")
                 elif layer_index == LAYER_SAND:
                     movement_factor = MOVEMENT_FACTOR_SAND
                 print_debug("collided with tile in layer %d" % layer_index)
@@ -105,3 +107,12 @@ func _on_body_shape_exited(body_rid, body, _body_shape_index, _local_shape_index
 
 func _on_body_entered(body: Node) -> void:
     $HitParticles.emitting = true
+
+
+func _play_sound(sound: AudioStreamPlayer2D) -> void:
+    if Options.play_sounds:
+        sound.play()
+
+
+func _play_splash_sound() -> void:
+    _play_sound(splash_sound)
