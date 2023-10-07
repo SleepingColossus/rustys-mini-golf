@@ -14,9 +14,12 @@ var _message_index := 0
 
 func _ready() -> void:
     if Options.play_tutorials:
+        $Overlay/Tutorial.visible = true
         %TutorialAnimator.play("show")
         %Text.text = text_lines[_message_index]
         %ScrollingTextAnimator.play("scroll_text")
+    else:
+        $Overlay/Tutorial.visible = false
 
 
 func _toggle_zoom():

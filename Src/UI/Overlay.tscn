@@ -209,6 +209,7 @@ offset_bottom = 80.0
 texture_normal = ExtResource("11_1b23b")
 
 [node name="Tutorial" type="MarginContainer" parent="Overlay"]
+visible = false
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
