@@ -41,6 +41,11 @@ func _on_zoom_button_pressed() -> void:
     _toggle_zoom()
 
 
+func _on_back_button_pressed() -> void:
+    SoundPlayer.play_sound(click_sound)
+    get_tree().change_scene_to_file("res://LevelSelect/LevelSelect.tscn")
+
+
 func _on_next_button_pressed() -> void:
     SoundPlayer.play_sound(click_sound)
     _next_message()
@@ -87,3 +92,4 @@ func _on_replay_button_pressed() -> void:
 func _on_next_level_button_pressed() -> void:
     SoundPlayer.play_sound(click_sound)
     get_tree().change_scene_to_file("res://LevelSelect/LevelSelect.tscn")
+

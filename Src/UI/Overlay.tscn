@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bdnmctsjtjrgl"]
+[gd_scene load_steps=31 format=3 uid="uid://bdnmctsjtjrgl"]
 
 [ext_resource type="Script" path="res://UI/Overlay.gd" id="1_3x7xf"]
 [ext_resource type="Texture2D" uid="uid://irfoeqkh77x5" path="res://UI/ButtonZoom.png" id="1_g8ndk"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://duopy1iyrmwim" path="res://UI/Scoreboard.png" id="8_sygyr"]
 [ext_resource type="Texture2D" uid="uid://c1e8sdr7rxyun" path="res://UI/Star.png" id="9_iva0f"]
 [ext_resource type="Theme" uid="uid://b27jjwqe2yuhy" path="res://UI/MenuButtons/ButtonTheme.tres" id="10_aeofw"]
+[ext_resource type="Texture2D" uid="uid://0poldlbl8b85" path="res://UI/ButtonBack.png" id="11_1b23b"]
 [ext_resource type="AudioStream" uid="uid://bn8tdme6p84bf" path="res://UI/Sounds/Win1Star.ogg" id="11_5mjvd"]
 [ext_resource type="AudioStream" uid="uid://cyofqj5gtyrc5" path="res://UI/Sounds/Win2Stars.ogg" id="12_n61r1"]
 [ext_resource type="AudioStream" uid="uid://dj32qrmt150bg" path="res://UI/Sounds/Win3Stars.ogg" id="13_wrk4s"]
@@ -199,8 +200,15 @@ grow_horizontal = 0
 texture_normal = ExtResource("1_g8ndk")
 script = SubResource("GDScript_mjhbw")
 
+[node name="BackButton" type="TextureButton" parent="Overlay"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 80.0
+offset_bottom = 80.0
+texture_normal = ExtResource("11_1b23b")
+
 [node name="Tutorial" type="MarginContainer" parent="Overlay"]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -383,6 +391,7 @@ stream = ExtResource("14_m7cfg")
 stream = ExtResource("15_pc5v0")
 
 [connection signal="pressed" from="Overlay/ZoomButton" to="." method="_on_zoom_button_pressed"]
+[connection signal="pressed" from="Overlay/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="Overlay/Tutorial/TextBubble/NextButton" to="." method="_on_next_button_pressed"]
 [connection signal="pressed" from="Overlay/Scoreboard/Navigation/MenuButton" to="." method="_on_menu_button_pressed"]
 [connection signal="pressed" from="Overlay/Scoreboard/Navigation/ReplayButton" to="." method="_on_replay_button_pressed"]
