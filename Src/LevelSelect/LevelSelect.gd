@@ -17,7 +17,7 @@ func _ready() -> void:
 
 
 func _on_back_button_pressed() -> void:
-    $ClickSound.play()
+    SoundPlayer.play_sound($ClickSound)
     get_tree().change_scene_to_file("res://MainMenu/MainMenu.tscn")
 
 

@@ -1,8 +1,11 @@
 extends Control
 
 
+@onready var click_sound := $ClickSound
+
+
 func _on_play_pressed() -> void:
-    $ClickSound.play()
+    SoundPlayer.play_sound($ClickSound)
     get_tree().change_scene_to_file("res://LevelSelect/LevelSelect.tscn")
 
 
@@ -12,6 +15,7 @@ func _bool_to_string(option_state: bool) -> String:
 
 
 func _on_tutorial_pressed() -> void:
+    SoundPlayer.play_sound($ClickSound)
     Options.play_tutorials = !Options.play_tutorials
 
     var label = "TUTORIAL: %s" % (_bool_to_string(Options.play_tutorials))
@@ -19,6 +23,7 @@ func _on_tutorial_pressed() -> void:
 
 
 func _on_sound_on_pressed() -> void:
+    SoundPlayer.play_sound($ClickSound)
     Options.play_sounds = !Options.play_sounds
 
     var label = "SOUND: %s" % (_bool_to_string(Options.play_sounds))
@@ -26,6 +31,7 @@ func _on_sound_on_pressed() -> void:
 
 
 func _on_music_on_pressed() -> void:
+    SoundPlayer.play_sound($ClickSound)
     Options.play_music = !Options.play_music
 
     var label = "MUSIC: %s" % (_bool_to_string(Options.play_music))
