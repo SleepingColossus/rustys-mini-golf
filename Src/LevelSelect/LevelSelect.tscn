@@ -24,7 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://b1rl4rksecsox" path="res://LevelSelect/Islands/Level16.tscn" id="18_jsoty"]
 [ext_resource type="PackedScene" uid="uid://2hahi8oj1xek" path="res://LevelSelect/Islands/Level17.tscn" id="19_2uiei"]
 [ext_resource type="PackedScene" uid="uid://mnln682hc7tn" path="res://LevelSelect/Islands/Level18.tscn" id="20_64l3n"]
-[ext_resource type="AudioStream" uid="uid://b17iyvlway0dg" path="res://UI/ClickSound.ogg" id="25_lyq0i"]
+[ext_resource type="AudioStream" uid="uid://b17iyvlway0dg" path="res://UI/Sounds/ClickSound.ogg" id="25_lyq0i"]
 
 [node name="Control" type="Control"]
 layout_mode = 3

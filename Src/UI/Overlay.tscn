@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bdnmctsjtjrgl"]
+[gd_scene load_steps=30 format=3 uid="uid://bdnmctsjtjrgl"]
 
 [ext_resource type="Script" path="res://UI/Overlay.gd" id="1_3x7xf"]
 [ext_resource type="Texture2D" uid="uid://irfoeqkh77x5" path="res://UI/ButtonZoom.png" id="1_g8ndk"]
@@ -14,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://cyofqj5gtyrc5" path="res://UI/Sounds/Win2Stars.ogg" id="12_n61r1"]
 [ext_resource type="AudioStream" uid="uid://dj32qrmt150bg" path="res://UI/Sounds/Win3Stars.ogg" id="13_wrk4s"]
 [ext_resource type="AudioStream" uid="uid://cmchagh1bxan5" path="res://UI/Sounds/StarPop.ogg" id="14_m7cfg"]
+[ext_resource type="AudioStream" uid="uid://b17iyvlway0dg" path="res://UI/Sounds/ClickSound.ogg" id="15_pc5v0"]
 
 [sub_resource type="GDScript" id="GDScript_mjhbw"]
 script/source = "extends TextureButton
@@ -377,6 +378,9 @@ stream = ExtResource("13_wrk4s")
 
 [node name="StarPopSound" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("14_m7cfg")
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("15_pc5v0")
 
 [connection signal="pressed" from="Overlay/ZoomButton" to="." method="_on_zoom_button_pressed"]
 [connection signal="pressed" from="Overlay/Tutorial/TextBubble/NextButton" to="." method="_on_next_button_pressed"]

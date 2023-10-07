@@ -9,6 +9,8 @@ signal tutorial_complete
 var _message_index := 0
 @export var text_lines : Array[String]
 
+@onready var click_sound := $Sounds/ClickSound
+
 
 func _ready() -> void:
     %TutorialAnimator.play("show")
@@ -17,7 +19,7 @@ func _ready() -> void:
 
 
 func _toggle_zoom():
-    print_debug("Camera toggled")
+    SoundPlayer.play_sound(click_sound)
     level_camera.enabled = not level_camera.enabled
     ball.ball_camera.enabled = not ball.ball_camera.enabled
 
@@ -34,10 +36,12 @@ func _next_message() -> void:
 
 
 func _on_zoom_button_pressed() -> void:
+    SoundPlayer.play_sound(click_sound)
     _toggle_zoom()
 
 
 func _on_next_button_pressed() -> void:
+    SoundPlayer.play_sound(click_sound)
     _next_message()
 
 
@@ -54,28 +58,31 @@ func show_scoreboard(stars_earned: int, shots_taken: int, three_star_score: int,
         $Overlay/Scoreboard/Stats/VBoxContainer/Stars/Star1.visible = true
         $Overlay/Scoreboard/Stats/VBoxContainer/Stars/Star2.visible = true
         $Overlay/Scoreboard/Stats/VBoxContainer/Stars/Star3.visible = true
-        $Sounds/Win3StarSound.play()
+        SoundPlayer.play_sound($Sounds/Win3StarSound)
     elif stars_earned == 2:
         $Overlay/Scoreboard/Stats/VBoxContainer/NextStar.text = "Next Star: %d" % three_star_score
         $Overlay/Scoreboard/Stats/VBoxContainer/Stars/Star1.visible = true
         $Overlay/Scoreboard/Stats/VBoxContainer/Stars/Star2.visible = true
         $Overlay/Scoreboard/Stats/VBoxContainer/Stars/Star3.visible = false
-        $Sounds/Win2StarSound.play()
+        SoundPlayer.play_sound($Sounds/Win2StarSound)
     else:
         $Overlay/Scoreboard/Stats/VBoxContainer/NextStar.text = "Next Star: %d" % two_star_condition
         $Overlay/Scoreboard/Stats/VBoxContainer/Stars/Star1.visible = true
         $Overlay/Scoreboard/Stats/VBoxContainer/Stars/Star2.visible = false
         $Overlay/Scoreboard/Stats/VBoxContainer/Stars/Star3.visible = false
-        $Sounds/Win1StarSound.play()
+        SoundPlayer.play_sound($Sounds/Win1StarSound)
 
 
 func _on_menu_button_pressed() -> void:
+    SoundPlayer.play_sound(click_sound)
     get_tree().change_scene_to_file("res://MainMenu/MainMenu.tscn")
 
 
 func _on_replay_button_pressed() -> void:
+    SoundPlayer.play_sound(click_sound)
     get_tree().reload_current_scene()
 
 
 func _on_next_level_button_pressed() -> void:
+    SoundPlayer.play_sound(click_sound)
     get_tree().change_scene_to_file("res://LevelSelect/LevelSelect.tscn")

@@ -44,7 +44,7 @@ func can_move():
 func move(forceX, forceY):
     _last_known_position = position
     hit_particles.emitting = true
-    _play_sound(hit_sound)
+    SoundPlayer.play_sound(hit_sound)
     apply_impulse(Vector2(forceX, forceY))
 
 
@@ -80,7 +80,7 @@ func _on_body_shape_entered(body_rid, body, _body_shape_index, _local_shape_inde
                 continue
             else:
                 if layer_index == LAYER_TERRAIN:
-                    _play_sound(bounce_sound)
+                    SoundPlayer.play_sound(bounce_sound)
                 elif layer_index == LAYER_HOLE:
                     _win()
                 elif layer_index == LAYER_WATER:
@@ -113,10 +113,5 @@ func _on_body_entered(body: Node) -> void:
     hit_particles.emitting = true
 
 
-func _play_sound(sound: AudioStreamPlayer2D) -> void:
-    if Options.play_sounds:
-        sound.play()
-
-
 func _play_splash_sound() -> void:
-    _play_sound(splash_sound)
+    SoundPlayer.play_sound(splash_sound)

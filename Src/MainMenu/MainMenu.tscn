@@ -7,7 +7,7 @@
 [ext_resource type="TileSet" uid="uid://jxwklsycjhqh" path="res://Terrain/SpaceTileSet.tres" id="4_v7y8r"]
 [ext_resource type="PackedScene" uid="uid://du633ihr8gykw" path="res://Cursor/CustomCursor.tscn" id="5_u3a4g"]
 [ext_resource type="Texture2D" uid="uid://d20tiu0dm4qxf" path="res://MainMenu/Godoey.png" id="5_uclqq"]
-[ext_resource type="AudioStream" uid="uid://b17iyvlway0dg" path="res://UI/ClickSound.ogg" id="7_fc57y"]
+[ext_resource type="AudioStream" uid="uid://b17iyvlway0dg" path="res://UI/Sounds/ClickSound.ogg" id="7_fc57y"]
 [ext_resource type="Texture2D" uid="uid://c4ty71ohtejpa" path="res://MainMenu/SocialMediaButtons/ItchIo.png" id="9_ci5km"]
 [ext_resource type="Texture2D" uid="uid://dxj7mo5is4w8m" path="res://MainMenu/SocialMediaButtons/Youtube.png" id="10_akxka"]
 [ext_resource type="Texture2D" uid="uid://dqbgj1fldu38h" path="res://MainMenu/SocialMediaButtons/Instagram.png" id="11_feiix"]

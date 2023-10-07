@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Global="*res://Scripts/Global.gd"
 Options="*res://Scripts/Options.gd"
+SoundPlayer="*res://Scripts/SoundPlayer.gd"
 
 [display]
 
