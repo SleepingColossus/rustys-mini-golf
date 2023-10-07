@@ -22,14 +22,18 @@ var _has_won := false
 
 @onready var ball_camera : Camera2D = $BallCamera
 
+# sounds
 @onready var hit_sound := $Sounds/HitSound
 @onready var bounce_sound := $Sounds/BounceSound
 @onready var splash_sound := $Sounds/SplashSound
 
+# particles
+@onready var hit_particles := $Particles/HitParticles
 
 func _ready():
     movement_factor = MOVEMENT_FACTOR_GRASS
     _last_known_position = position
+    visible = true
 
 
 func can_move():
@@ -39,7 +43,7 @@ func can_move():
 
 func move(forceX, forceY):
     _last_known_position = position
-    $HitParticles.emitting = true
+    hit_particles.emitting = true
     _play_sound(hit_sound)
     apply_impulse(Vector2(forceX, forceY))
 
@@ -106,7 +110,7 @@ func _on_body_shape_exited(body_rid, body, _body_shape_index, _local_shape_index
 
 
 func _on_body_entered(body: Node) -> void:
-    $HitParticles.emitting = true
+    hit_particles.emitting = true
 
 
 func _play_sound(sound: AudioStreamPlayer2D) -> void:
