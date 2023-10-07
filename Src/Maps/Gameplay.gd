@@ -5,6 +5,7 @@ enum State {
     GAMEPLAY_STATE
 }
 
+
 @export var three_star_condition : int
 @export var two_star_condition : int
 @export var level_number : int
@@ -67,6 +68,7 @@ func _draw():
                 color = Color.RED
 
             draw_line(_ball.position, end_point, color, 6)
+
 
 func _mouse_released():
     print_debug("Ball's linear velocity: %s" % _ball.get_linear_velocity().length())
