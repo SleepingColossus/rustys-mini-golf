@@ -26,6 +26,7 @@ var _has_won := false
 @onready var hit_sound := $Sounds/HitSound
 @onready var bounce_sound := $Sounds/BounceSound
 @onready var splash_sound := $Sounds/SplashSound
+@onready var enter_hole_sound := $Sounds/EnterHoleSound
 
 # particles
 @onready var hit_particles := $Particles/HitParticles
@@ -59,7 +60,8 @@ func reset_position():
 
 
 func _win():
-    hole_entered.emit()
+    SoundPlayer.play_sound(enter_hole_sound)
+    $DelayVictoryTimer.start()
     _has_won = true
     visible = false
     linear_velocity = Vector2.ZERO
@@ -115,3 +117,7 @@ func _on_body_entered(body: Node) -> void:
 
 func _play_splash_sound() -> void:
     SoundPlayer.play_sound(splash_sound)
+
+
+func _on_delay_victory_timer_timeout() -> void:
+    hole_entered.emit()
