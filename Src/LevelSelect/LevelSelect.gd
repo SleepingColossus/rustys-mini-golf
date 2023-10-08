@@ -1,16 +1,25 @@
 extends Control
 
 
+const NUMBER_OF_LEVELS = 18
+
+
 func _ready() -> void:
-    for i in range(1, 18):
+    for i in range(1, NUMBER_OF_LEVELS + 1):
         var highest_score = Global.get_score(i)
+
+        # do something if the level has a score
         if highest_score > -1:
+            # set the number of stars on island
             var level = get_node("Levels/Level%d" % i)
             level.score = highest_score
             level.reveal_stars()
 
-            var next_level = get_node("Levels/Level%d" % (i + 1))
-            next_level.unlocked = true
+            # unlock next level
+            # unless level number is out of bounds
+            if i < NUMBER_OF_LEVELS:
+                var next_level = get_node("Levels/Level%d" % (i + 1))
+                next_level.unlocked = true
 
     _set_total_score_label()
 
