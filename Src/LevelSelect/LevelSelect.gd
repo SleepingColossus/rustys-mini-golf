@@ -5,6 +5,9 @@ const NUMBER_OF_LEVELS = 18
 
 
 func _ready() -> void:
+
+    var highest_unlocked := 0
+
     for i in range(1, NUMBER_OF_LEVELS + 1):
         var highest_score = Global.get_score(i)
 
@@ -20,6 +23,12 @@ func _ready() -> void:
             if i < NUMBER_OF_LEVELS:
                 var next_level = get_node("Levels/Level%d" % (i + 1))
                 next_level.unlocked = true
+                highest_unlocked = i + 1
+
+    # play reveal animation on latest island to be unlocked
+    if highest_unlocked > 0:
+        var newest_level = get_node("Levels/Level%d" % highest_unlocked)
+        newest_level.reveal_island()
 
     _set_total_score_label()
 

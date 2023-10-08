@@ -94,7 +94,7 @@ libraries = {
 [node name="StartAnimationTimer" type="Timer" parent="Island/FloatAnimation"]
 one_shot = true
 
-[node name="ModulateAnimation" type="AnimationPlayer" parent="Island"]
+[node name="RevealAnimation" type="AnimationPlayer" parent="Island"]
 libraries = {
 "": SubResource("AnimationLibrary_7t0pk")
 }

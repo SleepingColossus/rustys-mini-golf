@@ -41,6 +41,10 @@ func reveal_stars() -> void:
         $Island/Star3.visible = true
 
 
+func reveal_island() -> void:
+    $Island/RevealAnimation.play("reveal")
+
+
 func _on_island_pressed() -> void:
     if unlocked:
         get_tree().change_scene_to_file("res://Maps/%s.tscn" % level_name)
