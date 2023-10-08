@@ -9,6 +9,7 @@ extends Control
 
 var _playback_position : float
 
+
 func _ready() -> void:
     _set_label(toggle_tutorial_button, "TUTORIAL", Options.play_tutorials)
     _set_label(toggle_sound_button, "SOUND", Options.play_sounds)
@@ -21,8 +22,7 @@ func _on_play_pressed() -> void:
 
 
 func _bool_to_string(option_state: bool) -> String:
-    var str = "ON" if option_state else "OFF"
-    return str
+    return "ON" if option_state else "OFF"
 
 
 func _set_label(button: Button, base_text: String, toggle: bool) -> void:

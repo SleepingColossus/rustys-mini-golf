@@ -111,7 +111,7 @@ func _on_body_shape_exited(body_rid, body, _body_shape_index, _local_shape_index
                 print_debug("exited layer %d" % layer_index)
 
 
-func _on_body_entered(body: Node) -> void:
+func _on_body_entered(_body: Node) -> void:
     hit_particles.emitting = true
 
 

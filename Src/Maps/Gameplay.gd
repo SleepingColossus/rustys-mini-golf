@@ -16,6 +16,7 @@ var _is_mouse_down := false
 var _shots_taken := 0
 @onready var _ball = $Ball
 
+
 func _ready():
     if Options.play_tutorials:
         _state = State.INTRO_STATE

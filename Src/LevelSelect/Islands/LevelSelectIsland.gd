@@ -5,7 +5,6 @@ extends MarginContainer
 @export var level_name : String
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
     reveal_stars()
 
@@ -16,8 +15,7 @@ func _ready() -> void:
     timer.start()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
     if !unlocked:
         modulate = Color(0.2, 0.2, 0.2)
     else:
