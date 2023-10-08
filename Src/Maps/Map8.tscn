@@ -10,7 +10,7 @@
 
 [node name="TestMap2" type="Node2D"]
 script = ExtResource("1_jvtp8")
-three_star_condition = 2
+three_star_condition = 3
 two_star_condition = 3
 level_number = 8
 
