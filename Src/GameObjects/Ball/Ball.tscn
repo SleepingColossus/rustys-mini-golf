@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://bfbfpib2g1smh" path="res://GameObjects/Ball/BallEnterHole.ogg" id="6_ns8js"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8efvg"]
+friction = 0.1
 bounce = 1.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_13qkb"]
