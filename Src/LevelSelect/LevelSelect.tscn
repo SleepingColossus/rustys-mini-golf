@@ -56,38 +56,38 @@ unlocked = true
 
 [node name="Level2" parent="Levels" instance=ExtResource("4_b8fdx")]
 layout_mode = 0
-offset_left = 221.0
-offset_top = 11.0
-offset_right = 333.0
-offset_bottom = 91.0
+offset_left = 217.0
+offset_top = 17.0
+offset_right = 329.0
+offset_bottom = 97.0
 
 [node name="Level3" parent="Levels" instance=ExtResource("5_skfec")]
 layout_mode = 0
-offset_left = 377.0
+offset_left = 370.0
 offset_top = 89.0
-offset_right = 489.0
+offset_right = 482.0
 offset_bottom = 169.0
 
 [node name="Level4" parent="Levels" instance=ExtResource("6_c8n4h")]
 layout_mode = 0
-offset_left = 542.0
-offset_top = 35.0
-offset_right = 638.0
-offset_bottom = 131.0
+offset_left = 534.0
+offset_top = 39.0
+offset_right = 630.0
+offset_bottom = 135.0
 
 [node name="Level5" parent="Levels" instance=ExtResource("7_g3m7a")]
 layout_mode = 0
-offset_left = 670.0
-offset_top = 37.0
-offset_right = 766.0
-offset_bottom = 133.0
+offset_left = 655.0
+offset_top = 42.0
+offset_right = 751.0
+offset_bottom = 138.0
 
 [node name="Level6" parent="Levels" instance=ExtResource("8_w5w77")]
 layout_mode = 0
-offset_left = 816.0
-offset_top = 21.0
-offset_right = 912.0
-offset_bottom = 149.0
+offset_left = 794.0
+offset_top = 25.0
+offset_right = 890.0
+offset_bottom = 153.0
 
 [node name="Level7" parent="Levels" instance=ExtResource("9_ianqu")]
 layout_mode = 0
@@ -180,9 +180,9 @@ anchors_preset = 0
 texture_filter = 1
 layout_mode = 0
 offset_left = 163.0
-offset_top = 122.0
+offset_top = 125.0
 offset_right = 227.0
-offset_bottom = 186.0
+offset_bottom = 189.0
 rotation = -1.33993
 scale = Vector2(0.837157, 0.837157)
 texture = ExtResource("4_al6c4")
@@ -190,9 +190,9 @@ texture = ExtResource("4_al6c4")
 [node name="Line2" type="TextureRect" parent="Lines"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 327.0
+offset_left = 318.0
 offset_top = 88.0
-offset_right = 391.0
+offset_right = 382.0
 offset_bottom = 152.0
 rotation = -0.299782
 scale = Vector2(0.656055, 0.656055)
@@ -201,10 +201,10 @@ texture = ExtResource("4_al6c4")
 [node name="Line3" type="TextureRect" parent="Lines"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 488.0
-offset_top = 125.0
-offset_right = 552.0
-offset_bottom = 189.0
+offset_left = 481.0
+offset_top = 128.0
+offset_right = 545.0
+offset_bottom = 192.0
 rotation = -1.35403
 scale = Vector2(0.710046, 0.710046)
 texture = ExtResource("4_al6c4")
@@ -212,10 +212,10 @@ texture = ExtResource("4_al6c4")
 [node name="Line4" type="TextureRect" parent="Lines"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 616.0
-offset_top = 97.0
-offset_right = 680.0
-offset_bottom = 161.0
+offset_left = 603.0
+offset_top = 100.0
+offset_right = 667.0
+offset_bottom = 164.0
 rotation = -0.913392
 scale = Vector2(0.532271, 0.60282)
 texture = ExtResource("4_al6c4")
@@ -223,10 +223,10 @@ texture = ExtResource("4_al6c4")
 [node name="Line5" type="TextureRect" parent="Lines"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 772.0
-offset_top = 65.0
-offset_right = 836.0
-offset_bottom = 129.0
+offset_left = 753.0
+offset_top = 70.0
+offset_right = 817.0
+offset_bottom = 134.0
 rotation = -1.09631
 scale = Vector2(0.6, 0.64)
 texture = ExtResource("4_al6c4")
@@ -234,10 +234,10 @@ texture = ExtResource("4_al6c4")
 [node name="Line6" type="TextureRect" parent="Lines"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 888.0
-offset_top = 78.0
-offset_right = 952.0
-offset_bottom = 142.0
+offset_left = 862.0
+offset_top = 113.0
+offset_right = 926.0
+offset_bottom = 177.0
 rotation = -0.227513
 scale = Vector2(0.472202, 0.472202)
 texture = ExtResource("4_al6c4")
