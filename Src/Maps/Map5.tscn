@@ -64,6 +64,6 @@ mass = 0.4
 [node name="Overlay" parent="." node_paths=PackedStringArray("level_camera", "ball") instance=ExtResource("6_2exmm")]
 level_camera = NodePath("../LevelCamera")
 ball = NodePath("../Ball")
-text_lines = Array[String](["Oh wow! Water!", "I have 2 tips regarding water tiles!", "1. AVOIND AT ALL COSTS!", "If you sink your ball your score will be worse!", "2. I woudln't touch the ball if it sinks.", "Has it ever occurred to you where the water came from?", "Nature called! ;D"])
+text_lines = Array[String](["Oh, wow! We found some water!", "I have two tips regarding water tiles:", "1. AVOID THEM AT ALL COSTS!", "If you sink your ball, it'll get reset to it's last position.", "This is bad for your score!", "2. I woudln't touch the ball if it sinks.", "Did you ever wonder where the water came from?", "Nature called! ;D"])
 
 [node name="GameplayMusicPlayer" parent="." instance=ExtResource("7_yr8ax")]
