@@ -57,3 +57,10 @@ func _on_music_on_pressed() -> void:
         music.stop()
     else:
         music.play(_playback_position)
+
+
+func _on_toggle_fullscreen_pressed():
+    if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:
+        DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+    else:
+        DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)

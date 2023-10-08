@@ -42,28 +42,38 @@ grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme_override_constants/separation = 20
+theme_override_constants/separation = 10
 
 [node name="Play" type="Button" parent="Navigation"]
 layout_mode = 2
 size_flags_vertical = 4
 theme = ExtResource("1_gwc1j")
+theme_override_font_sizes/font_size = 18
 text = "PLAY"
 
 [node name="ToggleTutorial" type="Button" parent="Navigation"]
 layout_mode = 2
 theme = ExtResource("1_gwc1j")
+theme_override_font_sizes/font_size = 18
 text = "TUTORIAL: ON"
 
 [node name="ToggleSound" type="Button" parent="Navigation"]
 layout_mode = 2
 theme = ExtResource("1_gwc1j")
+theme_override_font_sizes/font_size = 18
 text = "SOUND: ON"
 
 [node name="ToggleMusic" type="Button" parent="Navigation"]
 layout_mode = 2
 theme = ExtResource("1_gwc1j")
+theme_override_font_sizes/font_size = 18
 text = "MUSIC: ON"
+
+[node name="ToggleFullscreen" type="Button" parent="Navigation"]
+layout_mode = 2
+theme = ExtResource("1_gwc1j")
+theme_override_font_sizes/font_size = 18
+text = "FULLSCREEN"
 
 [node name="Logo" type="TextureRect" parent="."]
 layout_mode = 1
@@ -180,6 +190,7 @@ stream = ExtResource("7_fc57y")
 [connection signal="pressed" from="Navigation/ToggleTutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="pressed" from="Navigation/ToggleSound" to="." method="_on_sound_on_pressed"]
 [connection signal="pressed" from="Navigation/ToggleMusic" to="." method="_on_music_on_pressed"]
+[connection signal="pressed" from="Navigation/ToggleFullscreen" to="." method="_on_toggle_fullscreen_pressed"]
 [connection signal="pressed" from="SocialMeadia/ItchIo" to="SocialMeadia/ItchIo" method="_on_pressed"]
 [connection signal="pressed" from="SocialMeadia/Youtube" to="SocialMeadia/Youtube" method="_on_pressed"]
 [connection signal="pressed" from="SocialMeadia/Instagram" to="SocialMeadia/Instagram" method="_on_pressed"]
