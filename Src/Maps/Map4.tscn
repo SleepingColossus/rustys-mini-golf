@@ -64,6 +64,6 @@ mass = 0.4
 [node name="Overlay" parent="." node_paths=PackedStringArray("level_camera", "ball") instance=ExtResource("6_tckv0")]
 level_camera = NodePath("../LevelCamera")
 ball = NodePath("../Ball")
-text_lines = Array[String](["Ooooooooh want to try something fun?!", "Try bouncing your ball of the wall!", "Aim for that wall under the sandpit to get the perfect angle"])
+text_lines = Array[String](["Ooooooooh want to try something fun?!", "Try bouncing your ball off the wall!", "Aim for that wall under the sandpit to get the perfect angle"])
 
 [node name="GameplayMusicPlayer" parent="." instance=ExtResource("7_mspfk")]

@@ -113,6 +113,6 @@ libraries = {
 [node name="Overlay" parent="." node_paths=PackedStringArray("level_camera", "ball") instance=ExtResource("7_kdh7w")]
 level_camera = NodePath("../LevelCamera")
 ball = NodePath("../Ball")
-text_lines = Array[String](["You're outstanding!", "Watch out for the moving obstacle.", "Observe it's pattern and find the perfect time to strike."])
+text_lines = Array[String](["You're outstanding!", "Watch out for the moving obstacle.", "Observe its pattern and find the perfect time to strike."])
 
 [node name="GameplayMusicPlayer" parent="." instance=ExtResource("8_105jb")]
