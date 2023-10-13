@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://1wou1hcuk4mw"]
+[gd_scene load_steps=18 format=3 uid="uid://bbrgbomnb7yy1"]
 
 [ext_resource type="Script" path="res://Maps/Gameplay.gd" id="1_6f0t6"]
 [ext_resource type="PackedScene" uid="uid://bdnmctsjtjrgl" path="res://UI/Overlay.tscn" id="2_epd6p"]
@@ -125,8 +125,8 @@ _data = {
 
 [node name="TestMap" type="Node2D"]
 script = ExtResource("1_6f0t6")
-three_star_condition = 4
-two_star_condition = 6
+three_star_condition = 5
+two_star_condition = 7
 level_number = 15
 
 [node name="Overlay" parent="." node_paths=PackedStringArray("level_camera", "ball") instance=ExtResource("2_epd6p")]
