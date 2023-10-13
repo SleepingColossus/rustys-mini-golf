@@ -178,7 +178,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(212, -550), Vector2(212, 0)]
+"values": [Vector2(212, -535), Vector2(212, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_t64vp"]
@@ -306,9 +306,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -300.0
-offset_top = -550.0
+offset_top = -590.0
 offset_right = 300.0
-offset_bottom = -15.0
+offset_bottom = -55.0
 grow_horizontal = 2
 
 [node name="Stats" type="AspectRatioContainer" parent="Overlay/Scoreboard"]
