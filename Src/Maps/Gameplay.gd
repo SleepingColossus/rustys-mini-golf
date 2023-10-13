@@ -42,8 +42,14 @@ func _input(event):
                 else:
                     _is_mouse_down = false
                     _mouse_released()
+        elif event is InputEventScreenTouch:
+            if event.is_pressed():
+                _is_mouse_down = true
+            else:
+                _is_mouse_down = false
+                _mouse_released()
 
-        if event is InputEventMouseMotion and _is_mouse_down:
+        if (event is InputEventMouseMotion or event is InputEventScreenDrag) and _is_mouse_down:
             _mouse_position = get_local_mouse_position()
         else:
             _mouse_position = null
