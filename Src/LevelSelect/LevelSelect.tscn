@@ -322,10 +322,10 @@ texture = ExtResource("4_al6c4")
 [node name="Line14" type="TextureRect" parent="Lines"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 107.0
-offset_top = 452.0
-offset_right = 171.0
-offset_bottom = 516.0
+offset_left = 74.0
+offset_top = 470.0
+offset_right = 138.0
+offset_bottom = 534.0
 rotation = -0.111291
 scale = Vector2(0.824146, 0.824146)
 texture = ExtResource("4_al6c4")
@@ -333,12 +333,12 @@ texture = ExtResource("4_al6c4")
 [node name="Line15" type="TextureRect" parent="Lines"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 275.0
-offset_top = 475.0
-offset_right = 339.0
-offset_bottom = 539.0
+offset_left = 299.0
+offset_top = 471.0
+offset_right = 363.0
+offset_bottom = 535.0
 rotation = -0.92545
-scale = Vector2(0.543984, 0.543984)
+scale = Vector2(0.336088, 0.336088)
 texture = ExtResource("4_al6c4")
 
 [node name="Line16" type="TextureRect" parent="Lines"]
