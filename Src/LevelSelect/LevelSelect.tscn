@@ -147,10 +147,10 @@ offset_bottom = 444.0
 
 [node name="Level15" parent="Levels" instance=ExtResource("17_3k1jf")]
 layout_mode = 0
-offset_left = 164.0
-offset_top = 386.0
-offset_right = 276.0
-offset_bottom = 562.0
+offset_left = 138.0
+offset_top = 387.0
+offset_right = 298.0
+offset_bottom = 563.0
 
 [node name="Level16" parent="Levels" instance=ExtResource("18_jsoty")]
 layout_mode = 0
